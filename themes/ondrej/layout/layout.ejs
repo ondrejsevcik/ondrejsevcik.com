@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      <%- [page.title, config.title].filter(i => i).join(' - ') %>
+    </title>
+
+    <%- css('styles') %>
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        <a href="/">home</a>
+      </h1>
+    </div>
+
+    <div>
+      <%- body %>
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; <%= date(new Date(), 'YYYY') %> Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>

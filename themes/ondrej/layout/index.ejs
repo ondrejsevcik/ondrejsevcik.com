@@ -1,0 +1,13 @@
+<ul>
+  <% site.posts.forEach(function(post){ %>
+    <li>
+      <a href="<%- post.permalink %>">
+        <%- post.title %>
+      </a>
+      <br>
+      <time>
+        <%- date(post.date, "YYYY-MM-DD") %>
+      </time>
+    </li>
+  <% }); %>
+</ul>
