@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "server": "hexo server --bail",
-    "deploy": "hexo deploy"
+    "generate": "hexo generate"
   },
   "hexo": {
     "version": "3.8.0"
