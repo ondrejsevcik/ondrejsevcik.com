@@ -18,7 +18,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs # GitHub Pages allows to be published from docs folder
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
