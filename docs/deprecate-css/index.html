@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="" />
+    <title>
+      Make your deprecated CSS stand out - Ondrej Sevcik
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        <a href="/">home</a>
+      </h1>
+    </div>
+
+    <div>
+      <header>
+    <h1>
+      Make your deprecated CSS stand out
+    </h1>
+    <div class="post-meta">
+      <time datetime>
+        2019-02-18
+      </time>
+    </div>
+</header>
+
+<article>
+  <p>Refactoring CSS is difficult. Due to it’s bazillion selectors and unlimited combinations it can get pretty nasty. </p>
+<p>If you’re working in a team with a large codebase, you rarely have a chance to refactor everything in one batch. Sometimes it is better to go one by one and check visually that your refactoring didn’t break anything. In that case, this technique might help you.</p>
+<p>The idea is very simple - make your deprecated CSS stand out (aka - scream!) and every time you see it in the UI, you have an unique chance to refactor it.</p>
+<figure><br>  <a href="/images/deprecated-css-example.png"><img src="/images/deprecated-css-example.png" alt="Example of deprecated CSS on GitHub homepage"></a><br>  <figcaption>Example of deprecated CSS on GitHub homepage</figcaption><br></figure>
+
+<p>This has a several benefits:</p>
+<ul>
+<li>There is a visual feedback on what’s outdated in the UI when you use your app</li>
+<li>It is safer and more effective than simple <code>// deprecated comment</code> or <code>deprecated.css</code> techniques</li>
+<li>It clearly communicates to your team that it is deprecated</li>
+</ul>
+<p>If your coworkers start working on a new UI and use some of the deprecated CSS, they will immediately note that something is wrong. Over time, you will lover your technical debt and eventually you could remove the old classes from your CSS.</p>
+<h2 id="Implementation-in-Ember-with-SASS"><a href="#Implementation-in-Ember-with-SASS" class="headerlink" title="Implementation (in Ember with SASS)"></a>Implementation (in Ember with SASS)</h2><p>The implementation is quite easy. I will demonstrate it on Ember setup, but it should be more or less similar in any other setup. </p>
+<p>Let’s start by marking some class as deprecated</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.some-old-class</span> &#123;</span><br><span class="line">  …</span><br><span class="line">  <span class="comment">// You can also include the message </span></span><br><span class="line">  <span class="comment">// that will be shown in the dev tools</span></span><br><span class="line">  @<span class="keyword">include</span> deprecated(“Use .new-class instead.”); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then we need to add <code>deprecated</code> mixin</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> deprecated(<span class="variable">$message</span>: <span class="string">''</span>) &#123;</span><br><span class="line">  @<span class="keyword">if</span> (<span class="variable">$environment</span> == <span class="string">'development'</span>) &#123;</span><br><span class="line">    <span class="comment">// Using outline has a two benefits</span></span><br><span class="line">    <span class="comment">// it is very rarely used and </span></span><br><span class="line">    <span class="comment">// it doesn’t break the flow of the element </span></span><br><span class="line">    <span class="attribute">outline</span>: <span class="number">3px</span> double red;</span><br><span class="line">    --deprecation-message: <span class="string">"#&#123;$message&#125;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This mixin requires <code>$environment</code> variable. Using <code>/index.js</code>, we can create SASS file on the fly that will have this variable.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> writeFile = <span class="built_in">require</span>(<span class="string">'broccoli-file-creator'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  treeForStyles() &#123;</span><br><span class="line">    <span class="keyword">let</span> tree = <span class="keyword">this</span>._super.treeForStyles.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> target = <span class="keyword">this</span>._findHost();</span><br><span class="line">    <span class="keyword">let</span> &#123; env &#125; = target;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> sassEnvironmentFile = writeFile(</span><br><span class="line">      <span class="string">'/app/styles/_environment-variable.scss'</span>,</span><br><span class="line">      <span class="string">`$environment: "<span class="subst">$&#123;env&#125;</span>"`</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> merge([sassEnvironmentFile, tree]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>and then just include this file in your app or addon SASS file</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// app/styles/my-app.scss</span></span><br><span class="line">@<span class="keyword">import</span> “environment-variable”;</span><br></pre></td></tr></table></figure>
+<p>That’s it, now go and refactor some of your old CSS.</p>
+<p>Big thanks goes to <a href="https://fnovy.com/" target="_blank" rel="noopener">Francesco</a> for helping with Ember setup.</p>
+
+</article>
+
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; 2019 Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>
