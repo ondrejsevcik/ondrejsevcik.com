@@ -1,6 +1,6 @@
 ---
 title: Make your deprecated CSS stand out
-date: 2019-02-16 19:20:00
+date: 2019-02-18 19:20:00
 category: tech
 ---
 
@@ -10,7 +10,10 @@ If you’re working in a team with a large codebase, you rarely have a chance to
 
 The idea is very simple - make your deprecated CSS stand out (aka - scream!) and every time you see it in the UI, you have an unique chance to refactor it.
 
-TODO: Add image with a stand out component
+<figure>
+  <a href="/images/deprecated-css-example.png"><img src="/images/deprecated-css-example.png" alt="Example of deprecated CSS on GitHub homepage"/></a>
+  <figcaption>Example of deprecated CSS on GitHub homepage</figcaption>
+</figure>
 
 This has a several benefits:
 - There is a visual feedback on what's outdated in the UI when you use your app
