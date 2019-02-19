@@ -12,7 +12,7 @@ The idea is very simple - make your deprecated CSS stand out and every time you 
 
 <figure>
   <a href="/images/deprecated-css-example.png"><img src="/images/deprecated-css-example.png" alt="Example of deprecated .align-center class on GitHub homepage"/></a>
-  <figcaption>Example of deprecated `.align-center` class on GitHub with a deprecated message.</figcaption>
+  <figcaption>Example of deprecated `.align-center` class on GitHub with a deprecation message.</figcaption>
 </figure>
 
 This has several benefits:
@@ -33,15 +33,15 @@ Let's start by marking some class as deprecated
   …
   // You can also provide message 
   // that will be shown in the dev tools
-  @include deprecated(“Use .new-class instead.”); 
+  @include deprecated("Use .new-class instead."); 
 }
 ```
 
 Then we need to add `deprecated` mixin
 
 ```scss
-@mixin deprecated($message: '') {
-  @if ($environment == 'development') {
+@mixin deprecated($message: "") {
+  @if ($environment == "development") {
     // Using outline has two benefits
     // it is very rarely used and 
     // it doesn’t break the flow of the element 
@@ -54,7 +54,7 @@ Then we need to add `deprecated` mixin
 This mixin displays deprecation only in `development` mode. We need to somehow inject the `$environment` variable. In Ember, you can customize `treeForStyles` method in `/index.js` and create a file with this SASS variable during each build. To be able to create a file on the fly, you need a [broccoli-file-creator](https://github.com/rwjblue/broccoli-file-creator) package.
 
 ```js
-const writeFile = require('broccoli-file-creator');
+const writeFile = require("broccoli-file-creator");
 
 module.exports = {
   treeForStyles() {
@@ -64,7 +64,7 @@ module.exports = {
     let { env } = target;
 
     let sassEnvironmentFile = writeFile(
-      '/app/styles/_environment-variable.scss',
+      "/app/styles/_environment-variable.scss",
       `$environment: "${env}"`
     );
 
@@ -77,7 +77,7 @@ And then just include this file in your app or addon SASS file
 
 ```scss
 // app/styles/my-app.scss
-@import “environment-variable”;
+@import "environment-variable";
 ```
 
 That's it! Now go and refactor some of your old CSS.
