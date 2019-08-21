@@ -1,5 +1,8 @@
 <ul>
-  <% site.posts.forEach(function(post){ %>
+  <% site.posts
+    // Sort by date from newest to oldest
+    .sort('date', -1)
+    .forEach(function(post) { %>
     <li>
       <a href="<%- post.permalink %>">
         <%- post.title %>
