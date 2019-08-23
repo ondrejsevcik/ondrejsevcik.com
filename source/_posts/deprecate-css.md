@@ -12,7 +12,7 @@ The idea is very simple - make your deprecated CSS stand out and every time you 
 
 <figure>
   <a href="/images/deprecated-css-example.png"><img src="/images/deprecated-css-example.png" alt="Example of deprecated .align-center class on GitHub homepage"/></a>
-  <figcaption>Example of deprecated `.align-center` class on GitHub with a deprecation message.</figcaption>
+  <figcaption>Example of deprecated <code>.align-center</code> class on GitHub with a deprecation message.</figcaption>
 </figure>
 
 This has several benefits:
