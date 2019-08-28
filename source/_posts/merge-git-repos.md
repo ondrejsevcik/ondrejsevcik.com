@@ -34,7 +34,7 @@ git clone <repo-url> packageC
 
 ## 2. Move all files into packages/\* sub-directory
 
-Moving all files from a source repository into `packages` sub-directory will make your life easier. You will avoid conflicts when you later merge it into monorepo. Also, certain operations in your monorepo will become easier (e.g.: finding renames, making a diff based on a file path).
+Moving all files in a source repository into `packages` sub-directory will make your life easier. You will avoid conflicts when you later merge it into monorepo. Also, certain operations in your monorepo will become easier (e.g.: finding renames, making a diff based on a file path).
 
 ```bash
 # The --prune-empty - removes commits which are empty due to the rewrite
