@@ -53,7 +53,7 @@ This is a paragraph before an _unnumbered_ list (`ul`). Lorem ipsum dolor sit am
 - Five
 
 <figure>
-  <a href="/images/deprecated-css-example.png">
+  <a href="https://images.unsplash.com/photo-1482914988630-16b155655e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80">
     <img 
       alt="Serles mountain near Innsbruck"
       src="https://images.unsplash.com/photo-1482914988630-16b155655e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80" 
@@ -74,7 +74,7 @@ This is a paragraph before a _numbered_ list (`ol`). Note that the spacing betwe
 
 The following table has a caption. The first row and the first column contain table header cells only; other cells are data cells.
 
-<table summary="each row names a nordic country and specifies its total area and land area, in square kilometers">
+<table class="article-table">
   <caption>Areas of the Nordic countries, in sq km</caption>
   <thead>
     <tr>
@@ -119,5 +119,14 @@ The following table has a caption. The first row and the first column contain ta
 </table>
 
 <p class="warning-box">
-  There is a catch! There is always some catch.
+  <strong>Warning</strong> - there is also warning box included.
 </p>
+
+
+### Color palette
+
+<div style="padding:1rem;background:#040303;color:white;">Rich black - #040303</div>
+<div style="padding:1rem;background:#7FB069;color:white;">Asparagus - #7FB069</div>
+<div style="padding:1rem;background:#698F3F;color:white;">Palm leaf - #698F3F</div>
+<div style="padding:1rem;background:#FFC53A;">Sunglow - #FFC53A</div>
+<div style="padding:1rem;background:#E3B23C;">Meat brown - #E3B23C</div>

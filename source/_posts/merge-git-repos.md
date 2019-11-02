@@ -12,7 +12,9 @@ In this article, we will merge a git repository into monorepo. The example is de
 
 We start with two git repositories (monorepo and packageC) and end up with just monorepo, that will contain git history and all files from packageC.
 
-Beware: This technique doesn't allow you to merge tags from packageC.
+<div class="warning-box">
+  <strong>Beware</strong> - This technique doesn't allow you to merge tags from <code>packageC</code>.
+</div>
 
 <figure>
   <a href="/images/git-folders-before-after.png"><img src="/images/git-folders-before-after.png" alt="Folder structure before and after merge"/></a>
