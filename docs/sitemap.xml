@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/styleguide/index.html</loc>
+    
+    <lastmod>2019-11-02T18:25:00.725Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/merge-git-repos/</loc>
     
-    <lastmod>2019-08-28T17:20:03.515Z</lastmod>
+    <lastmod>2019-11-02T18:25:00.724Z</lastmod>
     
   </url>
   

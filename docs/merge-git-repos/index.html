@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <div class="header">
-      <h1>
-        <a href="/">home</a>
-      </h1>
-    </div>
+    <nav class="menu">
+      <a href="/">Articles</a>
+    </nav>
 
     <div>
       <header>
@@ -31,11 +29,14 @@
 
 <article>
   <p>Merging two unrelated git repositories into one might look like an ambitious task, but once you understand what’s happening, you will find out it’s pretty simple.</p>
-<h2 id="What-we-are-about-to-do"><a href="#What-we-are-about-to-do" class="headerlink" title="What we are about to do"></a>What we are about to do</h2><p>In this article, we will merge a git repository into monorepo. The example is demonstrated on a <a href="https://yarnpkg.com/en/docs/workspaces/" target="_blank" rel="noopener">yarn workspace</a> (which is a bunch of npm packages in one repository) and one npm package that should be merged into it. This is a common setup for a lot of front-end projects out there.</p>
+<h2 id="What-we-are-about-to-do"><a href="#What-we-are-about-to-do" class="headerlink" title="What we are about to do"></a>What we are about to do</h2><p>In this article, we will merge a git repository into monorepo. The example is demonstrated on a <a href="https://yarnpkg.com/en/docs/workspaces/">yarn workspace</a> (which is a bunch of npm packages in one repository) and one npm package that should be merged into it. This is a common setup for a lot of front-end projects out there.</p>
 <p>We start with two git repositories (monorepo and packageC) and end up with just monorepo, that will contain git history and all files from packageC.</p>
-<p>Beware: This technique doesn’t allow you to merge tags from packageC.</p>
+<div class="warning-box">
+  <strong>Beware</strong> - This technique doesn't allow you to merge tags from <code>packageC</code>.
+</div>
+
 <figure>
-  <a href="/images/git-folders-before-after.png"><img src="/images/git-folders-before-after.png" alt="Folder structure before and after merge"></a>
+  <a href="/images/git-folders-before-after.png"><img src="/images/git-folders-before-after.png" alt="Folder structure before and after merge"/></a>
   <figcaption>Folder structure before and after merge</figcaption>
 </figure>
 
@@ -50,9 +51,9 @@
 <p>BTW: With <code>git filter-branch</code> you can also extract package out of monorepo back into a single repository, but that’s a topic for another article.</p>
 <h3 id="3-Merge-into-monorepo"><a href="#3-Merge-into-monorepo" class="headerlink" title="3. Merge into monorepo"></a>3. Merge into monorepo</h3><p>Now everything is ready to be merged. But before we do so, I will shortly explain what is this <code>git merge --allow-unrelated-histories</code> flag about.</p>
 <p>By default, git won’t allow you to merge branch that doesn’t have a common ancestor. With this flag, we’re telling git that we know about it and that this merge is deliberate.</p>
-<p>Git repository is always created with an initial commit, but in this case, we don’t have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that’s common for those unrelated histories. You can read more about it in the <a href="https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories" target="_blank" rel="noopener">official documentation</a>.</p>
+<p>Git repository is always created with an initial commit, but in this case, we don’t have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that’s common for those unrelated histories. You can read more about it in the <a href="https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories">official documentation</a>.</p>
 <figure style="max-width: 24rem; margin:auto;">
-  <a href="/images/git-history-before-after-merge.png"><img src="/images/git-history-before-after-merge.png" alt="Git history before and after merge"></a>
+  <a href="/images/git-history-before-after-merge.png"><img src="/images/git-history-before-after-merge.png" alt="Git history before and after merge"/></a>
   <figcaption>Git history before and after merge</figcaption>
 </figure>
 
