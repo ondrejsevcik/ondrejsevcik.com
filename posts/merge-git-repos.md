@@ -1,7 +1,7 @@
 ---
 title: How to merge git repository into monorepo
 date: 2019-08-23 20:00:00
-category: tech
+tags: tech
 ---
 
 Merging two unrelated git repositories into one might look like an ambitious task, but once you understand what's happening, you will find out it's pretty simple.

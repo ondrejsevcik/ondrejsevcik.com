@@ -1,7 +1,7 @@
 ---
 title: Make your deprecated CSS stand out
 date: 2019-02-18 19:20:00
-category: tech
+tags: tech
 ---
 
 Refactoring CSS is difficult. Due to its bazillion selectors and unlimited combinations, it can get pretty nasty.

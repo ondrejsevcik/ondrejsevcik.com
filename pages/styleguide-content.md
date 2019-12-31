@@ -1,6 +1,4 @@
----
-title: Styleguide
----
+# Style guide
 
 White, cup coffee spoon milk seasonal white with link to [homepage](/). Lungo espresso plunger pot wings, qui steamed fair trade sit acerbic turkish.
 

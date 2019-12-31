@@ -1,7 +1,7 @@
 ---
 title: How to automatically number list in Markdown
 date: 2019-11-18 16:00:00
-category: til
+tags: til
 ---
 
 I've been using Markdown for quite some time, but this little trick never found a way to me, until now.

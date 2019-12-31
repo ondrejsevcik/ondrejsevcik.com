@@ -1,10 +1,6 @@
 # Created by https://www.gitignore.io/api/vim,node,hexo,macos,linux,windows,webstorm,intellij
 # Edit at https://www.gitignore.io/?templates=vim,node,hexo,macos,linux,windows,webstorm,intellij
 
-### Hexo ###
-db.json
-public/
-
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
