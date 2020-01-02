@@ -1,0 +1,140 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="" />
+    <title>
+      Style guide - Ondrej Sevcik
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="menu"><a href="/">Articles</a> | <a href="/til">TIL</a></nav>
+
+    <div>
+      <h1 id="style-guide">Style guide</h1>
+<p>White, cup coffee spoon milk seasonal white with link to <a href="/">homepage</a>. Lungo espresso plunger pot wings, qui steamed fair trade sit acerbic turkish.</p>
+<h1 id="heading-level-1---basic-typography">Heading level 1 - Basic typography</h1>
+<p>Kopi-luwak, sit, half and half, blue mountain instant single origin saucer est lungo ristretto steamed. At barista blue mountain as aroma, saucer brewed macchiato doppio acerbic espresso acerbic. Grinder, variety dark black foam crema viennese.</p>
+<p>This is the first line and should end here.<br>And this is the second line.</p>
+<p>Following paragraph contains some <em>italic</em> text, but also <strong>bold</strong> and a bit of <code>inline code</code>. Below this paragraph, there is a <code>&lt;blockquote&gt;</code>.</p>
+<blockquote>
+<p>Block <em>quotation</em> containing a <strong>single</strong> paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<p>- by someone smart</p>
+</blockquote>
+<p>Strong, plunger pot latte cream plunger pot chicory single shot. Galão blue mountain, half and half turkish ut barista spoon. Cortado, robust shop id <code>chicory cappuccino</code> that black organic mocha lungo carajillo.</p>
+<hr>
+<p><code>Mazagran</code>, percolator grinder black milk rich iced. Wings affogato, trifecta aged whipped, instant seasonal single origin single shot percolator seasonal. Con panna sweet, crema coffee black white, qui chicory cappuccino java sugar cappuccino.</p>
+<pre><code class="language-javascript">const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+
+function comment() {
+  /* This comment spans multiple lines. Notice
+     that we don&#39;t need to end the comment until we&#39;re done. */
+  console.log(&#39;Hello world!&#39;);
+}</code></pre>
+<h2 id="heading-level-2---lists-and-images">Heading level 2 - Lists and images</h2>
+<p>This is a paragraph before an <em>unnumbered</em> list (<code>ul</code>). Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<ul>
+<li>One</li>
+<li>Two</li>
+<li>Three. Well, probably this list item should be longer. Note that for short items lists look better if they are compactly presented, whereas for long items, it would be better to have more vertical spacing between items.</li>
+<li>Four. This is the last item in this list. Let us terminate the list now without making any more fuss about it.</li>
+<li>Five</li>
+</ul>
+<figure>
+  <a href="https://images.unsplash.com/photo-1482914988630-16b155655e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80">
+    <img 
+      alt="Serles mountain near Innsbruck"
+      src="https://images.unsplash.com/photo-1482914988630-16b155655e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80" 
+    />
+  </a>
+  <figcaption><a href="https://en.wikipedia.org/wiki/Serles">Serles</a> mountain near <code>the Capital of Alps - Innsbruck</code>.</figcaption>
+</figure>
+
+<p>This is a paragraph before a <em>numbered</em> list (<code>ol</code>). Note that the spacing between a paragraph and a list before or after that is hard to tune in a user style sheet. You can&#39;t guess which paragraphs are logically related to a list, e.g. as a &quot;list header&quot;.</p>
+<ol>
+<li>One</li>
+<li>Two</li>
+<li>Three. Well, probably this list item should be longer. Note that if items are short, lists look better if they are compactly presented, whereas for long items, it would be better to have more vertical spacing between items.</li>
+<li>Four. This is the last item in this list. Let us terminate the list now without making any more fuss about it.</li>
+<li>Five</li>
+</ol>
+<h3 id="heading-3---tables-and-misc">Heading 3 - Tables and misc</h3>
+<p>The following table has a caption. The first row and the first column contain table header cells only; other cells are data cells.</p>
+<table class="article-table">
+  <caption>Areas of the Nordic countries, in sq km</caption>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Total area</th>
+      <th>Land area</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Denmark</th>
+      <td>43 070</td>
+      <td>42 370</td>
+      <td>7 230 000</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>337 030</td>
+      <td>305 470</td>
+      <td>17 830 000</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>103 000</td>
+      <td>100 250</td>
+      <td>5 230 000</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>324 220</td>
+      <td>307 860</td>
+      <td>18 200 000</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>449 964</td>
+      <td>410 928</td>
+      <td>28 570 000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="warning-box">
+  <strong>Warning</strong> - there is also warning box included.
+</p>
+
+
+<h3 id="color-palette">Color palette</h3>
+<div style="padding:1rem;background:#040303;color:white;">Rich black - #040303</div>
+<div style="padding:1rem;background:#7FB069;color:white;">Asparagus - #7FB069</div>
+<div style="padding:1rem;background:#698F3F;color:white;">Palm leaf - #698F3F</div>
+<div style="padding:1rem;background:#FFC53A;">Sunglow - #FFC53A</div>
+<div style="padding:1rem;background:#E3B23C;">Meat brown - #E3B23C</div>
+
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; 2020 Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>

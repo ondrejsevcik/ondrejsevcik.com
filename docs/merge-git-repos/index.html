@@ -1,0 +1,94 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="" />
+    <title>
+      How to merge git repository into monorepo - Ondrej Sevcik
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="menu"><a href="/">Articles</a> | <a href="/til">TIL</a></nav>
+
+    <div>
+      
+    <header>
+        <h1>
+          How to merge git repository into monorepo
+        </h1>
+        <div class="post-meta">
+          <time datetime="">
+            2019-08-23
+          </time>
+        </div>
+    </header>
+
+    <article>
+      <p>Merging two unrelated git repositories into one might look like an ambitious task, but once you understand what&#39;s happening, you will find out it&#39;s pretty simple.</p>
+<h2 id="what-we-are-about-to-do">What we are about to do</h2>
+<p>In this article, we will merge a git repository into monorepo. The example is demonstrated on a <a href="https://yarnpkg.com/en/docs/workspaces/">yarn workspace</a> (which is a bunch of npm packages in one repository) and one npm package that should be merged into it. This is a common setup for a lot of front-end projects out there.</p>
+<p>We start with two git repositories (monorepo and packageC) and end up with just monorepo, that will contain git history and all files from packageC.</p>
+<div class="warning-box">
+  <strong>Beware</strong> - This technique doesn't allow you to merge tags from <code>packageC</code>.
+</div>
+
+<figure>
+  <a href="/images/git-folders-before-after.png"><img src="/images/git-folders-before-after.png" alt="Folder structure before and after merge"/></a>
+  <figcaption>Folder structure before and after merge</figcaption>
+</figure>
+
+<p>TIP: If you don&#39;t want to keep history, it&#39;s way simpler to just copy files to the new repository and make a commit (KISS).</p>
+<h2 id="step-by-step">Step by step</h2>
+<h3 id="1-clone-source-repository">1. Clone source repository</h3>
+<p>Even if you already have a copy of your source repository, I recommend making a new one. There will be changes and if something goes wrong, it&#39;s easier to just delete and start over rather than trying to undo the changes (unless you know git very well).</p>
+<pre><code class="language-bash"><span class="comment">## Replace packageC with your folder name</span>
+git <span class="built_in">clone</span> &lt;repo-url&gt; packageC</code></pre>
+<h2 id="2-move-all-files-into-packages-sub-directory">2. Move all files into packages/* sub-directory</h2>
+<p>Moving all files in a source repository into <code>packages</code> sub-directory will make your life easier. You will avoid conflicts when you later merge it into monorepo. Also, certain operations in your monorepo will become easier (e.g.: finding renames, making a diff based on a file path).</p>
+<pre><code class="language-bash"><span class="comment"># The --prune-empty - removes commits which are empty due to the rewrite</span>
+<span class="built_in">export</span> TARGET_DIR=<span class="string">"packages/packageC"</span>
+git filter-branch --prune-empty --tree-filter <span class="string">'
+  mkdir -p "$TARGET_DIR"
+  git ls-tree --name-only $GIT_COMMIT | xargs -I files mv files "$TARGET_DIR"
+'</span></code></pre>
+<p>Since now, the history will be rewritten as if all files were always located in <code>packages/packageC</code> folder.</p>
+<p>BTW: With <code>git filter-branch</code> you can also extract package out of monorepo back into a single repository, but that&#39;s a topic for another article.</p>
+<h3 id="3-merge-into-monorepo">3. Merge into monorepo</h3>
+<p>Now everything is ready to be merged. But before we do so, I will shortly explain what is this <code>git merge --allow-unrelated-histories</code> flag about.</p>
+<p>By default, git won&#39;t allow you to merge branch that doesn&#39;t have a common ancestor. With this flag, we&#39;re telling git that we know about it and that this merge is deliberate.</p>
+<p>Git repository is always created with an initial commit, but in this case, we don&#39;t have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that&#39;s common for those unrelated histories. You can read more about it in the <a href="https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories">official documentation</a>.</p>
+<figure style="max-width: 24rem; margin:auto;">
+  <a href="/images/git-history-before-after-merge.png"><img src="/images/git-history-before-after-merge.png" alt="Git history before and after merge"/></a>
+  <figcaption>Git history before and after merge</figcaption>
+</figure>
+
+<pre><code class="language-bash"><span class="comment"># Add remote in your monorepo to packageC</span>
+git remote add packageC ~/git/packageC
+
+<span class="comment"># Fetch commits from packageC</span>
+<span class="comment"># --no-tags - do not fetch tags, otherwise they will pollute your tags in current monorepo</span>
+git fetch packageC --no-tags
+
+<span class="comment"># Merge</span>
+git merge packageC/master --allow-unrelated-histories
+
+<span class="comment"># Remove remote</span>
+git remote remove packageC</code></pre>
+<h3 id="4-clean-up">4. Clean up</h3>
+<p>After a successful merge, it&#39;s time for cleanup. Remove duplicate config files (<code>.editorconfig</code>, <code>.eslint</code>, ...), delete old repository and fix your CI build.</p>
+
+    </article>
+  
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; 2020 Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>
