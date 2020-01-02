@@ -4,6 +4,7 @@ const marked = require('marked');
 const postLayout = require('./layout/post');
 const indexPage = require('./pages/index');
 const styleguidePage = require('./pages/styleguide');
+const tilPage = require('./pages/til');
 const hljs = require('highlight.js');
 
 // Github automatically deploys docs folder
@@ -70,8 +71,7 @@ const posts = fs.readdirSync('./posts')
       title,
       date: new Date(dateString),
       tags,
-      permalink: fileName.replace('.md', ''),
-      // TODO load with highlight.js
+      permalink: `/${fileName.replace('.md', '')}`,
       htmlContent: marked(markdownContent,{
         highlight(code, lang) {
           let highlightedCode = hljs.highlight(lang, code).value;
@@ -90,6 +90,10 @@ posts.forEach(post => {
 
 // Compile index page
 fs.writeFileSync(`${outputDir}/index.html`, indexPage(posts));
+
+// Compile TIL page
+fs.mkdirSync(`${outputDir}/til`);
+fs.writeFileSync(`${outputDir}/til/index.html`, tilPage(posts));
 
 // Compile styleguide page
 fs.mkdirSync(`${outputDir}/styleguide`);

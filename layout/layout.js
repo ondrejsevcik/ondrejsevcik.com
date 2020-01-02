@@ -1,4 +1,11 @@
 module.exports = function(title, htmlContent) {
+  let navContent = [
+    {href: '/', label: 'Articles'},
+    {href: '/til', label: 'TIL'},
+  ]
+    .map(item => `<a href="${item.href}">${item.label}</a>`)
+    .join(' | ');
+
   return ` 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +20,7 @@ module.exports = function(title, htmlContent) {
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <nav class="menu">
-      <a href="/">Articles</a>
-    </nav>
+    <nav class="menu">${navContent}</nav>
 
     <div>
       ${htmlContent}
