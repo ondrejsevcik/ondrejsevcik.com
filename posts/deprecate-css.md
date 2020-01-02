@@ -54,7 +54,7 @@ Then we need to add `deprecated` mixin
 
 This mixin displays deprecation only in `development` mode. We need to somehow inject the `$environment` variable. In Ember, you can customize `treeForStyles` method in `/index.js` and create a file with this SASS variable during each build. To be able to create a file on the fly, you need a [broccoli-file-creator](https://github.com/rwjblue/broccoli-file-creator) package.
 
-```js
+```javascript
 const writeFile = require('broccoli-file-creator');
 
 module.exports = {

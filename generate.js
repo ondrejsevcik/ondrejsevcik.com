@@ -4,6 +4,7 @@ const marked = require('marked');
 const postLayout = require('./layout/post');
 const indexPage = require('./pages/index');
 const styleguidePage = require('./pages/styleguide');
+const hljs = require('highlight.js');
 
 // Github automatically deploys docs folder
 const outputDir = 'docs';
@@ -61,17 +62,24 @@ const posts = fs.readdirSync('./posts')
       .split(',')
       .map(tag => tag.trim());
 
+    hljs.configure({
+      classPrefix: '' // don't append class prefix
+    });
+
     return {
       title,
       date: new Date(dateString),
       tags,
       permalink: fileName.replace('.md', ''),
       // TODO load with highlight.js
-      htmlContent: marked(markdownContent)
+      htmlContent: marked(markdownContent,{
+        highlight(code, lang) {
+          let highlightedCode = hljs.highlight(lang, code).value;
+          return `${highlightedCode}`;
+        }
+      })
     };
   });
-
-// TODO add autoprefixer
 
 // Compile posts into html files
 posts.forEach(post => {

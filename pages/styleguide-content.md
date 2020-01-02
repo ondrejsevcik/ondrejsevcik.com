@@ -21,7 +21,7 @@ Strong, plunger pot latte cream plunger pot chicory single shot. Galão blue mou
 
 `Mazagran`, percolator grinder black milk rich iced. Wings affogato, trifecta aged whipped, instant seasonal single origin single shot percolator seasonal. Con panna sweet, crema coffee black white, qui chicory cappuccino java sugar cappuccino.
 
-```js
+```javascript
 const array1 = [1, 2, 3, 4];
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
