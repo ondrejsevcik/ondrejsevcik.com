@@ -3,7 +3,7 @@ const layout = require('../layout/layout');
 module.exports = function(posts) {
   let postsHtml = posts
     // Sort by date from newest to oldest
-    .sort(post => post.date.valueOf())
+    .sort((postA, postB) => postB.date.valueOf() - postA.date.valueOf())
     .map((post) => {
       return `
         <li>

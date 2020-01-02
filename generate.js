@@ -32,16 +32,42 @@ const posts = fs.readdirSync('./posts')
     let path = `./posts/${fileName}`;
     let contents = fs.readFileSync(path).toString();
 
+    let frontMatterContent = contents
+      .split('\n')
+      // skip first 5 lines - that's front-matter syntax
+      .slice(0,5)
+      .join('\n');
+
+    let markdownContent = contents
+      .split('\n')
+      // the rest is the actual markdown content
+      .slice(5)
+      .join('\n');
+
+    let title = frontMatterContent
+      .match(/title:.+/)[0]
+      .replace('title: ', '')
+      .trim();
+
+    let dateString = frontMatterContent
+      .match(/date:.+/)[0]
+      .replace('date: ', '')
+      .trim();
+
+    let tags = frontMatterContent
+      .match(/tags:.+/)[0]
+      .replace('tags: ', '')
+      .trim()
+      .split(',')
+      .map(tag => tag.trim());
+
     return {
-      // TODO load actual title
-      title: 'Title for' + path,
-      // TODO load actual date
-      date: new Date(),
-      // TODO load actual tags
-      tags: [],
+      title,
+      date: new Date(dateString),
+      tags,
       permalink: fileName.replace('.md', ''),
       // TODO load with highlight.js
-      htmlContent: marked(contents)
+      htmlContent: marked(markdownContent)
     };
   });
 

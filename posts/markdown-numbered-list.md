@@ -1,6 +1,6 @@
 ---
 title: How to automatically number list in Markdown
-date: 2019-11-18 16:00:00
+date: 2019-11-18
 tags: til
 ---
 

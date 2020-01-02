@@ -1,6 +1,6 @@
 ---
 title: Make your deprecated CSS stand out
-date: 2019-02-18 19:20:00
+date: 2019-02-18
 tags: tech
 ---
 

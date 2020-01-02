@@ -1,6 +1,6 @@
 ---
 title: How to merge git repository into monorepo
-date: 2019-08-23 20:00:00
+date: 2019-08-23
 tags: tech
 ---
 
