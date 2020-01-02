@@ -1,11 +1,10 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
-const marked = require('marked');
+const { markedHighlight } = require('./utils');
 const postLayout = require('./layout/post');
 const indexPage = require('./pages/index');
 const styleguidePage = require('./pages/styleguide');
 const tilPage = require('./pages/til');
-const hljs = require('highlight.js');
 
 // Github automatically deploys docs folder
 const outputDir = 'docs';
@@ -63,21 +62,12 @@ const posts = fs.readdirSync('./posts')
       .split(',')
       .map(tag => tag.trim());
 
-    hljs.configure({
-      classPrefix: '' // don't append class prefix
-    });
-
     return {
       title,
       date: new Date(dateString),
       tags,
       permalink: `/${fileName.replace('.md', '')}`,
-      htmlContent: marked(markdownContent,{
-        highlight(code, lang) {
-          let highlightedCode = hljs.highlight(lang, code).value;
-          return `${highlightedCode}`;
-        }
-      })
+      htmlContent: markedHighlight(markdownContent)
     };
   });
 
