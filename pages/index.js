@@ -20,5 +20,5 @@ module.exports = function(posts) {
     })
     .join('');
 
-  return layout('Ondrej Sevcik', `<ul>${postsHtml}</ul>`);
+  return layout('Articles', `<ul>${postsHtml}</ul>`);
 };

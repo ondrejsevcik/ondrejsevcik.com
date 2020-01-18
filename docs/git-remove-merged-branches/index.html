@@ -1,0 +1,49 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="" />
+    <title>
+      Find and remove merged git branches - Ondrej Sevcik
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="menu"><a href="/">Articles</a> | <a href="/til">TIL</a></nav>
+
+    <div>
+      
+    <header>
+        <h1>
+          Find and remove merged git branches
+        </h1>
+        <div class="post-meta">
+          <time datetime="">
+            2020-01-18
+          </time>
+        </div>
+    </header>
+
+    <article>
+      <p>Working in multiple repositories with multiple branches and many PRs, it&#39;s very easy to lose track of what has been merged. That&#39;s why I&#39;m glad I&#39;ve found this command.</p>
+<pre><code class="language-bash"><span class="comment"># Shows a list of branches that have been merged to master</span>
+git branch --merged master
+
+<span class="comment"># Combine it with grep and automatically delete all merged branches.</span>
+<span class="comment"># Just make sure you're on master when you do that.</span>
+git branch --merged master | grep --invert-match <span class="string">'^\*'</span> | xargs -n 1 git branch -d</code></pre>
+
+    </article>
+  
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; 2020 Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>
