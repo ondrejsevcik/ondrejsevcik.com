@@ -1,0 +1,50 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="" />
+    <title>
+      Find most changed files in Git repo - Ondrej Sevcik
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="menu"><a href="/">Articles</a> | <a href="/til">TIL</a></nav>
+
+    <div>
+      
+    <header>
+        <h1>
+          Find most changed files in Git repo
+        </h1>
+        <div class="post-meta">
+          <time datetime="">
+            2020-03-07
+          </time>
+        </div>
+    </header>
+
+    <article>
+      <p>Somewhere I&#39;ve read that the files you change most often are most likely the ones that are doing too much and should be refactored into smaller ones.</p>
+<p>With a bit of googling, I&#39;ve landed on this one-liner</p>
+<pre><code class="language-bash"><span class="comment"># Shows most 100 changed files in last year in current branch</span>
+<span class="comment"># --pretty=format:&lt;empty&gt; is a workaround to hide the commit message and show only file names</span>
+git <span class="built_in">log</span> --name-only --since=<span class="string">"last year"</span> --pretty=format: | sort | uniq -c | sort -rg | head -100</code></pre>
+<p>You can also throw in <code>grep</code> to narrow down the results for a specific filetype or path.</p>
+<pre><code class="language-bash"><span class="comment"># Only JavaScript files (.js extension)</span>
+git <span class="built_in">log</span> --name-only --since=<span class="string">"last year"</span> --pretty=format: | grep .js$ | sort | uniq -c | sort -rg | head -100</code></pre>
+
+    </article>
+  
+    </div>
+
+    <div class="footer">
+      <div class="copyright">
+        &copy; 2020 Ondrej Sevcik
+      </div>
+    </div>
+  </body>
+</html>
