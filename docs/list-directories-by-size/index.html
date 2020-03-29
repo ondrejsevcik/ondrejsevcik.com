@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="" />
     <title>
-      How to automatically number list in Markdown - Ondrej Sevcik
+      List directories by size - Ondrej Sevcik
     </title>
 
     <link rel="stylesheet" href="/styles.css">
@@ -19,26 +19,32 @@
       
     <header>
         <h1>
-          How to automatically number list in Markdown
+          List directories by size
         </h1>
         <div class="post-meta">
           <time datetime="">
-            2019-11-18
+            2020-03-29
           </time>
         </div>
     </header>
 
     <article>
-      <p>I&#39;ve been using Markdown for quite some time, but this little trick never found a way to me, until now.</p>
-<p>Instead of manually numbering list in Markdown</p>
-<pre><code class="language-md"><span class="bullet">1. </span>Item 1
-<span class="bullet">2. </span>Item 2
-<span class="bullet">3. </span>Item 3</code></pre>
-<p>You can use <code>1.</code> everywhere and it will increase next item automatically</p>
-<pre><code class="language-md"><span class="bullet">1. </span>Item 1
-<span class="bullet">1. </span>Item 2
-<span class="bullet">1. </span>Item 3</code></pre>
-<p>Magic!</p>
+      <p>This one proved to be useful many times!</p>
+<pre><code class="language-bash"><span class="comment"># du</span>
+<span class="comment">#   -d - depth</span>
+<span class="comment">#   -h - "Human-readable" output</span>
+<span class="comment"># sort</span>
+<span class="comment">#   -h - make sure it sorts correctly MB,KB</span>
+<span class="comment">#   -r - (reverse) make sure it is sorted from the largest</span>
+du -d 1 -h | sort -h -r
+
+<span class="comment"># will output</span>
+ 30M    .
+ 28M    ./node_modules
+1.6M    ./.git
+248K    ./docs
+188K    ./public
+ 28K    ./posts</code></pre>
 
     </article>
   
