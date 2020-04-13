@@ -10,7 +10,7 @@ const outputDir = 'build';
 
 // Clean output folder
 execSync(
-  `rm -r "${outputDir}"`,
+  `if [ -d "${outputDir}" ]; then rm -Rf ${outputDir}; fi`,
   {stdio: 'inherit'}
 );
 
