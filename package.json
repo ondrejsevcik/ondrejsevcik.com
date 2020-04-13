@@ -9,6 +9,6 @@
   "dependencies": {
     "highlight.js": "^9.18.1",
     "http-server": "^0.12.1",
-    "marked": "^0.8.0"
+    "marked": "^0.8.2"
   }
 }
