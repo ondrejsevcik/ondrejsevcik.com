@@ -20,12 +20,6 @@ execSync(
   {stdio: 'inherit'}
 );
 
-// Compile less into css and copy to output folder
-execSync(
-  `./node_modules/.bin/lessc ./layout/styles.less "${outputDir}/styles.css"`,
-  {stdio: 'inherit'}
-);
-
 // Find all markdown posts into post object
 const posts = fs.readdirSync('./posts')
   .map(fileName => {
