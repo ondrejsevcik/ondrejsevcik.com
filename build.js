@@ -6,8 +6,7 @@ const indexPage = require('./pages/index');
 const styleguidePage = require('./pages/styleguide');
 const tilPage = require('./pages/til');
 
-// Github automatically deploys docs folder
-const outputDir = 'docs';
+const outputDir = 'build';
 
 // Clean output folder
 execSync(

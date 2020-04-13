@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "http-server ./docs",
+    "serve": "http-server ./build",
     "build": "node build.js"
   },
   "dependencies": {
