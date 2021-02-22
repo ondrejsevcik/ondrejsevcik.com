@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { Link, graphql } from "gatsby"
 
-export default function HomePage({ data }) {
+export default function TilPage({ data }) {
   return (
     <Layout>
       <ul>
@@ -19,9 +19,9 @@ export default function HomePage({ data }) {
 }
 
 export const query = graphql`
-  query Homepage {
+  query Til {
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { eq: "tech" } } }
+      filter: { frontmatter: { tags: { eq: "til" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
