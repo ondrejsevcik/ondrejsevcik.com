@@ -1,6 +1,6 @@
 import React from "react"
-import Menu from "../components/Menu"
-import Footer from "../components/Footer"
+import Menu from "../components/menu"
+import Footer from "../components/footer"
 
 export default function Layout({ children }) {
   return (
