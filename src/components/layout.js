@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="page-layout">
       <Menu />
       <article>{children}</article>
       <Footer />
