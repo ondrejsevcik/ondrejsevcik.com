@@ -6,7 +6,7 @@ export default function HomePage() {
     <Layout>
       <div className="homepage-intro">
         <img
-          className="profile-pic"
+          className="rounded-full p-1 border-8 border-solid border-blue-100 w-56"
           alt="Profile picture"
           src="/images/profile-picture.jpg"
         />

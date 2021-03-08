@@ -5,7 +5,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Ondrej Sevcik'
+    title: "Ondrej Sevcik",
   },
   plugins: [
     {
@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    'gatsby-transformer-remark',
+    "gatsby-transformer-remark",
+    "gatsby-plugin-postcss",
   ],
 }
