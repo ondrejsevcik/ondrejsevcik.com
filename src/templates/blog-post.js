@@ -1,21 +1,21 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/page-layout"
 import { graphql } from "gatsby"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
-    <Layout>
+    <PageLayout>
       <header>
         <h1>{post.frontmatter.title}</h1>
-        <div className="post-meta">
+        <div>
           <time dateTime={post.frontmatter.date.substring(0, 10)}>
             {post.frontmatter.date.substring(0, 10)}
           </time>
         </div>
       </header>
       <article dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
+    </PageLayout>
   )
 }
 

@@ -2,13 +2,12 @@
   /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
 
   /* TODO come up with better names */
-  --color-black-100: #0D1C33;
-  --color-green-100: #17373C;
-  --color-green-200: #2B6832;
-  --color-green-300: #4F9300;
-  --color-green-400: #A1D700;
-  --color-blue-100: #0067A6;
-
+  --color-black-100: #0d1c33;
+  --color-green-100: #17373c;
+  --color-green-200: #2b6832;
+  --color-green-300: #4f9300;
+  --color-green-400: #a1d700;
+  --color-blue-100: #0067a6;
 
   /* --color-black: #040303; */
   --color-grey: #737373;
@@ -31,71 +30,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 2.5rem auto;
-  max-width: 40rem;
-  line-height: 1.5;
-  font-size: 1.2rem;
-  font-family: var(--font-family);
-  color: var(--color-black);
-  padding: 0 0.5rem;
-}
-
-.page-layout {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-}
-
-h1,
-h2,
-h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  line-height: 1.25;
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 a {
-  color: var(--color-blue);
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--color-grey);
-}
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
-.homepage-intro {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.color-grey {
-  color: var(--color-grey);
-}
-.color-black {
-  color: var(--color-black);
-}
-.fs5 {
-  font-size: 1.5rem;
-}
-.bold {
-  font-weight: bold;
+  color: var(--color-blue-100);
 }
 
 /* img {

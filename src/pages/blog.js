@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import Wrapper from "../components/wrapper"
 import { Link, graphql } from "gatsby"
 
 export default function Blog({ data }) {
   return (
-    <Layout>
+    <Wrapper>
       <ul>
         {data.allMarkdownRemark.nodes.map(node => (
           <li key={node.fields.slug}>
@@ -14,7 +14,7 @@ export default function Blog({ data }) {
           </li>
         ))}
       </ul>
-    </Layout>
+    </Wrapper>
   )
 }
 
