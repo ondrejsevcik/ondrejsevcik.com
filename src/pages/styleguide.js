@@ -1,16 +1,16 @@
 import React from "react"
-import PageLayout from "../components/page-layout"
+import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
 
 export default function Styleguide({ data }) {
   const page = data.markdownRemark
   return (
-    <PageLayout>
+    <FullPageLayout>
       <header>
         <h1>{page.frontmatter.title}</h1>
       </header>
       <article dangerouslySetInnerHTML={{ __html: page.html }} />
-    </PageLayout>
+    </FullPageLayout>
   )
 }
 

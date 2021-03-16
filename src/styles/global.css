@@ -1,45 +1,22 @@
-:root {
-  /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
-
-  /* TODO come up with better names */
-  --color-black-100: #0d1c33;
-  --color-green-100: #17373c;
-  --color-green-200: #2b6832;
-  --color-green-300: #4f9300;
-  --color-green-400: #a1d700;
-  --color-blue-100: #0067a6;
-
-  /* --color-black: #040303; */
-  --color-grey: #737373;
-  --color-light-grey: rgba(27, 31, 35, 0.05);
-  --color-asparagus: #7fb069;
-  --color-palm: #698f3f;
-  --color-sunglow: #ffc53a;
-  --color-brown: #e3b23c;
-
-  --highlight-color-comment: #737373;
-  --highlight-color-keyword: #916600;
-  --highlight-color-value: #4b7936;
-
-  --font-family-code: SFMono-Regular, Consolas, Liberation Mono, Menlo,
-    monospace;
-  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-#___gatsby,
-#gatsby-focus-wrapper {
-  height: 100%;
-  width: 100%;
-}
+@layer base {
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    height: 100%;
+    width: 100%;
+  }
 
-a {
-  color: var(--color-blue-100);
+  a {
+    @apply text-blue-100;
+  }
+  a:hover {
+    @apply text-blue-200;
+  }
 }
 
 /* img {
@@ -50,58 +27,58 @@ a {
   margin-right: auto;
 } */
 
-code {
+/* code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
   background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
   font-family: var(--font-family-code);
-}
+} */
 
-blockquote {
+/* blockquote {
   border-left: 3px solid var(--color-black);
   margin: 2rem 1rem;
   padding-left: 1.5rem;
   font-weight: 200;
   font-style: italic;
-}
+} */
 
-.warning-box {
+/* .warning-box {
   border-left: 3px solid var(--color-brown);
   background: var(--color-sunglow);
   padding: 0.5rem;
   border-radius: 3px;
   font-size: 1rem;
-}
+} */
 
-.article-table {
+/* .article-table {
   width: 100%;
   text-align: left;
   margin: 1rem 0;
   border-spacing: 0;
-}
+} */
 
-.article-table caption {
+/* .article-table caption {
   caption-side: bottom;
   margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: 1rem;
   color: var(--color-grey);
-}
-
+} */
+/* 
 .article-table td,
 .article-table th {
   border-bottom: 1px solid #eee;
   padding: 0.5rem;
-}
+} */
 
-figure {
+/* figure {
   width: auto;
   margin: 2rem;
-}
+} */
 
-figcaption {
+/* figcaption {
   color: var(--color-grey);
   font-size: 1rem;
   margin-top: 1rem;
@@ -113,11 +90,13 @@ hr {
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
+} */
+
+/* TODO fix highlight styles */
 
 /* Highlight styles */
 
-pre code {
+/* pre code {
   display: block;
   margin: 0;
   overflow-x: auto;
@@ -154,4 +133,4 @@ pre code .string {
 
 pre code .link {
   text-decoration: underline;
-}
+} */

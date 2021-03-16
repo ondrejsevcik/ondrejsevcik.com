@@ -1,10 +1,10 @@
 import React from "react"
-import PageLayout from "../components/page-layout"
+import {FullPageLayout} from "../components/full-page-layout"
 import { Link, graphql } from "gatsby"
 
 export default function TilPage({ data }) {
   return (
-    <PageLayout>
+    <FullPageLayout>
       <ul>
         {data.allMarkdownRemark.nodes.map(node => (
           <li key={node.fields.slug}>
@@ -14,7 +14,7 @@ export default function TilPage({ data }) {
           </li>
         ))}
       </ul>
-    </PageLayout>
+    </FullPageLayout>
   )
 }
 

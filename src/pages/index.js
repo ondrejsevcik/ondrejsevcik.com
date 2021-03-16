@@ -1,9 +1,9 @@
 import React from "react"
-import PageLayout from "../components/page-layout"
+import { FullPageLayout } from "../components/full-page-layout"
 
 export default function HomePage() {
   return (
-    <PageLayout>
+    <FullPageLayout>
       <div className="flex justify-center">
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-8 mx-10 max-w-lg">
           <img
@@ -34,6 +34,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </PageLayout>
+    </FullPageLayout>
   )
 }

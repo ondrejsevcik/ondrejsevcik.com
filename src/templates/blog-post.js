@@ -1,11 +1,11 @@
 import React from "react"
-import PageLayout from "../components/page-layout"
+import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
-    <PageLayout>
+    <FullPageLayout>
       <header>
         <h1>{post.frontmatter.title}</h1>
         <div>
@@ -15,7 +15,7 @@ export default function BlogPost({ data }) {
         </div>
       </header>
       <article dangerouslySetInnerHTML={{ __html: post.html }} />
-    </PageLayout>
+    </FullPageLayout>
   )
 }
 
