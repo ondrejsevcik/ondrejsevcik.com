@@ -1,19 +1,22 @@
 import React from "react"
-import {FullPageLayout} from "../components/full-page-layout"
-import { Link, graphql } from "gatsby"
+import { FullPageLayout } from "../components/full-page-layout"
+import { BlogPostsList } from "../components/blog-posts-list"
+import { graphql } from "gatsby"
 
 export default function TilPage({ data }) {
   return (
     <FullPageLayout>
-      <ul>
-        {data.allMarkdownRemark.nodes.map(node => (
-          <li key={node.fields.slug}>
-            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-            <br />
-            <time>{node.frontmatter.date.substring(0, 10)}</time>
-          </li>
-        ))}
-      </ul>
+      <div className="max-w-xl m-auto">
+        <div className="mx-4 mt-8">
+          <BlogPostsList
+            posts={data.allMarkdownRemark.nodes.map(node => ({
+              slug: node.fields.slug,
+              title: node.frontmatter.title,
+              date: new Date(node.frontmatter.date),
+            }))}
+          />
+        </div>
+      </div>
     </FullPageLayout>
   )
 }
