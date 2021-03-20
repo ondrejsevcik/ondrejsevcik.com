@@ -34,7 +34,7 @@ Even if you already have a copy of your source repository, I recommend making a 
 git clone <repo-url> packageC
 ```
 
-## 2. Move all files into packages/\* sub-directory
+### 2. Move all files into packages/\* sub-directory
 
 Moving all files in a source repository into `packages` sub-directory will make your life easier. You will avoid conflicts when you later merge it into monorepo. Also, certain operations in your monorepo will become easier (e.g.: finding renames, making a diff based on a file path).
 
@@ -59,7 +59,7 @@ By default, git won't allow you to merge branch that doesn't have a common ances
 
 Git repository is always created with an initial commit, but in this case, we don't have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that's common for those unrelated histories. You can read more about it in the [official documentation](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories).
 
-<figure style="max-width: 24rem; margin:auto;">
+<figure style="max-width: 24rem; margin-left:auto; margin-right:auto;">
   <a href="/images/git-history-before-after-merge.png"><img src="/images/git-history-before-after-merge.png" alt="Git history before and after merge"/></a>
   <figcaption>Git history before and after merge</figcaption>
 </figure>

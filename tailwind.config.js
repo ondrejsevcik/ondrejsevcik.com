@@ -3,6 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
+    // TODO fix color naming
     colors: {
       white: "#000000",
       black: "#0D1C33",
@@ -12,6 +13,7 @@ module.exports = {
       "green-400": "#A1D700",
       "blue-100": "#0067A6",
       "blue-200": "#0D1C33",
+      "gray-50": "#F9F9F9",
       "gray-100": "#8C8C8C",
     },
     fontFamily: {

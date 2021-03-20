@@ -1,6 +1,6 @@
 import React from "react"
-
 import { Link } from "gatsby"
+import { formatDate } from "../utils/format-date"
 
 export function BlogPostsList({ posts }) {
   return (
@@ -23,8 +23,4 @@ export function BlogPostsList({ posts }) {
       })}
     </div>
   )
-}
-
-function formatDate(date) {
-  return new Intl.DateTimeFormat("en-GB", { dateStyle: "long" }).format(date)
 }

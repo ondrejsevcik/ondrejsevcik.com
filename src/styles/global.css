@@ -17,6 +17,59 @@
   a:hover {
     @apply text-blue-200;
   }
+
+  .blog-post h2 {
+    @apply text-2xl mt-6 mb-4;
+  }
+
+  .blog-post h3 {
+    @apply text-xl mt-6 mb-4;
+  }
+
+  .blog-post p {
+    @apply my-4 max-w-prose;
+  }
+
+  .blog-post figure {
+    @apply my-6;
+  }
+
+  .blog-post figcaption {
+    @apply text-sm max-w-lg m-auto mt-2 text-center;
+  }
+
+  .blog-post ul {
+    @apply list-disc ml-8;
+  }
+
+  .blog-post li {
+    @apply mb-2;
+  }
+
+  /* .blog-post code {
+    --font-family-code: SFMono-Regular, Consolas, Liberation Mono, Menlo,
+      monospace;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+    font-family: var(--font-family-code);
+  } */
+
+  .blog-post pre {
+    @apply bg-gray-50 p-2 rounded overflow-scroll;
+  }
+
+  .blog-post .warning-box {
+    --color-sunglow: #ffc53a;
+    --color-brown: #e3b23c;
+    border-left: 3px solid var(--color-brown);
+    background: var(--color-sunglow);
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+  }
 }
 
 /* img {

@@ -1,20 +1,30 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
+import { formatDate } from "../utils/format-date"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
+  let title = post.frontmatter.title
+  let date = new Date(post.frontmatter.date)
+  let html = post.html
+
   return (
     <FullPageLayout>
-      <header>
-        <h1>{post.frontmatter.title}</h1>
-        <div>
-          <time dateTime={post.frontmatter.date.substring(0, 10)}>
-            {post.frontmatter.date.substring(0, 10)}
-          </time>
-        </div>
-      </header>
-      <article dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="mx-2">
+        <section className="mt-8 max-w-2xl m-auto">
+          <header className="mb-6">
+            <h1 className="text-3xl mb-1">{title}</h1>
+            <time dateTime={date.toISOString()} className="text-sm">
+              {formatDate(date)}
+            </time>
+          </header>
+          <article
+            dangerouslySetInnerHTML={{ __html: html }}
+            className="blog-post"
+          />
+        </section>
+      </div>
     </FullPageLayout>
   )
 }
