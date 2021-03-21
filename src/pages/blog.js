@@ -1,7 +1,7 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { BlogPostsList } from "../components/blog-posts-list"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 export default function Blog({ data }) {
   return (

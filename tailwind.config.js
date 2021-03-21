@@ -3,18 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
-    // TODO fix color naming
     colors: {
-      white: "#000000",
-      black: "#0D1C33",
-      "green-100": "#17373C",
-      "green-200": "#2B6832",
-      "green-300": "#4F9300",
-      "green-400": "#A1D700",
       "blue-100": "#0067A6",
       "blue-200": "#0D1C33",
-      "gray-50": "#F9F9F9",
-      "gray-100": "#8C8C8C",
+      "gray-100": "#F9F9F9",
+      "gray-200": "#8C8C8C",
     },
     fontFamily: {
       sans: [
@@ -24,8 +17,8 @@ module.exports = {
         "Helvetica",
         "Arial",
       ],
-      // TODO add custom serif font
       serif: ["serif"],
+      code: ["SFMono-Regular", "Consolas", "monospace"],
     },
     extend: {},
   },

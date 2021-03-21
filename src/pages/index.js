@@ -1,5 +1,6 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
+import { Link } from "gatsby"
 
 export default function HomePage() {
   return (
@@ -16,11 +17,12 @@ export default function HomePage() {
             <div className="text-sm">Hi, I'm</div>
             <div className="text-2xl font-bold">Ondrej Sevcik</div>
             <p className="text-sm mt-2">
-              Pumpkin spice, latte cup est seasonal viennese foam. Lungo qui
-              caramelization est bar that coffee. Et aroma café au lait, robust
-              mazagran iced beans cappuccino breve id rich decaffeinated.
+              Frontend Developer with a special focus on simplicity and
+              well-designed apps. Currently building Cafe app at{" "}
+              <a href="https://cropster.com">Cropster</a> and occasionally
+              writing on my <Link to="/blog">/blog</Link>.
             </p>
-            <div className="color-gray-100 text-sm flex mt-6">
+            <div className="color-gray-200 text-sm flex mt-6">
               <a className="mr-6" href="mailto:hi@ondrejsevcik.com">
                 hi@ondrejsevcik.com
               </a>
