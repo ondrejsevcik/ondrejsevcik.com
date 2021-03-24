@@ -2,6 +2,7 @@ import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
 import { formatDate } from "../utils/format-date"
+import { readingTime } from "../utils/reading-time"
 import { SEO } from "../components/seo"
 
 export default function BlogPost({ data }) {
@@ -18,9 +19,11 @@ export default function BlogPost({ data }) {
         <section className="mt-8 max-w-2xl m-auto">
           <header className="mb-6">
             <h1 className="text-3xl mb-1">{title}</h1>
-            <time dateTime={date.toISOString()} className="text-sm">
-              {formatDate(date)}
-            </time>
+            <div className="text-sm">
+              <time dateTime={date.toISOString()}>{formatDate(date)}</time>
+              <span>・</span>
+              <span>{readingTime(html)} min read</span>
+            </div>
           </header>
           <article
             dangerouslySetInnerHTML={{ __html: html }}

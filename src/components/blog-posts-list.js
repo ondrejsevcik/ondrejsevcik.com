@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { formatDate } from "../utils/format-date"
+import { readingTime } from "../utils/reading-time"
 import { SEO } from "../components/seo"
 
 export function BlogPostsList({ posts }) {
@@ -13,9 +14,13 @@ export function BlogPostsList({ posts }) {
             <Link to={post.slug} className="mb-1 text-xl hover:underline">
               {post.title}
             </Link>
-            <time dateTime={post.date.toISOString()} className="text-sm">
-              {formatDate(post.date)}
-            </time>
+            <div className="text-sm">
+              <time dateTime={post.date.toISOString()}>
+                {formatDate(post.date)}
+              </time>
+              <span>・</span>
+              <span>{readingTime(post.html)} min read</span>
+            </div>
           </div>
         )
       })}

@@ -13,6 +13,7 @@ export default function Blog({ data }) {
               slug: node.fields.slug,
               title: node.frontmatter.title,
               date: new Date(node.frontmatter.date),
+              html: node.html,
             }))}
           />
         </div>
@@ -28,6 +29,7 @@ export const query = graphql`
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
+        html
         fields {
           slug
         }
