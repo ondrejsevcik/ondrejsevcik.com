@@ -1,5 +1,6 @@
 ---
 title: How to merge git repository into monorepo
+description: Step-by-step tutorial on how to merge one repository into another one while keeping all its history.
 date: 2019-08-23
 tags: tech
 ---

@@ -1,5 +1,6 @@
 ---
 title: Find and remove merged git branches
+description: Remove merged branches with one simple git command.
 date: 2020-01-18
 tags: til
 ---

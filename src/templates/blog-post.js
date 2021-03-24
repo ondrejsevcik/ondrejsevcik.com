@@ -2,15 +2,18 @@ import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
 import { formatDate } from "../utils/format-date"
+import { SEO } from "../components/seo"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
   let title = post.frontmatter.title
+  let description = post.frontmatter.description
   let date = new Date(post.frontmatter.date)
   let html = post.html
 
   return (
     <FullPageLayout>
+      <SEO title={title} description={description} article={true} />
       <div className="mx-2">
         <section className="mt-8 max-w-2xl m-auto">
           <header className="mb-6">
@@ -35,6 +38,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
         date
       }
     }

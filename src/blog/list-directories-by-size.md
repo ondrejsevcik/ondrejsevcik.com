@@ -1,5 +1,6 @@
 ---
 title: List directories by size
+description: List directories by size in your terminal without any additional software.
 date: 2020-03-29
 tags: til
 ---

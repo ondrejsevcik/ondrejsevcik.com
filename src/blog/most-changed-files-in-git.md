@@ -1,5 +1,6 @@
 ---
-title: Find most changed files in Git repo
+title: Find most changed files in Git repository
+description: With this command, you can list the most changed files in your repository over time.
 date: 2020-03-07
 tags: til
 ---

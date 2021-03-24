@@ -6,6 +6,9 @@
 module.exports = {
   siteMetadata: {
     title: "Ondrej Sevcik",
+    titleTemplate: "%s | Ondrej Sevcik",
+    description: "Blogging about everything dev.",
+    url: "https://ondrejsevcik.com", // No trailing slash allowed!
   },
   plugins: [
     {
@@ -15,6 +18,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
     "gatsby-plugin-postcss",
   ],
