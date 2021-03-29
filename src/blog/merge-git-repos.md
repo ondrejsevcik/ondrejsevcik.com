@@ -13,9 +13,9 @@ In this article, we will merge a git repository into monorepo. The example is de
 
 We start with two git repositories (monorepo and packageC) and end up with just monorepo, that will contain git history and all files from packageC.
 
-<div class="warning-box">
+<p class="warning-box">
   <strong>Beware</strong> - This technique doesn't allow you to merge tags from <code>packageC</code>.
-</div>
+</p>
 
 <figure>
   <a href="/images/git-folders-before-after.png"><img src="/images/git-folders-before-after.png" alt="Folder structure before and after merge"/></a>
@@ -50,7 +50,9 @@ git filter-branch --prune-empty --tree-filter '
 
 Since now, the history will be rewritten as if all files were always located in `packages/packageC` folder.
 
-BTW: With `git filter-branch` you can also extract package out of monorepo back into a single repository, but that's a topic for another article.
+<p class="info-box">
+  With <code>git filter-branch</code> you can also extract package out of monorepo back into a single repository, but that's a topic for another article.
+</p>
 
 ### 3. Merge into monorepo
 
