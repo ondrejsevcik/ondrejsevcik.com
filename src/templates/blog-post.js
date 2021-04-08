@@ -16,7 +16,7 @@ export default function BlogPost({ data }) {
     <FullPageLayout>
       <SEO title={title} description={description} article={true} />
       <div className="mx-2">
-        <section className="mt-8 max-w-2xl m-auto">
+        <section className="mt-8 max-w-xl m-auto">
           <header className="mb-6">
             <h1 className="text-3xl mb-1">{title}</h1>
             <div className="text-sm">
