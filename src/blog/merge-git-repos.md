@@ -22,7 +22,9 @@ We start with two git repositories (monorepo and packageC) and end up with just 
   <figcaption>Folder structure before and after merge</figcaption>
 </figure>
 
-TIP: If you don't want to keep history, it's way simpler to just copy files to the new repository and make a commit (KISS).
+<p class="info-box">
+  If you don't want to keep history, it's way simpler to just copy files to the new repository and make a commit (KISS).
+</p>
 
 ## Step by step
 
