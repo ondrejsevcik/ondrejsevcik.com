@@ -2,6 +2,11 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ["Nunito Sans", "sans-serif"],
+      // serif: ["serif"], // ATM I don't use any serif
+      mono: ["Source Code Pro", "monospace"],
+    },
     /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
     colors: {
       "blue-100": "#D5EBFF",
@@ -34,17 +39,6 @@ module.exports = {
       "yellow-700": "#FBCF4B",
       "yellow-800": "#FBC831",
       "yellow-900": "#FAC217",
-    },
-    fontFamily: {
-      sans: [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Helvetica",
-        "Arial",
-      ],
-      serif: ["serif"],
-      code: ["SFMono-Regular", "Consolas", "monospace"],
     },
     extend: {},
   },
