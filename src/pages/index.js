@@ -19,17 +19,23 @@ export default function HomePage() {
             <p className="mt-2 mr-2">
               Frontend Developer with a special focus on simplicity and
               well-designed apps. Currently building Cafe app at{" "}
-              <a href="https://cropster.com">Cropster</a> and occasionally
-              writing on my <Link to="/blog">/blog</Link>.
+              <a className="link" href="https://cropster.com">
+                Cropster
+              </a>{" "}
+              and occasionally writing on my{" "}
+              <Link className="link" to="/blog">
+                /blog
+              </Link>
+              .
             </p>
             <div className="flex mt-6">
-              <a className="mr-6" href="mailto:hi@ondrejsevcik.com">
+              <a className="link mr-6" href="mailto:hi@ondrejsevcik.com">
                 hi@ondrejsevcik.com
               </a>
-              <a className="mr-6" href="https://twitter.com/ondrejsevcik">
+              <a className="link mr-6" href="https://twitter.com/ondrejsevcik">
                 Twitter
               </a>
-              <a className="mr-6" href="https://github.com/ondrejsevcik">
+              <a className="link mr-6" href="https://github.com/ondrejsevcik">
                 Github
               </a>
             </div>

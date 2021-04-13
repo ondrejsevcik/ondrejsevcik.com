@@ -11,7 +11,7 @@ export function BlogPostsList({ posts }) {
       {posts.map(post => {
         return (
           <div key={post.slug} className="p-2 flex flex-col">
-            <Link to={post.slug} className="mb-1 text-2xl hover:underline">
+            <Link to={post.slug} className="link mb-1 text-2xl">
               {post.title}
             </Link>
             <div className="text-sm">
