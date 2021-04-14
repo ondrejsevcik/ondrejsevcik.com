@@ -1,5 +1,9 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
+import { GithubIcon } from "../components/github-icon"
+import { MailIcon } from "../components/mail-icon"
+import { TwitterIcon } from "../components/twitter-icon"
+import { PopLink } from "../components/pop-link"
 import { Link } from "gatsby"
 
 export default function HomePage() {
@@ -28,16 +32,28 @@ export default function HomePage() {
               </Link>
               .
             </p>
-            <div className="flex mt-6">
-              <a className="link mr-6" href="mailto:hi@ondrejsevcik.com">
-                hi@ondrejsevcik.com
-              </a>
-              <a className="link mr-6" href="https://twitter.com/ondrejsevcik">
-                Twitter
-              </a>
-              <a className="link mr-6" href="https://github.com/ondrejsevcik">
-                Github
-              </a>
+            <div className="inline-grid grid-cols-3 gap-8 mt-6">
+              <span className="w-6 h-6">
+                <PopLink href="mailto:hi@ondrejsevcik.com" aria-label="Email">
+                  <MailIcon />
+                </PopLink>
+              </span>
+              <span className="w-6 h-6">
+                <PopLink
+                  href="https://twitter.com/ondrejsevcik"
+                  aria-label="Twitter"
+                >
+                  <TwitterIcon />
+                </PopLink>
+              </span>
+              <span className="w-6 h-6">
+                <PopLink
+                  href="https://github.com/ondrejsevcik"
+                  aria-label="Github"
+                >
+                  <GithubIcon />
+                </PopLink>
+              </span>
             </div>
           </div>
         </div>
