@@ -5,8 +5,6 @@ date: 2021-04-09
 tags: tech
 ---
 
-## Intro
-
 Your internet service provider can see every single app and site you use - even if the website is using encrypted `HTTPS` protocol.
 
 DNS is to blame. It is used by (almost) every single app in your system, but even in 2021, it is still [unencrypted](https://blog.cloudflare.com/dns-encryption-explained/).
