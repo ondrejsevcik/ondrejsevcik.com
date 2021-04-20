@@ -10,10 +10,12 @@ export function BlogPostsList({ posts }) {
       <SEO title="Blog" />
       {posts.map(post => {
         return (
-          <div key={post.slug} className="p-2 flex flex-col">
-            <Link to={post.slug} className="link mb-1 text-2xl">
-              {post.title}
-            </Link>
+          <div key={post.slug} className="p-2">
+            <div className="mb-1 text-2xl">
+              <Link to={post.slug} className="link">
+                {post.title}
+              </Link>
+            </div>
             <div className="text-sm">
               <time dateTime={post.date.toISOString()}>
                 {formatDate(post.date)}

@@ -64,9 +64,13 @@
 @layer components {
   .link {
     @apply text-blue-800;
+    transition: box-shadow 200ms ease 0s;
+    box-shadow: 0px 0px 0px theme("colors.blue-800");
   }
-  .link:hover {
-    @apply text-blue-600 underline;
+  .link:hover,
+  .link:focus {
+    transition: box-shadow 50ms ease 0s;
+    box-shadow: 0px 2px 0px theme("colors.blue-800");
   }
 }
 
