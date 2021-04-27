@@ -38,7 +38,7 @@ export default function HomePage() {
       <div className="flex justify-center mx-2">
         <div className="mt-12 inline-grid grid-cols-1 sm:grid-cols-2 gap-8">
           <img
-            className="rounded-full p-1 border-8 border-solid border-blue-800 w-48 sm:w-56 justify-self-center sm:justify-self-end"
+            className="rounded-full p-1 border-8 border-solid border-blue-800 w-48 h-48 sm:w-56 sm:h-56 justify-self-center sm:justify-self-end"
             alt="Profile picture"
             src="/images/profile-picture.jpg"
           />
