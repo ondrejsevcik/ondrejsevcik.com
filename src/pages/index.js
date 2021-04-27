@@ -2,9 +2,37 @@ import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { PopLink } from "../components/pop-link"
 import { Link } from "gatsby"
-import { GithubIcon, MailIcon, TwitterIcon } from "../components/icons"
+import {
+  GithubIcon,
+  MailIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from "../components/icons"
 
 export default function HomePage() {
+  let socialLinks = [
+    {
+      label: "Email",
+      href: "mailto:hi@ondrejsevcik.com",
+      icon: <MailIcon />,
+    },
+    {
+      label: "Twitter",
+      href: "https://twitter.com/ondrejsevcik",
+      icon: <TwitterIcon />,
+    },
+    {
+      label: "Github",
+      href: "https://github.com/ondrejsevcik",
+      icon: <GithubIcon />,
+    },
+    {
+      href: "https://www.linkedin.com/in/ondrejsevcik/",
+      label: "LinkedIn profile",
+      icon: <LinkedInIcon />,
+    },
+  ]
+
   return (
     <FullPageLayout>
       <div className="flex justify-center mx-2">
@@ -30,28 +58,14 @@ export default function HomePage() {
               </Link>
               .
             </p>
-            <div className="inline-grid grid-cols-3 gap-8 mt-6">
-              <span className="w-6 h-6">
-                <PopLink href="mailto:hi@ondrejsevcik.com" aria-label="Email">
-                  <MailIcon />
-                </PopLink>
-              </span>
-              <span className="w-6 h-6">
-                <PopLink
-                  href="https://twitter.com/ondrejsevcik"
-                  aria-label="Twitter"
-                >
-                  <TwitterIcon />
-                </PopLink>
-              </span>
-              <span className="w-6 h-6">
-                <PopLink
-                  href="https://github.com/ondrejsevcik"
-                  aria-label="Github"
-                >
-                  <GithubIcon />
-                </PopLink>
-              </span>
+            <div className="inline-grid grid-cols-4 gap-5 mt-6 text-xl">
+              {socialLinks.map(socialLink => (
+                <span className="w-6 h-6">
+                  <PopLink href={socialLink.href} aria-label={socialLink.label}>
+                    {socialLink.icon}
+                  </PopLink>
+                </span>
+              ))}
             </div>
           </div>
         </div>
