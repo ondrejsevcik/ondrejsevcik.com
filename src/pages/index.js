@@ -1,10 +1,8 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
-import { GithubIcon } from "../components/github-icon"
-import { MailIcon } from "../components/mail-icon"
-import { TwitterIcon } from "../components/twitter-icon"
 import { PopLink } from "../components/pop-link"
 import { Link } from "gatsby"
+import { GithubIcon, MailIcon, TwitterIcon } from "../components/icons"
 
 export default function HomePage() {
   return (
