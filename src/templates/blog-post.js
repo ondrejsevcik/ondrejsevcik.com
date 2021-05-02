@@ -3,7 +3,7 @@ import { FullPageLayout } from "../components/full-page-layout"
 import { graphql } from "gatsby"
 import { formatDate } from "../utils/format-date"
 import { readingTime } from "../utils/reading-time"
-import { SEO } from "../components/seo"
+import { SearchEngineOptimization } from "../components/seo"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
@@ -14,7 +14,11 @@ export default function BlogPost({ data }) {
 
   return (
     <FullPageLayout>
-      <SEO title={title} description={description} article={true} />
+      <SearchEngineOptimization
+        title={title}
+        description={description}
+        article={true}
+      />
       <div className="mx-2">
         <section className="mt-8 max-w-xl m-auto">
           <header className="mb-6">
