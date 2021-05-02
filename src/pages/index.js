@@ -60,7 +60,7 @@ export default function HomePage() {
             </p>
             <div className="inline-grid grid-cols-4 gap-5 mt-6 text-xl">
               {socialLinks.map(socialLink => (
-                <span className="w-6 h-6">
+                <span key={socialLink.href} className="w-6 h-6">
                   <PopLink href={socialLink.href} aria-label={socialLink.label}>
                     {socialLink.icon}
                   </PopLink>

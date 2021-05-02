@@ -22,10 +22,10 @@ export default function BlogPost({ data }) {
       <div className="mx-2">
         <section className="mt-8 max-w-xl m-auto">
           <header className="mb-6">
-            <h1 className="text-3xl mb-1">{title}</h1>
-            <div className="text-sm">
+            <h1 className="text-3xl font-bold mb-4">{title}</h1>
+            <div className="text-sm font-medium">
               <time dateTime={date.toISOString()}>{formatDate(date)}</time>
-              <span>・</span>
+              <span className="mx-2 opacity-30">|</span>
               <span>{readingTime(html)} min read</span>
             </div>
           </header>

@@ -6,13 +6,14 @@ import { graphql } from "gatsby"
 export default function Blog({ data }) {
   return (
     <FullPageLayout>
-      <div className="max-w-xl m-auto">
-        <div className="mx-4 mt-8">
+      <div className="max-w-2xl m-auto">
+        <div className="mx-2 mt-8">
           <BlogPostsList
             posts={data.allMarkdownRemark.nodes.map(node => ({
               slug: node.fields.slug,
               title: node.frontmatter.title,
               date: new Date(node.frontmatter.date),
+              tags: node.frontmatter.tags,
               html: node.html,
             }))}
           />
@@ -24,10 +25,7 @@ export default function Blog({ data }) {
 
 export const query = graphql`
   query Blog {
-    allMarkdownRemark(
-      filter: { frontmatter: { tags: { eq: "tech" } } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         html
         fields {
@@ -36,6 +34,7 @@ export const query = graphql`
         frontmatter {
           title
           date
+          tags
         }
       }
     }

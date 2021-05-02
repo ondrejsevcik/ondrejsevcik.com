@@ -3,7 +3,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ["Nunito Sans", "sans-serif"],
+      sans: [
+        "Avenir Next",
+        "Avenir",
+        "Helvetica",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif",
+      ],
       // serif: ["serif"], // ATM I don't use any serif
       mono: ["Source Code Pro", "monospace"],
     },
