@@ -25,5 +25,12 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://ondrejsevcik.com`,
+        stripQueryString: true,
+      },
+    },
   ],
 }
