@@ -19,6 +19,12 @@ export function SearchEngineOptimization({ title, description, article }) {
     >
       <html lang="en" />
       <meta name="description" content={seo.description} />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="Blog posts RSS"
+        href={`${siteMetadata.url}/rss.xml`}
+      ></link>
 
       {/* Open Graph data */}
       {article ? <meta property="og:type" content="article" /> : null}
