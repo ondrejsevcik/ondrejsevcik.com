@@ -7,6 +7,7 @@ import {
   MailIcon,
   LinkedInIcon,
   TwitterIcon,
+  RssFeedIcon,
 } from "../components/icons"
 
 export default function HomePage() {
@@ -30,6 +31,11 @@ export default function HomePage() {
       href: "https://www.linkedin.com/in/ondrejsevcik/",
       label: "LinkedIn profile",
       icon: <LinkedInIcon />,
+    },
+    {
+      href: "/rss.xml",
+      label: "RSS feed",
+      icon: <RssFeedIcon />,
     },
   ]
 
@@ -58,7 +64,7 @@ export default function HomePage() {
               </Link>
               .
             </p>
-            <div className="inline-grid grid-cols-4 gap-5 mt-6 text-xl">
+            <div className="inline-grid grid-cols-5 gap-5 mt-6 text-xl">
               {socialLinks.map(socialLink => (
                 <span key={socialLink.href} className="w-6 h-6">
                   <PopLink href={socialLink.href} aria-label={socialLink.label}>
