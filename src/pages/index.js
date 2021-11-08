@@ -1,7 +1,6 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { PopLink } from "../components/pop-link"
-import { Link } from "gatsby"
 import {
   GithubIcon,
   MailIcon,
