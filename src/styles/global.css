@@ -22,7 +22,7 @@
     @apply link;
   }
 
-  .blog-post p {
+  .blog-post > p {
     @apply my-4 max-w-prose;
   }
 
@@ -47,6 +47,10 @@
 
   .blog-post ol > li {
     @apply mb-2;
+  }
+
+  .blog-post blockquote {
+    @apply rounded-r p-2 border-l-4 bg-blue-100 border-blue-600;
   }
 
   /* There is also code inside <pre> element,
