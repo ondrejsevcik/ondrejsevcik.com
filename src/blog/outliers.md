@@ -17,6 +17,8 @@ Success is a series of **lucky events**, **rare opportunities**, **financial res
 
 When you're young, it matters whether you're 8 years old competing against 9 years old (in sports, school, or anything else). Ten extra months at that age gives you a huge advantage. This advantage adds up over time (success -> motivation -> more work -> more success -> ...).
 
+Bill Gates was so successful because he was the only person in the world to have unlimited access to the computer terminal at that time. That gave him a huge advantage over anyone else who was also hard working.
+
 ## Where you come from matters
 
 > Our heritage has a huge effect on our potential for success.
