@@ -60,7 +60,7 @@
   }
 
   .blog-post pre {
-    @apply font-mono text-sm p-3 rounded bg-gray-100 overflow-scroll;
+    @apply font-mono text-sm p-3 rounded bg-gray-100 overflow-x-auto;
   }
 
   .blog-post .warning-box {
