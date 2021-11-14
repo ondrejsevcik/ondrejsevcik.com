@@ -7,20 +7,18 @@ tags: til
 
 I've been using Markdown for quite some time, but this little trick never found a way to me, until now.
 
-Instead of manually numbering list in Markdown
-
-```md
-1. Item 1
-2. Item 2
-3. Item 3
-```
-
-You can use `1.` everywhere and it will increase next item automatically
+Instead of manually numbering list in Markdown, you can use `1.` everywhere and it will increase next item automatically.
 
 ```md
 1. Item 1
 1. Item 2
 1. Item 3
 ```
+
+will output
+
+1. Item 1
+1. Item 2
+1. Item 3
 
 Magic!
