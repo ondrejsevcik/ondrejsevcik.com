@@ -27,7 +27,7 @@ const MetaDivider = styled.span`
 `
 
 const BlogPostWrapper = styled.section`
-  max-width: 36rem;
+  max-width: 65ch;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -61,13 +61,9 @@ const BlogPostContent = styled.article`
   & a {
     color: var(--blue-800);
 
-    transition: box-shadow 200ms ease 0s;
-    box-shadow: 0px 0px 0px currentColor;
-
     &:hover,
     &:focus {
-      transition: box-shadow 50ms ease 0s;
-      box-shadow: 0px 2px 0px currentColor;
+      text-decoration: underline;
     }
   }
 
