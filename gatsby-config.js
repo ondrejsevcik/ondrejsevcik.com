@@ -21,9 +21,9 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
-    "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-canonical-urls`,

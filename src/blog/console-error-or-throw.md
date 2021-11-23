@@ -25,7 +25,7 @@ Consider following scenario
 
 ```js
 try {
-  let today = new Date(‘orange’)
+  let today = new Date("orange")
 } catch (e) {
   // handle error
 }

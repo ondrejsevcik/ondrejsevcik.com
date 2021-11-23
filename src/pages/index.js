@@ -9,6 +9,53 @@ import {
   RssFeedIcon,
 } from "../components/icons"
 
+import styled from "styled-components"
+
+const HeaderName = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+`
+
+const Content = styled.div`
+  max-width: 24rem;
+`
+
+const ProfileImg = styled.img`
+  padding: 0.25rem;
+  border-color: rgba(0, 93, 174, 1);
+  border-style: solid;
+  border-width: 8px;
+  border-radius: 9999px;
+  justify-self: center;
+  width: 14rem;
+  height: 14rem;
+  transition: transform 0.1s ease-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+`
+
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
+const SocialLinks = styled.div`
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  gap: 1.25rem;
+  grid-template-columns: repeat(5, 1fr);
+  display: inline-grid;
+  margin-top: 1.5rem;
+`
+
+const Paragraph = styled.p`
+  margin-top: ${prop => (prop.smallMargin ? `0.5rem` : `1rem`)};
+`
+
 export default function HomePage() {
   let socialLinks = [
     {
@@ -40,40 +87,34 @@ export default function HomePage() {
 
   return (
     <FullPageLayout>
-      <div className="flex justify-center mx-2">
-        {/* I would like to use Flexbox here, but Safari is missing gap support. I would have to hack a way around it. */}
-        <div className="mt-12 inline-grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <img
-            className="rounded-full p-1 border-8 border-solid border-blue-800 w-48 h-48 sm:w-56 sm:h-56 justify-self-center sm:justify-self-end"
-            alt="Profile portrait"
-            src="/images/profile-picture.jpg"
-          />
-          <div className="max-w-sm">
-            <div className="text-2xl font-bold">Hi, I'm Ondrej 👋🏼</div>
-            <p className="mt-2">
-              Frontend Developer, runner, minimalist, and occasional writer.
-            </p>
-            <p className="mt-4">
-              I specialize in building UIs that <strong>do not break</strong>{" "}
-              and users <strong>love to use</strong>.
-            </p>
-            <p className="mt-4">
-              If you want to chat, feel free to write me an email or reach out
-              on Twitter.
-            </p>
+      <ContentWrapper>
+        <ProfileImg alt="Profile portrait" src="/images/profile-picture.jpg" />
+        <Content>
+          <HeaderName>Hi, I'm Ondrej 👋🏼</HeaderName>
+          <Paragraph smallMargin>
+            Frontend Developer, runner, minimalist, and occasional writer.
+          </Paragraph>
+          <Paragraph>
+            I specialize in building UIs that <strong>do not break</strong> and
+            users <strong>love to use</strong>.
+          </Paragraph>
+          <Paragraph>
+            If you want to chat, feel free to write me an email or reach out on
+            Twitter.
+          </Paragraph>
 
-            <div className="inline-grid grid-cols-5 gap-5 mt-6 text-xl">
-              {socialLinks.map(socialLink => (
-                <span key={socialLink.href} className="w-6 h-6">
-                  <PopLink href={socialLink.href} aria-label={socialLink.label}>
-                    {socialLink.icon}
-                  </PopLink>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+          <SocialLinks>
+            {socialLinks.map(socialLink => (
+              <PopLink
+                key={socialLink.href}
+                href={socialLink.href}
+                label={socialLink.label}
+                icon={socialLink.icon}
+              />
+            ))}
+          </SocialLinks>
+        </Content>
+      </ContentWrapper>
     </FullPageLayout>
   )
 }

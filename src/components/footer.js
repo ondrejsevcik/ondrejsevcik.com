@@ -1,9 +1,17 @@
 import React from "react"
+import styled from "styled-components"
+
+const FooterWrapper = styled.footer`
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+`
 
 export default function Footer() {
   return (
-    <footer className="mt-4 mb-4 text-center text-sm text-gray-600">
+    <FooterWrapper>
       &copy; {new Date().getFullYear()} Ondrej Sevcik
-    </footer>
+    </FooterWrapper>
   )
 }
