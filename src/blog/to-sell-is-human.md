@@ -1,6 +1,6 @@
 ---
-title: Book notes - To Sell is Human (by Daniel H. Pink)
-description: Book notes - To Sell is Human (by Daniel H. Pink)
+title: To Sell is Human (by Daniel H. Pink)
+description: To Sell is Human (by Daniel H. Pink)
 date: 2021-07-31
 tags: book-review
 ---
