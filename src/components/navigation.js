@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const NavLink = styled(Link)`
-  color: var(--blue-800);
   transition: box-shadow 200ms ease 0s;
   box-shadow: 0px 0px 0px currentColor;
 
