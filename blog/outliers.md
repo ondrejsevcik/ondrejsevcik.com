@@ -1,7 +1,7 @@
 ---
 title: "Outliers: The Story of Success (by Malcolm Gladwell)"
 description: "Outliers: The Story of Success (by Malcolm Gladwell)"
-date: 2021-11-06
+date: "2021-11-06"
 tags: book-review
 ---
 

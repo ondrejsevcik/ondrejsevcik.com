@@ -1,7 +1,7 @@
 ---
 title: How to automatically number list in Markdown
 description: With this little trick, you get list numbering automatically for free.
-date: 2019-11-18
+date: "2019-11-18"
 tags: til
 ---
 

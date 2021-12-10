@@ -1,7 +1,7 @@
 ---
 title: Make your deprecated CSS stand out
 description: Make your deprecated CSS visible in your UI so that every developer can easily spot it.
-date: 2019-02-18
+date: "2019-02-18"
 tags: tech
 ---
 

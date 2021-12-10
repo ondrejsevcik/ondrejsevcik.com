@@ -1,7 +1,7 @@
 ---
 title: Console.error or throw new Error?
 description: How do I decide whether to use console.error or throw.
-date: 2021-11-21
+date: "2021-11-21"
 tags: tech
 ---
 

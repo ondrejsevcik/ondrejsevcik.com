@@ -1,7 +1,7 @@
 ---
 title: To Sell is Human (by Daniel H. Pink)
 description: To Sell is Human (by Daniel H. Pink)
-date: 2021-07-31
+date: "2021-07-31"
 tags: book-review
 ---
 

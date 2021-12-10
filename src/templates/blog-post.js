@@ -1,6 +1,5 @@
 import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
-import { graphql } from "gatsby"
 import { formatDate } from "../utils/format-date"
 import { readingTime } from "../utils/reading-time"
 import { SearchEngineOptimization } from "../components/seo"
@@ -183,16 +182,3 @@ export default function BlogPost({ data }) {
     </FullPageLayout>
   )
 }
-
-export const query = graphql`
-  query ($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        description
-        date
-      }
-    }
-  }
-`

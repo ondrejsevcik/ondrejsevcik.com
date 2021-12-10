@@ -1,8 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import styled from "styled-components"
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   transition: box-shadow 200ms ease 0s;
   box-shadow: 0px 0px 0px currentColor;
 
@@ -24,10 +23,18 @@ const Nav = styled.nav`
 `
 
 export default function Navigation() {
+  const items = [
+    { href: "/", title: "Home" },
+    { href: "/blog", title: "Blog" },
+  ]
+
   return (
     <Nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/blog">Blog</NavLink>
+      {items.map(({ href, title }) => (
+        <Link key={href} href={href} passHref>
+          <NavLink>{title}</NavLink>
+        </Link>
+      ))}
     </Nav>
   )
 }

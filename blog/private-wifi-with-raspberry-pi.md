@@ -1,7 +1,7 @@
 ---
 title: Building private WiFi hotspot with RaspberryPi, RaspAP, and VPN
 description: Build your private WiFi hotspot so that your internet provider can't spy on you.
-date: 2021-04-09
+date: "2021-04-09"
 tags: tech
 ---
 

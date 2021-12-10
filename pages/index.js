@@ -1,4 +1,3 @@
-import React from "react"
 import { FullPageLayout } from "../components/full-page-layout"
 import { PopLink } from "../components/pop-link"
 import {
@@ -8,7 +7,6 @@ import {
   TwitterIcon,
   RssFeedIcon,
 } from "../components/icons"
-
 import styled from "styled-components"
 
 const HeaderName = styled.div`

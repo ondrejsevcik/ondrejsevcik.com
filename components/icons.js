@@ -1,5 +1,3 @@
-import React from "react"
-
 export function MailIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" height="1em" width="1em">

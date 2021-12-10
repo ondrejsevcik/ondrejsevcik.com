@@ -1,7 +1,7 @@
 ---
 title: On giving and receiving Feedback
 description: Simple rules that work well when giving feedback.
-date: 2021-04-22
+date: "2021-04-22"
 tags: tech
 ---
 
