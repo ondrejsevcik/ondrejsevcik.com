@@ -1,9 +1,9 @@
-import { FullPageLayout } from "../components/full-page-layout"
+import { FullPageLayout } from "../../components/full-page-layout"
 import Link from "next/link"
-import { SearchEngineOptimization } from "../components/seo"
-import { groupBy } from "../utils/group-by"
+import { SearchEngineOptimization } from "../../components/seo"
+import { groupBy } from "../../utils/group-by"
 import styled from "styled-components"
-import { getAllPosts } from "../utils/api"
+import { getAllPosts } from "../../utils/api"
 
 const List = styled.div`
   max-width: 42rem;
@@ -41,11 +41,7 @@ const GroupTitle = styled.h2`
   line-height: 4rem;
 `
 
-export default function Blog({ allPosts }) {
-  let groupedPosts = Object.entries(
-    groupBy(allPosts, post => new Date(post.date).getFullYear().toString())
-  ).reverse()
-
+export default function Blog({ groupedPosts }) {
   return (
     <FullPageLayout>
       <List>
@@ -74,8 +70,9 @@ export default function Blog({ allPosts }) {
 
 export async function getStaticProps() {
   const allPosts = getAllPosts(["title", "date", "slug"])
+  const groupedPosts = Object.entries(
+    groupBy(allPosts, post => new Date(post.date).getFullYear().toString())
+  ).reverse()
 
-  return {
-    props: { allPosts },
-  }
+  return { props: { groupedPosts } }
 }

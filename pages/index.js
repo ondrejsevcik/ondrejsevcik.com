@@ -88,7 +88,7 @@ export default function HomePage() {
       <ContentWrapper>
         <ProfileImg alt="Profile portrait" src="/images/profile-picture.jpg" />
         <Content>
-          <HeaderName>Hi, I'm Ondrej 👋🏼</HeaderName>
+          <HeaderName>Hi, I&apos;m Ondrej 👋🏼</HeaderName>
           <Paragraph smallMargin>
             Frontend Developer, runner, minimalist, and occasional writer.
           </Paragraph>

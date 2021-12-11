@@ -1,8 +1,9 @@
-import React from "react"
-import { FullPageLayout } from "../components/full-page-layout"
-import { formatDate } from "../utils/format-date"
-import { readingTime } from "../utils/reading-time"
-import { SearchEngineOptimization } from "../components/seo"
+import { getPostBySlug, getAllPosts } from "../../utils/api"
+import { FullPageLayout } from "../../components/full-page-layout"
+import { formatDate } from "../../utils/format-date"
+import { readingTime } from "../../utils/reading-time"
+import { SearchEngineOptimization } from "../../components/seo"
+import markdownToHtml from "../../utils/markdownToHtml"
 import styled from "styled-components"
 
 const PostTitle = styled.h1`
@@ -115,7 +116,7 @@ const BlogPostContent = styled.article`
 
   /* There is also code inside <pre> element,
   but that one should be styled differently */
-  & code:not([class]) {
+  & p code {
     background-color: rgba(31, 41, 55, 0.1);
     border-radius: 0.25rem;
     font-family: var(--font-sans);
@@ -152,12 +153,9 @@ const BlogPostContent = styled.article`
   }
 `
 
-export default function BlogPost({ data }) {
-  const post = data.markdownRemark
-  let title = post.frontmatter.title
-  let description = post.frontmatter.description
-  let date = new Date(post.frontmatter.date)
-  let html = post.html
+export default function BlogPost({ post }) {
+  let { title, date: dateString, description, html } = post
+  let date = new Date(dateString)
 
   return (
     <FullPageLayout>
@@ -181,4 +179,34 @@ export default function BlogPost({ data }) {
       </BlogPostWrapper>
     </FullPageLayout>
   )
+}
+
+// This function gets called at build time on server-side.
+// Won't be called on client-side.
+export async function getStaticProps({ params }) {
+  const { content, ...post } = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "slug",
+    "description",
+    "content",
+  ])
+
+  const html = await markdownToHtml(content || "")
+
+  return {
+    props: {
+      post: {
+        ...post,
+        html,
+      },
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(["slug"])
+  const paths = posts.map(({ slug }) => ({ params: { slug } }))
+
+  return { paths, fallback: false }
 }
