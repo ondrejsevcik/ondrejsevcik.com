@@ -5,7 +5,7 @@ import fs from "fs"
 const baseUrl = "https://ondrejsevcik.com"
 
 export function generateRssFeed() {
-  const posts = getAllPosts(["slug", "title", "date", "content"]).sort(
+  const posts = getAllPosts(["slug", "title", "date", "description"]).sort(
     (a, b) => a.date - b.date
   )
 
@@ -25,14 +25,14 @@ export function generateRssFeed() {
   })
 
   posts.forEach(post => {
-    const { slug, title, date, content } = post
+    const { slug, title, date, description } = post
     const url = `${baseUrl}/blog/${slug}`
 
     feed.addItem({
       title,
       id: url,
       link: url,
-      description: content.substring(0, 100) + "...",
+      description,
       date: new Date(date),
     })
   })
