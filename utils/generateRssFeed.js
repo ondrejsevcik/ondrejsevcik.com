@@ -10,7 +10,7 @@ export function generateRssFeed() {
   )
 
   const feed = new Feed({
-    title: "Blog posts by Ondrej Sevcik",
+    title: "Ondrej Sevcik",
     description: "Blogging about everything dev.",
     generator: "",
     id: baseUrl,
