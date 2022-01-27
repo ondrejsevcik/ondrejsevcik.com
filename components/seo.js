@@ -26,6 +26,12 @@ export function SearchEngineOptimization({ title, description, article }) {
       {/* Twitter SEO */}
       {<meta name="twitter:card" value="summary" />}
       {<meta name="twitter:creator" content="@ondrejsevcik" />}
+
+      <script
+        defer
+        data-domain="ondrejsevcik.com"
+        src="https://plausible.io/js/plausible.js"
+      ></script>
     </Head>
   )
 }
