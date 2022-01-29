@@ -10,7 +10,6 @@
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "next": "^12.0.9",
-    "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark": "^14.0.2",
@@ -19,6 +18,7 @@
   },
   "devDependencies": {
     "eslint": "^8.8.0",
-    "eslint-config-next": "^12.0.9"
+    "eslint-config-next": "^12.0.9",
+    "prettier": "^2.5.1"
   }
 }
