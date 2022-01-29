@@ -1,6 +1,7 @@
 ---
 title: "Why I migrated from ProtonMail to Fastmail (and how)"
 description: "I’m a long-time fan of ProtonMail. That’s why I had a hard time deciding whether I want to leave them or not."
+image: "https://ondrejsevcik.com/images/export-email.png"
 date: "2022-01-29"
 tags: tech
 ---

@@ -159,7 +159,7 @@ const BlogPostContent = styled.article`
 `
 
 export default function BlogPost({ post }) {
-  let { title, date: dateString, description, html } = post
+  let { title, date: dateString, description, image, html } = post
   let date = new Date(dateString)
 
   return (
@@ -168,6 +168,7 @@ export default function BlogPost({ post }) {
         title={title}
         description={description}
         article={true}
+        image={image}
       />
       <BlogPostWrapper>
         <header>
@@ -191,9 +192,10 @@ export default function BlogPost({ post }) {
 export async function getStaticProps({ params }) {
   const { content, ...post } = getPostBySlug(params.slug, [
     "title",
+    "description",
+    "image",
     "date",
     "slug",
-    "description",
     "content",
   ])
 

@@ -1,6 +1,11 @@
 import Head from "next/head"
 
-export function SearchEngineOptimization({ title, description, article }) {
+export function SearchEngineOptimization({
+  title,
+  description,
+  article,
+  image,
+}) {
   const defaultDescription = "Blogging about everything dev."
 
   return (
@@ -21,7 +26,7 @@ export function SearchEngineOptimization({ title, description, article }) {
         <meta property="og:description" content={description} />
       ) : null}
       {/* <meta property="og:url" content="http://www.example.com/" /> */}
-      {/* <meta property="og:image" content="http://example.com/image.jpg" /> */}
+      {image ? <meta property="og:image" content={image} /> : null}
 
       {/* Twitter SEO */}
       {<meta name="twitter:card" value="summary" />}
