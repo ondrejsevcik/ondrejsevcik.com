@@ -6,7 +6,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "latest",
+    "babel-plugin-styled-components": "^2.0.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "next": "^12.0.9",
