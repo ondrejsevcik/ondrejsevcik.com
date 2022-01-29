@@ -9,7 +9,7 @@ import styled from "styled-components"
 const PostTitle = styled.h1`
   font-weight: 700;
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2rem;
 `
 
 const Meta = styled.span`
@@ -76,6 +76,11 @@ const BlogPostContent = styled.article`
   & figure {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  & figure > a {
+    display: inline-block;
   }
 
   & figcaption {
