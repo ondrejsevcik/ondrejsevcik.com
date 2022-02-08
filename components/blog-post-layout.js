@@ -1,6 +1,5 @@
 import { FullPageLayout } from "./full-page-layout"
 import { formatDate } from "../utils/format-date"
-import { readingTime } from "../utils/reading-time"
 import { SearchEngineOptimization } from "./seo"
 import styled from "styled-components"
 
@@ -14,14 +13,6 @@ const Meta = styled.span`
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
-`
-
-const MetaDivider = styled.span`
-  opacity: 0.3;
-  padding: 0 0.5rem;
-  &:before {
-    content: "|";
-  }
 `
 
 const BlogPostWrapper = styled.section`
@@ -157,8 +148,6 @@ export default function BlogPostLayout({ meta, children }) {
             <Meta as="time" dateTime={date.toISOString()}>
               {formatDate(date)}
             </Meta>
-            <MetaDivider />
-            {/* <Meta>{readingTime(html)} min read</Meta> */}
           </div>
         </header>
         <BlogPostContent>{children}</BlogPostContent>
