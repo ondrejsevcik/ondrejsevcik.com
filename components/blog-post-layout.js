@@ -1,9 +1,7 @@
-import { getPostBySlug, getAllPosts } from "../../utils/api"
-import { FullPageLayout } from "../../components/full-page-layout"
-import { formatDate } from "../../utils/format-date"
-import { readingTime } from "../../utils/reading-time"
-import { SearchEngineOptimization } from "../../components/seo"
-import markdownToHtml from "../../utils/markdownToHtml"
+import { FullPageLayout } from "./full-page-layout"
+import { formatDate } from "../utils/format-date"
+import { readingTime } from "../utils/reading-time"
+import { SearchEngineOptimization } from "./seo"
 import styled from "styled-components"
 
 const PostTitle = styled.h1`
@@ -158,8 +156,8 @@ const BlogPostContent = styled.article`
   }
 `
 
-export default function BlogPost({ post }) {
-  let { title, date: dateString, description, image, html } = post
+export default function BlogPostLayout({ meta, children }) {
+  let { title, date: dateString, description, image } = meta
   let date = new Date(dateString)
 
   return (
@@ -178,42 +176,11 @@ export default function BlogPost({ post }) {
               {formatDate(date)}
             </Meta>
             <MetaDivider />
-            <Meta>{readingTime(html)} min read</Meta>
+            {/* <Meta>{readingTime(html)} min read</Meta> */}
           </div>
         </header>
-        <BlogPostContent dangerouslySetInnerHTML={{ __html: html }} />
+        <BlogPostContent>{children}</BlogPostContent>
       </BlogPostWrapper>
     </FullPageLayout>
   )
-}
-
-// This function gets called at build time on server-side.
-// Won't be called on client-side.
-export async function getStaticProps({ params }) {
-  const { content, ...post } = getPostBySlug(params.slug, [
-    "title",
-    "description",
-    "image",
-    "date",
-    "slug",
-    "content",
-  ])
-
-  const html = await markdownToHtml(content || "")
-
-  return {
-    props: {
-      post: {
-        ...post,
-        html,
-      },
-    },
-  }
-}
-
-export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"])
-  const paths = posts.map(({ slug }) => ({ params: { slug } }))
-
-  return { paths, fallback: false }
 }

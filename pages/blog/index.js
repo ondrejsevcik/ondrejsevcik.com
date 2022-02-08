@@ -3,7 +3,7 @@ import Link from "next/link"
 import { SearchEngineOptimization } from "../../components/seo"
 import { groupBy } from "../../utils/group-by"
 import styled from "styled-components"
-import { getAllPosts } from "../../utils/api"
+import { getAllPostMeta } from "../../utils/api"
 
 const List = styled.div`
   max-width: 42rem;
@@ -69,7 +69,7 @@ export default function Blog({ groupedPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["title", "date", "slug"])
+  const allPosts = await getAllPostMeta()
   const groupedPosts = Object.entries(
     groupBy(allPosts, post => new Date(post.date).getFullYear().toString())
   ).reverse()

@@ -1,38 +1,18 @@
 import fs from "fs"
-import matter from "gray-matter"
 import { join } from "path"
 
-const postsDirectory = join(process.cwd(), "blog")
+export async function getAllPostMeta() {
+  const blogPosts = fs
+    .readdirSync(join(process.cwd(), "pages/blog"))
+    .filter(f => f != "index.js")
+    .map(fileName => fileName.replace(/\.mdx$/, ""))
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
-}
-
-export function getPostBySlug(slug, fields = []) {
-  const realSlug = slug.replace(/\.md$/, "")
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, "utf8")
-  const { data, content } = matter(fileContents)
-
-  const items = {}
-
-  // Ensure only the minimal needed data is exposed
-  fields.forEach(field => {
-    if (field === "slug") {
-      items[field] = realSlug
-    }
-    if (field === "content") {
-      items[field] = content
-    }
-
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field]
-    }
-  })
-
-  return items
-}
-
-export function getAllPosts(fields = []) {
-  return getPostSlugs().map(slug => getPostBySlug(slug, fields))
+  return await Promise.all(
+    blogPosts.map(blogPost =>
+      import(`../pages/blog/${blogPost}.mdx`).then(({ meta }) => ({
+        ...meta,
+        slug: blogPost,
+      }))
+    )
+  )
 }
