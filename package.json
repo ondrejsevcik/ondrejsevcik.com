@@ -6,6 +6,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.0.0",
+    "@next/mdx": "^12.0.10",
     "babel-plugin-styled-components": "^2.0.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",

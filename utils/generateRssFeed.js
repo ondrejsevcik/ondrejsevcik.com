@@ -1,13 +1,12 @@
-import { getAllPosts } from "./api"
+import { getAllPostMeta } from "./api"
 import { Feed } from "feed"
 import fs from "fs"
 
 const baseUrl = "https://ondrejsevcik.com"
 
-export function generateRssFeed() {
-  const posts = getAllPosts(["slug", "title", "date", "description"]).sort(
-    (a, b) => a.date - b.date
-  )
+export async function generateRssFeed() {
+  let posts = await getAllPostMeta()
+  posts = posts.sort((a, b) => a.date - b.date)
 
   const feed = new Feed({
     title: "Ondrej Sevcik",
