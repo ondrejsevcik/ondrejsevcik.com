@@ -1,4 +1,5 @@
 import BlogPostLayout from "../../components/blog-post-layout"
+import WarningBox from "../../components/blog/warning-box"
 
 export const meta = {
   title: "Building private WiFi hotspot with RaspberryPi, RaspAP, and VPN",
@@ -52,10 +53,10 @@ Go to DHCP Server > Advanced and add `1.1.1.1` as an upstream DNS server. Also, 
 
 After this, test your setup on [DNS leak test](https://dnsleaktest.com/). This website will check if you've configured your DNS correctly. If you see any other DNS than Cloudflare’s, then it is wrong.
 
-<p className="warning-box">
+<WarningBox>
   Don't use Firefox for this test. Firefox uses <code>DNS over HTTPS</code>{" "}
   feature that works different way than classic DNS.
-</p>
+</WarningBox>
 
 ### Step 5 - Enable AdBlocking
 
