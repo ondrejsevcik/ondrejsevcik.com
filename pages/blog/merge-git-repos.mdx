@@ -1,5 +1,6 @@
 import BlogPostLayout from "../../components/blog-post-layout"
 import WarningBox from "../../components/blog/warning-box"
+import InfoBox from "../../components/blog/info-box"
 
 export const meta = {
   title: "How to merge git repository into monorepo",
@@ -32,10 +33,10 @@ We start with two git repositories (monorepo and packageC) and end up with just 
   <figcaption>Folder structure before and after merge</figcaption>
 </figure>
 
-<p className="info-box">
+<InfoBox>
   If you don't want to keep history, it's way simpler to just copy files to the
   new repository and make a commit (KISS).
-</p>
+</InfoBox>
 
 ## Step by step
 
@@ -63,11 +64,11 @@ git filter-branch --prune-empty --tree-filter '
 
 Since now, the history will be rewritten as if all files were always located in `packages/packageC` folder.
 
-<p className="info-box">
+<InfoBox>
   With <code>git filter-branch</code> you can also extract package out of
   monorepo back into a single repository, but that's a topic for another
   article.
-</p>
+</InfoBox>
 
 ### 3. Merge into monorepo
 
