@@ -136,15 +136,6 @@ const BlogPostContent = styled.article`
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-
-  & .info-box {
-    padding: 0.5rem;
-    background-color: rgba(254, 241, 203, 1);
-    border-bottom-right-radius: 0.25rem;
-    border-color: rgba(252, 214, 100, 1);
-    border-left-width: 4px;
-    border-top-right-radius: 0.25rem;
-  }
 `
 
 export default function BlogPostLayout({ meta, children }) {

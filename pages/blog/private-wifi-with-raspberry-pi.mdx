@@ -1,5 +1,6 @@
 import BlogPostLayout from "../../components/blog-post-layout"
 import WarningBox from "../../components/blog/warning-box"
+import InfoBox from "../../components/blog/info-box"
 
 export const meta = {
   title: "Building private WiFi hotspot with RaspberryPi, RaspAP, and VPN",
@@ -23,7 +24,7 @@ You will need **RaspberryPi**, **Lan cable (RJ45)**, and a **NordVPN** account (
 
 ## Setting it up
 
-<p className="info-box">I assume that you have some basic Linux skills.</p>
+<InfoBox>I assume that you have some basic Linux skills.</InfoBox>
 
 ### Step 1 - Install Raspbian
 
@@ -68,10 +69,10 @@ The last step is setting up a permanent VPN connection between your RaspberryPi 
 
 You will need an `.ovpn` configuration file. Go to [NordVPN servers](https://nordvpn.com/servers/tools/) website and pick a server of your choice.
 
-<p className="info-box">
+<InfoBox>
   Prefer <code>OpenVPN UDP</code> over <code>OpenVPN TCP</code> option - it is
   generally faster.
-</p>
+</InfoBox>
 
 After you get your config, go to the `OpenVPN` setting and upload it there. You will also need `Service credentials`. Those, you can get from your NordVPN account page.
 
