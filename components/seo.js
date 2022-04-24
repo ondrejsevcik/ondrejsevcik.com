@@ -52,7 +52,8 @@ export function SearchEngineOptimization({
       <script
         defer
         data-domain="ondrejsevcik.com"
-        src="https://plausible.io/js/plausible.js"
+        data-api="/hello/api/event"
+        src="/hello/js/script.js"
       ></script>
     </Head>
   )
