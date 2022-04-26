@@ -50,16 +50,21 @@ export default function Blog({ groupedPosts }) {
           <section key={year}>
             <GroupTitle>{year}</GroupTitle>
             <GroupPosts>
-              {posts.map(post => (
-                <GroupPost key={post.slug}>
-                  <Link
-                    href={`/blog/${encodeURIComponent(post.slug)}`}
-                    passHref
-                  >
-                    <PostLink>{post.title}</PostLink>
-                  </Link>
-                </GroupPost>
-              ))}
+              {posts
+                .sort(
+                  (pA, pB) =>
+                    new Date(pB.date).getTime() - new Date(pA.date).getTime()
+                )
+                .map(post => (
+                  <GroupPost key={post.slug}>
+                    <Link
+                      href={`/blog/${encodeURIComponent(post.slug)}`}
+                      passHref
+                    >
+                      <PostLink>{post.title}</PostLink>
+                    </Link>
+                  </GroupPost>
+                ))}
             </GroupPosts>
           </section>
         ))}
