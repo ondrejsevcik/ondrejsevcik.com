@@ -6,7 +6,9 @@ const baseUrl = "https://ondrejsevcik.com"
 
 export async function generateRssFeed() {
   let posts = await getAllPostMeta()
-  posts = posts.sort((a, b) => a.date - b.date)
+  posts = posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
 
   const feed = new Feed({
     title: "Ondrej Sevcik",
