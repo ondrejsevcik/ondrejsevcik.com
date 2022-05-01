@@ -85,7 +85,7 @@ export default function HomePage() {
   ]
 
   return (
-    <FullPageLayout withoutFooter>
+    <FullPageLayout withFooter={false}>
       <ContentWrapper>
         <ProfileImg alt="Profile portrait" src="/images/profile-picture.jpg" />
         <Content>

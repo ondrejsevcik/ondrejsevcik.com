@@ -10,6 +10,8 @@ const List = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const PostLink = styled.a`

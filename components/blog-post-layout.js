@@ -20,6 +20,8 @@ const BlogPostWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const BlogPostContent = styled.article`
