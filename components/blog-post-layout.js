@@ -64,25 +64,6 @@ const BlogPostContent = styled.article`
     max-width: 65ch;
   }
 
-  & figure {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  & figure > a {
-    display: inline-block;
-  }
-
-  & figcaption {
-    margin: auto;
-    margin-top: 0.5rem;
-    max-width: 32rem;
-    text-align: center;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
   & ol {
     margin-left: 1.5rem;
     list-style-type: decimal;

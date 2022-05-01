@@ -1,6 +1,7 @@
 import BlogPostLayout from "../../components/blog-post-layout"
 import WarningBox from "../../components/blog/warning-box"
 import InfoBox from "../../components/blog/info-box"
+import Figure from "../../components/blog/figure"
 
 export const meta = {
   title: "How to merge git repository into monorepo",
@@ -23,15 +24,12 @@ We start with two git repositories (monorepo and packageC) and end up with just 
   <code>packageC</code>.
 </WarningBox>
 
-<figure>
-  <a href="/images/git-folders-before-after.png">
-    <img
-      src="/images/git-folders-before-after.png"
-      alt="Folder structure before and after merge"
-    />
-  </a>
-  <figcaption>Folder structure before and after merge</figcaption>
-</figure>
+<Figure
+  src="/images/git-folders-before-after.png"
+  alt="Folder structure before and after merge"
+>
+  Folder structure before and after merge
+</Figure>
 
 <InfoBox>
   If you don't want to keep history, it's way simpler to just copy files to the
@@ -78,15 +76,13 @@ By default, git won't allow you to merge branch that doesn't have a common ances
 
 Git repository is always created with an initial commit, but in this case, we don't have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that's common for those unrelated histories. You can read more about it in the [official documentation](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories).
 
-<figure style={{ maxWidth: "24rem", marginLeft: "auto", marginRight: "auto" }}>
-  <a href="/images/git-history-before-after-merge.png">
-    <img
-      src="/images/git-history-before-after-merge.png"
-      alt="Git history before and after merge"
-    />
-  </a>
-  <figcaption>Git history before and after merge</figcaption>
-</figure>
+<Figure
+  src="/images/git-history-before-after-merge.png"
+  alt="Git history before and after merge"
+  maxWidth="24rem"
+>
+  Git history before and after merge
+</Figure>
 
 ```bash
 # Add remote in your monorepo to packageC

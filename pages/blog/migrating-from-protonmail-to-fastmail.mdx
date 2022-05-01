@@ -1,4 +1,5 @@
 import BlogPostLayout from "../../components/blog-post-layout"
+import Figure from "../../components/blog/figure"
 
 export const meta = {
   title: "Why I migrated from ProtonMail to Fastmail (and how)",
@@ -29,15 +30,13 @@ After searching for some while, I’ve stumbled over Fastmail. The reviews were 
 
 One feature that I’m particularly enjoying is [Masked email](https://www.fastmail.com/1password/). I didn't realize this until I've started using it. But being able to create an email alias exactly when you need it is great. More privacy and less tracking across the web.
 
-<figure>
-  <a href="/images/masked-email.png" style={{ maxWidth: "450px" }}>
-    <img
-      src="/images/masked-email.png"
-      alt="Masked email integration with 1Password"
-    />
-  </a>
-  <figcaption>Masked email integration with 1Password</figcaption>
-</figure>
+<Figure
+  src="/images/masked-email.png"
+  alt="Masked email integration with 1Password"
+  maxWidth="450px"
+>
+  Masked email integration with 1Password
+</Figure>
 
 ### Migration
 
@@ -45,15 +44,13 @@ Moving Contacts and Calendar was easy as downloading a file ([.ics](https://en.w
 
 Since ProtonMail is zero-knowledge, it’s not possible to use the usual IMAP import to move your data directly between different mail providers. I had to download all my mails with an export tool to the `.mbox` package.
 
-<figure>
-  <a href="/images/export-email.png" style={{ maxWidth: "450px" }}>
-    <img
-      src="/images/export-email.png"
-      alt="Export email tool from ProtonMail"
-    />
-  </a>
-  <figcaption>Export email tool from ProtonMail</figcaption>
-</figure>
+<Figure
+  src="/images/export-email.png"
+  alt="Export email tool from ProtonMail"
+  maxWidth="450px"
+>
+  Export email tool from ProtonMail
+</Figure>
 
 But even after that, the trouble didn’t end. Fastmail doesn’t support uploading the `.mbox` file. I used Apple Mail to import my emails from `.mbox` first and then connected it with my Fastmail account and drag&dropped my local mails to Fastmail inbox. A bit more work than expected.
 
