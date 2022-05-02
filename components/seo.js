@@ -56,6 +56,21 @@ export function SearchEngineOptimization({
         data-api="/hello/api/event"
         src="/hello/js/script.js"
       ></script>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-LXQ7HC9WJS"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LXQ7HC9WJS');
+          `,
+        }}
+      />
     </Head>
   )
 }
