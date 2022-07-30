@@ -1,4 +1,5 @@
 import BlogPostLayout from "../../components/blog-post-layout"
+import Callout from "../../components/blog/callout"
 
 export const meta = {
   title: "Console.error or throw new Error?",
@@ -21,7 +22,9 @@ Use `console.error` (or `console.assert`) to make assertions to prevent impossib
 
 Anytime you have corrupted data or an impossible state - throw!
 
-> Dead program can do less harm than a program with corrupted data.
+<Callout emoji="💡">
+  Dead program can do less harm than a program with corrupted data.
+</Callout>
 
 Consider following scenario
 
