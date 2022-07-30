@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Wrapper = styled.div`
+const Wrapper = styled.aside`
   background-color: var(--blue-100);
   padding: 1rem;
   border-radius: 4px;
