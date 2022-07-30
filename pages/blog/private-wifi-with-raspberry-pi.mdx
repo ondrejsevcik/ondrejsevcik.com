@@ -1,6 +1,7 @@
 import BlogPostLayout from "../../components/blog-post-layout"
-import WarningBox from "../../components/blog/warning-box"
+import Figure from "../../components/blog/figure"
 import InfoBox from "../../components/blog/info-box"
+import WarningBox from "../../components/blog/warning-box"
 
 export const meta = {
   title: "Building private WiFi hotspot with RaspberryPi, RaspAP, and VPN",
@@ -76,13 +77,21 @@ You will need an `.ovpn` configuration file. Go to [NordVPN servers](https://nor
 
 After you get your config, go to the `OpenVPN` setting and upload it there. You will also need `Service credentials`. Those, you can get from your NordVPN account page.
 
-![NordVPN account page](/images/nord-vpn-account-page.png)
+<Figure src="/images/nord-vpn-account-page.png" alt="NordVPN account page">
+  NordVPN account page
+</Figure>
 
 After this step, you can hit `Save` and start your OpenVPN service.
 
 If you did everything right, you can check [NordVPN.com](https://nordvpn.com) website and see in the top bar if you're connected through them.
 
-![NordVPN connected status](/images/nord-vpn-connected.png)
+<Figure
+  src="/images/nord-vpn-connected.png"
+  alt="NordVPN website status check"
+  maxWidth="400px"
+>
+  NordVPN website status check
+</Figure>
 
 ## Conclusion
 
