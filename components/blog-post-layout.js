@@ -93,7 +93,8 @@ const BlogPostContent = styled.article`
 
   /* There is also code inside <pre> element,
   but that one should be styled differently */
-  & p code {
+  & p code,
+  & li code {
     background-color: rgba(31, 41, 55, 0.1);
     border-radius: 0.25rem;
     font-family: var(--font-sans);
