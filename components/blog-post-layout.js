@@ -65,7 +65,7 @@ const BlogPostContent = styled.article`
   }
 
   & ol {
-    margin-left: 1.5rem;
+    margin-left: 2rem;
     list-style-type: decimal;
   }
 
