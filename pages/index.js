@@ -3,10 +3,11 @@ import { PopLink } from "../components/pop-link"
 import { generateRssFeed } from "../utils/generateRssFeed"
 import {
   GithubIcon,
-  MailIcon,
   LinkedInIcon,
-  TwitterIcon,
+  MailIcon,
+  MastodonIcon,
   RssFeedIcon,
+  TwitterIcon,
 } from "../components/icons"
 import styled from "styled-components"
 
@@ -46,7 +47,7 @@ const SocialLinks = styled.div`
   font-size: 1.25rem;
   line-height: 1.75rem;
   gap: 1.25rem;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   display: inline-grid;
   margin-top: 1.5rem;
 `
@@ -66,6 +67,12 @@ export default function HomePage() {
       label: "Twitter",
       href: "https://twitter.com/ondrejsevcik",
       icon: <TwitterIcon />,
+    },
+    {
+      label: "Mastodon",
+      href: "https://mastodonczech.cz/@ondrejsevcik",
+      icon: <MastodonIcon />,
+      rel: "me",
     },
     {
       label: "Github",
@@ -109,6 +116,7 @@ export default function HomePage() {
                 href={socialLink.href}
                 label={socialLink.label}
                 icon={socialLink.icon}
+                rel={socialLink.rel}
               />
             ))}
           </SocialLinks>

@@ -37,9 +37,9 @@ const Content = styled.span`
   }
 `
 
-export function PopLink({ icon, label, href }) {
+export function PopLink({ icon, label, href, rel }) {
   return (
-    <Link aria-label={label} href={href}>
+    <Link aria-label={label} href={href} rel={rel}>
       <LinkBg aria-hidden="true"></LinkBg>
       <Content aria-hidden="true">{icon}</Content>
     </Link>
