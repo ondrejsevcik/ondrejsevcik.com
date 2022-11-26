@@ -1,0 +1,48 @@
+.headerName {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.content {
+  max-width: 24rem;
+}
+
+.profileImg {
+  padding: 0.25rem;
+  border-color: rgba(0, 93, 174, 1);
+  border-style: solid;
+  border-width: 8px;
+  border-radius: 9999px;
+  justify-self: center;
+  width: 14rem;
+  height: 14rem;
+  transition: transform 0.1s ease-out;
+}
+
+.profileImg:hover {
+  transform: scale(1.03);
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.socialLinks {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  gap: 1.25rem;
+  grid-template-columns: repeat(6, 1fr);
+  display: inline-grid;
+  margin-top: 1.5rem;
+}
+
+.paragraph {
+  margin-top: 1rem;
+}
+
+.paragraphSmallMargin {
+  margin-top: 0.5rem;
+}

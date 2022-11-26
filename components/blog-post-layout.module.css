@@ -1,0 +1,107 @@
+.postTitle {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.meta {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.blogPostWrapper {
+  max-width: 65ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blogPostContent h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.blogPostContent h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.blogPostContent h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.blogPostContent a {
+  color: var(--blue-800);
+}
+
+.blogPostContent a:hover,
+.blogPostContent a:focus {
+  text-decoration: underline;
+}
+
+.blogPostContent > p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.blogPostContent ol {
+  margin-left: 2rem;
+  list-style-type: decimal;
+}
+
+.blogPostContent ol > li {
+  margin-bottom: 0.5rem;
+}
+
+.blogPostContent ul {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
+.blogPostContent ul > li {
+  margin-bottom: 0.5rem;
+}
+
+.blogPostContent blockquote {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-left-width: 4px;
+  border-color: rgba(3, 137, 255, 1);
+  background-color: rgba(213, 235, 255, 1);
+  padding: 0.5rem;
+}
+
+/* There is also code inside <pre> element,
+  but that one should be styled differently */
+.blogPostContent p code,
+.blogPostContent li code {
+  background-color: rgba(31, 41, 55, 0.1);
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.blogPostContent pre {
+  overflow-x: auto;
+  border-radius: 0.25rem;
+  background-color: rgba(243, 244, 246, 1);
+  padding: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}

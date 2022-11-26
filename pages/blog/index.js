@@ -2,75 +2,37 @@ import { FullPageLayout } from "../../components/full-page-layout"
 import Link from "next/link"
 import { SearchEngineOptimization } from "../../components/seo"
 import { groupBy } from "../../utils/group-by"
-import styled from "styled-components"
+import styles from "./index.module.css"
 import { getAllPostMeta } from "../../utils/api"
-
-const List = styled.div`
-  max-width: 42rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-`
-
-const PostLink = styled.a`
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 500;
-  color: var(--blue-800);
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const GroupPosts = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
-`
-
-const GroupPost = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const GroupTitle = styled.h2`
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 4rem;
-`
 
 export default function Blog({ groupedPosts }) {
   return (
     <FullPageLayout>
-      <List>
+      <div className={styles.list}>
         <SearchEngineOptimization title="Blog" />
         {groupedPosts.map(([year, posts]) => (
           <section key={year}>
-            <GroupTitle>{year}</GroupTitle>
-            <GroupPosts>
+            <h2 className={styles.groupTitle}>{year}</h2>
+            <div className={styles.groupPosts}>
               {posts
                 .sort(
                   (pA, pB) =>
                     new Date(pB.date).getTime() - new Date(pA.date).getTime()
                 )
                 .map(post => (
-                  <GroupPost key={post.slug}>
+                  <div className={styles.groupPost} key={post.slug}>
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
                       passHref
                     >
-                      <PostLink>{post.title}</PostLink>
+                      <a className={styles.postLink}>{post.title}</a>
                     </Link>
-                  </GroupPost>
+                  </div>
                 ))}
-            </GroupPosts>
+            </div>
           </section>
         ))}
-      </List>
+      </div>
     </FullPageLayout>
   )
 }

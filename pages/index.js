@@ -9,52 +9,7 @@ import {
   RssFeedIcon,
   TwitterIcon,
 } from "../components/icons"
-import styled from "styled-components"
-
-const HeaderName = styled.div`
-  font-size: 1.5rem;
-  font-weight: bold;
-`
-
-const Content = styled.div`
-  max-width: 24rem;
-`
-
-const ProfileImg = styled.img`
-  padding: 0.25rem;
-  border-color: rgba(0, 93, 174, 1);
-  border-style: solid;
-  border-width: 8px;
-  border-radius: 9999px;
-  justify-self: center;
-  width: 14rem;
-  height: 14rem;
-  transition: transform 0.1s ease-out;
-
-  &:hover {
-    transform: scale(1.03);
-  }
-`
-
-const ContentWrapper = styled.div`
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-`
-
-const SocialLinks = styled.div`
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  gap: 1.25rem;
-  grid-template-columns: repeat(6, 1fr);
-  display: inline-grid;
-  margin-top: 1.5rem;
-`
-
-const Paragraph = styled.p`
-  margin-top: ${prop => (prop.smallMargin ? `0.5rem` : `1rem`)};
-`
+import styles from "./index.module.css"
 
 export default function HomePage() {
   let socialLinks = [
@@ -93,23 +48,27 @@ export default function HomePage() {
 
   return (
     <FullPageLayout withFooter={false}>
-      <ContentWrapper>
-        <ProfileImg alt="Profile portrait" src="/images/profile-picture.jpg" />
-        <Content>
-          <HeaderName>Hi, I&apos;m Ondrej 👋🏼</HeaderName>
-          <Paragraph smallMargin>
+      <div className={styles.contentWrapper}>
+        <img
+          className={styles.profileImg}
+          alt="Profile portrait"
+          src="/images/profile-picture.jpg"
+        />
+        <div className={styles.content}>
+          <div className={styles.headerName}>Hi, I&apos;m Ondrej 👋🏼</div>
+          <p className={styles.paragraphSmallMargin}>
             Frontend Developer, runner, minimalist, and occasional writer.
-          </Paragraph>
-          <Paragraph>
+          </p>
+          <p className={styles.paragraph}>
             I specialize in building UIs that <strong>do not break</strong> and
             users <strong>love to use</strong>.
-          </Paragraph>
-          <Paragraph>
+          </p>
+          <p className={styles.paragraph}>
             If you want to chat, feel free to write me an email or reach out on
             Twitter.
-          </Paragraph>
+          </p>
 
-          <SocialLinks>
+          <div className={styles.socialLinks}>
             {socialLinks.map(socialLink => (
               <PopLink
                 key={socialLink.href}
@@ -119,9 +78,9 @@ export default function HomePage() {
                 rel={socialLink.rel}
               />
             ))}
-          </SocialLinks>
-        </Content>
-      </ContentWrapper>
+          </div>
+        </div>
+      </div>
     </FullPageLayout>
   )
 }

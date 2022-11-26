@@ -5,6 +5,7 @@ export async function getAllPostMeta() {
   const blogPosts = fs
     .readdirSync(join(process.cwd(), "pages/blog"))
     .filter(f => f != "index.js")
+    .filter(f => f != "index.module.css")
     .map(fileName => fileName.replace(/\.mdx$/, ""))
 
   return await Promise.all(
