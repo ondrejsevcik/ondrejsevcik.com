@@ -1,13 +1,25 @@
 .postTitle {
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .postTitle {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 }
 
 .meta {
+  display: block;
+  text-align: center;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #d1d5db;
 }
 
 .blogPostWrapper {
@@ -28,19 +40,19 @@
 }
 
 .blogPostContent h2 {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .blogPostContent h3 {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .blogPostContent a {

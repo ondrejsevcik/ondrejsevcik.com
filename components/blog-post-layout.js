@@ -18,11 +18,9 @@ export default function BlogPostLayout({ meta, children }) {
       <section className={styles.blogPostWrapper}>
         <header>
           <h1 className={styles.postTitle}>{title}</h1>
-          <div>
-            <time className={styles.meta} dateTime={date.toISOString()}>
-              {formatDate(date)}
-            </time>
-          </div>
+          <time className={styles.meta} dateTime={date.toISOString()}>
+            {formatDate(date)}
+          </time>
         </header>
         <article className={styles.blogPostContent}>{children}</article>
       </section>
