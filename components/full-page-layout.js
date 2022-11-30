@@ -14,8 +14,8 @@ export function FullPageLayout({ withFooter = true, children }) {
 
       <nav className={styles.nav}>
         {items.map(({ href, title }) => (
-          <Link key={href} href={href} passHref>
-            <a className={styles.navLink}>{title}</a>
+          <Link key={href} href={href} className={styles.navLink}>
+            {title}
           </Link>
         ))}
       </nav>

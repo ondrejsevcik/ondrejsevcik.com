@@ -23,9 +23,9 @@ export default function Blog({ groupedPosts }) {
                   <div className={styles.groupPost} key={post.slug}>
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
-                      passHref
+                      className={styles.postLink}
                     >
-                      <a className={styles.postLink}>{post.title}</a>
+                      {post.title}
                     </Link>
                   </div>
                 ))}
