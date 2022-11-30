@@ -49,13 +49,6 @@ export function SearchEngineOptimization({
       {/* Twitter SEO */}
       {<meta name="twitter:card" value="summary" />}
       {<meta name="twitter:creator" content="@ondrejsevcik" />}
-
-      <script
-        defer
-        data-domain="ondrejsevcik.com"
-        data-api="/hello/api/event"
-        src="/hello/js/script.js"
-      ></script>
     </Head>
   )
 }
