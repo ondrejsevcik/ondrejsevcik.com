@@ -1,13 +1,15 @@
-const withMDX = require("@next/mdx")({
+import rehypeHighlight from "rehype-highlight"
+import mdx from "@next/mdx"
+
+const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
-    rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
+    rehypePlugins: [rehypeHighlight],
   },
 })
-module.exports = withMDX({
+
+export default withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   async rewrites() {
     return [

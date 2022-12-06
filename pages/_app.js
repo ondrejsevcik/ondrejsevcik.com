@@ -2,6 +2,7 @@ import Script from "next/script"
 
 import "../styles/tailwind-base.css"
 import "../styles/global.css"
+import "../styles/highlight-js.css"
 
 export default function MyApp({ Component, pageProps }) {
   return (
