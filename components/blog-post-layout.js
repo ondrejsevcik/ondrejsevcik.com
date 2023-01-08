@@ -23,6 +23,17 @@ export default function BlogPostLayout({ meta, children }) {
           </time>
         </header>
         <article className={styles.blogPostContent}>{children}</article>
+        <footer className={styles.blogPostAside}>
+          Liked the post? Have concerns? Reply via{" "}
+          <a
+            href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            email
+          </a>
+          .
+        </footer>
       </section>
     </FullPageLayout>
   )
