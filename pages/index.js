@@ -25,7 +25,7 @@ export default function HomePage() {
     },
     {
       label: "Mastodon",
-      href: "https://mastodonczech.cz/@ondrejsevcik",
+      href: "https://hachyderm.io/@ondrejsevcik",
       icon: <MastodonIcon />,
       rel: "me",
     },
