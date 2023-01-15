@@ -65,7 +65,7 @@ export default function HomePage() {
           </p>
           <p className={styles.paragraph}>
             If you want to chat, feel free to write me an email or reach out on
-            Twitter.
+            Mastodon.
           </p>
 
           <div className={styles.socialLinks}>
