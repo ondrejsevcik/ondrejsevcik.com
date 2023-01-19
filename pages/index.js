@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { FullPageLayout } from "../components/full-page-layout"
 import { PopLink } from "../components/pop-link"
 import { generateRssFeed } from "../utils/generateRssFeed"
@@ -49,10 +50,12 @@ export default function HomePage() {
   return (
     <FullPageLayout withFooter={false}>
       <div className={styles.contentWrapper}>
-        <img
+        <Image
           className={styles.profileImg}
           alt="Profile portrait"
           src="/images/profile-picture.jpg"
+          width={800}
+          height={800}
         />
         <div className={styles.content}>
           <div className={styles.headerName}>Hi, I&apos;m Ondrej 👋🏼</div>

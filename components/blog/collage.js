@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from "./collage.module.css"
 
 function Collage() {
@@ -58,7 +59,13 @@ function Collage() {
       <div className={styles.collage}>
         {images.map(img => (
           <a key={img.src} href={img.src} title={img.alt}>
-            <img className={styles.collageImg} src={img.src} alt={img.alt} />
+            <Image
+              className={styles.collageImg}
+              src={img.src}
+              alt={img.alt}
+              width={300}
+              height={300}
+            />
           </a>
         ))}
       </div>
