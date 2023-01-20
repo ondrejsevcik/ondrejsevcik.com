@@ -54,8 +54,8 @@ export default function HomePage() {
           className={styles.profileImg}
           alt="Profile portrait"
           src="/images/profile-picture.jpg"
-          width={800}
-          height={800}
+          width={250}
+          height={250}
         />
         <div className={styles.content}>
           <div className={styles.headerName}>Hi, I&apos;m Ondrej 👋🏼</div>
