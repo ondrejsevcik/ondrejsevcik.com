@@ -9,13 +9,6 @@
   justify-content: center;
 }
 
-@media (min-width: 768px) {
-  .collage {
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
-}
-
 .collageImg {
   object-fit: cover;
   height: 6rem;
@@ -30,7 +23,6 @@
 }
 
 .collageImg {
-  /* border-radius: 4px; */
   transition-duration: 0.2s;
   transition-property: transform, box-shadow;
 }
