@@ -44,9 +44,9 @@
 			<PopLink href="https://www.linkedin.com/in/ondrejsevcik/" label="LinkedIn profile">
 				<LinkedInIcon />
 			</PopLink>
-			<PopLink href="/rss.xml" label="RSS feed">
+			<!-- <PopLink href="/rss.xml" label="RSS feed">
 				<RssFeedIcon />
-			</PopLink>
+			</PopLink> -->
 		</div>
 	</div>
 </section>
