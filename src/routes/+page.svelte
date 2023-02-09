@@ -14,6 +14,7 @@
 </svelte:head>
 
 <section class="contentWrapper">
+	<!-- TODO optimize image size -->
 	<img class="profileImg" alt="Profile portrait" src={profilePicture} width={250} height={250} />
 	<div class="content">
 		<div class="headerName">Hi, I&apos;m Ondrej 👋🏼</div>
