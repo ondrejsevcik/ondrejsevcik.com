@@ -1,12 +1,12 @@
 <script>
-	import PopLink from './PopLink.svelte';
-	import MailIcon from './MailIcon.svelte';
-	import TwitterIcon from './TwitterIcon.svelte';
-	import LinkedInIcon from './LinkedInIcon.svelte';
-	import RssFeedIcon from './RssFeedIcon.svelte';
-	import MastodonIcon from './MastodonIcon.svelte';
-	import GithubIcon from './GithubIcon.svelte';
-	import profilePicture from './profile-picture.jpg';
+	import PopLink from '$lib/components/PopLink.svelte';
+	import MailIcon from '$lib/components/icons/MailIcon.svelte';
+	import TwitterIcon from '$lib/components/icons/TwitterIcon.svelte';
+	import LinkedInIcon from '$lib/components/icons/LinkedInIcon.svelte';
+	import RssFeedIcon from '$lib/components/icons/RssFeedIcon.svelte';
+	import MastodonIcon from '$lib/components/icons/MastodonIcon.svelte';
+	import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
+	import profilePicture from '$lib/images/profile-picture.jpg';
 </script>
 
 <svelte:head>
