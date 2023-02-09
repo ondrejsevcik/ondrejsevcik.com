@@ -1,8 +1,7 @@
 <script>
 	import Header from './Header.svelte';
-	import './tailwind-base.css';
-	import './global.css';
-	import './highlight-js.css';
+	import '$lib/styles/tailwind-base.css';
+	import '$lib/styles/global.css';
 </script>
 
 <div class="layout">
