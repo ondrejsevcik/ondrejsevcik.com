@@ -1,0 +1,24 @@
+<script>
+	export let emoji;
+</script>
+
+<aside class="callout">
+	{#if emoji}
+		<div>{emoji}</div>
+	{/if}
+	<div><slot /></div>
+</aside>
+
+<style>
+	.callout {
+		background-color: var(--blue-100);
+		padding: 1rem;
+		border-radius: 4px;
+		color: var(--gray-700);
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.75rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+</style>
