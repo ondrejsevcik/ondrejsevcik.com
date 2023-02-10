@@ -8,6 +8,10 @@
 	).reverse();
 </script>
 
+<svelte:head>
+	<title>Blog | Ondrej Sevcik</title>
+</svelte:head>
+
 <div class="list">
 	{#each groupedPosts as [year, posts]}
 		<section>
