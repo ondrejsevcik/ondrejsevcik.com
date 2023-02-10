@@ -23,11 +23,11 @@
 	</header>
 	<article class="blogPostContent"><slot /></article>
 	<footer class="blogPostAside">
-		Liked the post? Have concerns? Reply via{' '}
-		<a href={`mailto:hi@ondrejsevcik.com?subject=${title}`} target="_blank" rel="noreferrer">
-			email
-		</a>
-		.
+		Liked the post? Have concerns? Reply via <a
+			href={`mailto:hi@ondrejsevcik.com?subject=${encodeURIComponent(title)}`}
+			target="_blank"
+			rel="noreferrer">email</a
+		>.
 	</footer>
 </section>
 
