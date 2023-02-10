@@ -65,16 +65,7 @@
 		margin-right: auto;
 	}
 
-	/* TODO I think this is never used */
-	.blogPostContent h1 {
-		margin-top: 1.5rem;
-		margin-bottom: 1rem;
-		font-size: var(--step-2);
-		line-height: 2.25rem;
-		font-weight: 700;
-	}
-
-	.blogPostContent h2 {
+	.blogPostContent :global(h2) {
 		margin-top: 2.5rem;
 		margin-bottom: 1rem;
 		font-size: var(--step-1);
@@ -82,7 +73,7 @@
 		font-weight: 600;
 	}
 
-	.blogPostContent h3 {
+	.blogPostContent :global(h3) {
 		margin-top: 2.5rem;
 		margin-bottom: 1rem;
 		font-size: var(--step-0);
@@ -90,40 +81,40 @@
 		font-weight: 600;
 	}
 
-	.blogPostContent a {
+	.blogPostContent :global(a) {
 		color: var(--blue-800);
 	}
 
-	.blogPostContent a:hover,
-	.blogPostContent a:focus {
+	.blogPostContent :global(a:hover),
+	.blogPostContent :global(a:focus) {
 		text-decoration: underline;
 	}
 
-	.blogPostContent > p {
+	.blogPostContent > :global(p) {
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		max-width: 65ch;
 	}
 
-	.blogPostContent ol {
+	.blogPostContent :global(ol) {
 		margin-left: 2rem;
 		list-style-type: decimal;
 	}
 
-	.blogPostContent ol > li {
+	.blogPostContent :global(ol > li) {
 		margin-bottom: 0.5rem;
 	}
 
-	.blogPostContent ul {
+	.blogPostContent :global(ul) {
 		margin-left: 2rem;
 		list-style-type: disc;
 	}
 
-	.blogPostContent ul > li {
+	.blogPostContent :global(ul > li) {
 		margin-bottom: 0.5rem;
 	}
 
-	.blogPostContent blockquote {
+	.blogPostContent :global(blockquote) {
 		border-top-right-radius: 0.25rem;
 		border-bottom-right-radius: 0.25rem;
 		border-left-width: 4px;
@@ -134,8 +125,8 @@
 
 	/* There is also code inside <pre> element,
   but that one should be styled differently */
-	.blogPostContent p code,
-	.blogPostContent li code {
+	.blogPostContent :global(p code),
+	.blogPostContent :global(li code) {
 		background-color: rgba(31, 41, 55, 0.1);
 		border-radius: 0.25rem;
 		font-family: var(--font-sans);
@@ -143,7 +134,7 @@
 		padding-right: 0.25rem;
 	}
 
-	.blogPostContent pre {
+	.blogPostContent :global(pre) {
 		overflow-x: auto;
 		font-family: var(--font-sans);
 		font-size: var(--step--1);
@@ -158,7 +149,7 @@
 	}
 
 	@media (min-width: 768px) {
-		.blogPostContent pre {
+		.blogPostContent :global(pre) {
 			margin-left: -1rem;
 			margin-right: -1rem;
 		}
