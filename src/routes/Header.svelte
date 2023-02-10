@@ -1,7 +1,7 @@
 <script>
 	let items = [
-		{ href: '/', title: 'Home' }
-		// { href: '/blog', title: 'Blog' }
+		{ href: '/', title: 'Home' },
+		{ href: '/blog', title: 'Blog' }
 	];
 </script>
 
