@@ -1,13 +1,12 @@
-import BlogPostLayout from "../../components/blog-post-layout"
-import Callout from "../../components/blog/callout"
-
-export const meta = {
-  title: "20 Principles I Learned From 10 Years of Developing Software",
-  description:
-    "It's been 10 years since I started my first job in the software industry. Here are 20 principles that I have learned and try to follow in my day-to-day life.",
-  date: "2022-08-25",
-  tags: ["tech"],
-}
+---
+title: "20 Principles I Learned From 10 Years of Developing Software"
+description: "It's been 10 years since I started my first job in the software industry. Here are 20 principles that I have learned and try to follow in my day-to-day life."
+date: "2022-08-25"
+tags: ["tech"]
+---
+<script>
+import Callout from "$lib/components/blog/Callout.svelte"
+</script>
 
 It's been 10 years since I started my first job in the software industry. Here are 20 principles that I have learned and try to follow in my day-to-day life.
 
@@ -31,7 +30,3 @@ It's been 10 years since I started my first job in the software industry. Here a
 18. **Take small steps** - Big rewrites don't work. You will lose motivation and focus along the way. Aim to release daily. It gives you the freedom to change focus when necessary.
 19. **Praise for good work** - Something we've observed in animals, but works for people too. You will get better results when you praise people for good work rather than punishing them for a bad one.
 20. **Perfect code doesn't exist** - It's better to accept this as a fact rather than wasting time and chasing the impossible.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)

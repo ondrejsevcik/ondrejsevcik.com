@@ -1,4 +1,4 @@
-// TODO: this is identical to WarningBox
+<!-- TODO: this is identical to WarningBox -->
 <div class="infoBox"><slot /></div>
 
 <style>

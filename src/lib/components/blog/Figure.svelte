@@ -4,18 +4,13 @@
 	export let maxWidth;
 	export let width;
 	export let height;
-
-	$: caption = children || alt || null;
 </script>
 
 <figure class="figure">
-	<a href={src} style="maxWidth: {maxWidth ?? '100%'}">
+	<a href={src} style="max-width: {maxWidth ?? '100%'}">
 		<img class="img" {src} {alt} {width} {height} />
 	</a>
-	{#if caption}
-		<!-- TODO figure out how to pass children or alt -->
-		<figcaption class="figCaption">{caption}</figcaption>
-	{/if}
+	<figcaption class="figCaption"><slot /></figcaption>
 </figure>
 
 <style>

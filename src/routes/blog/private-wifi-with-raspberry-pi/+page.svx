@@ -1,15 +1,16 @@
-import BlogPostLayout from "../../components/blog-post-layout"
-import Figure from "../../components/blog/figure"
-import InfoBox from "../../components/blog/info-box"
-import WarningBox from "../../components/blog/warning-box"
-
-export const meta = {
-  title: "Building Private WiFi Hotspot With RaspberryPi, RaspAP, and VPN",
-  description:
-    "Build your private WiFi hotspot so that your internet provider can't spy on you.",
-  date: "2021-04-09",
-  tags: ["tech"],
-}
+---
+title: "Building Private WiFi Hotspot With RaspberryPi, RaspAP, and VPN"
+description: "Build your private WiFi hotspot so that your internet provider can't spy on you."
+date: "2021-04-09"
+tags: ["tech"]
+---
+<script>
+import Figure from "$lib/components/blog/Figure.svelte"
+import InfoBox from "$lib/components/blog/InfoBox.svelte"
+import WarningBox from "$lib/components/blog/WarningBox.svelte"
+import nordVpnAccountPage from './nord-vpn-account-page.png'
+import nordVpnConnectedImg  from './nord-vpn-connected.png'
+</script>
 
 Your internet service provider can see every single app and site you use - even if the website is using encrypted `HTTPS` protocol.
 
@@ -78,7 +79,7 @@ You will need an `.ovpn` configuration file. Go to [NordVPN servers](https://nor
 After you get your config, go to the `OpenVPN` setting and upload it there. You will also need `Service credentials`. Those, you can get from your NordVPN account page.
 
 <Figure
-  src="/images/nord-vpn-account-page.png"
+  src={nordVpnAccountPage}
   alt="NordVPN account page"
   width={1300}
   height={749}
@@ -91,7 +92,7 @@ After this step, you can hit `Save` and start your OpenVPN service.
 If you did everything right, you can check [NordVPN.com](https://nordvpn.com) website and see in the top bar if you're connected through them.
 
 <Figure
-  src="/images/nord-vpn-connected.png"
+  src={nordVpnConnectedImg}
   alt="NordVPN website status check"
   maxWidth="400px"
   width={736}
@@ -107,7 +108,3 @@ Congratulations. If you've made it this far, it means you care about your privac
 I hope this mini-tutorial was helpful to you. Feel free to write me on my [Twitter](https://twitter.com/ondrejsevcik) if you have any questions or comments.
 
 PS: If you find RaspAP useful, consider supporting this project with some $$$ on their [GitHub sponsors page](https://github.com/sponsors/RaspAP).
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)

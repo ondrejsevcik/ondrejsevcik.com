@@ -1,13 +1,12 @@
-import BlogPostLayout from "../../components/blog-post-layout"
-import Callout from "../../components/blog/callout"
-
-export const meta = {
-  title: "6 Rules I Follow to Get Simple and Stable Tests",
-  description:
-    "These rules I always follow no matter what kind of tests I write.",
-  date: "2022-07-31",
-  tags: ["tech"],
-}
+---
+title: "6 Rules I Follow to Get Simple and Stable Tests"
+description: "These rules I always follow no matter what kind of tests I write."
+date: "2022-07-31"
+tags: ["tech"]
+---
+<script>
+import Callout from "$lib/components/blog/Callout.svelte"
+</script>
 
 It took me several years of trying and failing to figure out what does work when I write tests. Here are 6 rules that I always follow no matter what kind of tests I write.
 
@@ -130,7 +129,3 @@ With this, you should hit the 80% coverage mark easily.
 With these few rules, you can write tests that everybody will understand and it will be a pleasure to work with.
 
 Let me know if you have some other rules that you follow, and why.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)

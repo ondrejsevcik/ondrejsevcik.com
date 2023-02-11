@@ -1,14 +1,27 @@
-import BlogPostLayout from "../../components/blog-post-layout"
-import Figure from "../../components/blog/figure"
-import Collage from "../../components/blog/collage"
-
-export const meta = {
-  title: "Year in Review 2022",
-  description: "The year 2022 was eventful...",
-  image: "https://ondrejsevcik.com/images/year-in-review-2022-preview.png",
-  date: "2023-01-10",
-  tags: ["tech"],
-}
+---
+title: "Year in Review 2022"
+description: "The year 2022 was eventful..."
+image: "https://ondrejsevcik.com/images/year-in-review-2022-preview.png"
+date: "2023-01-10"
+tags: ["tech"]
+---
+<script>
+import Figure from "$lib/components/blog/Figure.svelte"
+import Collage from "$lib/components/blog/Collage.svelte"
+import viennaPraterImg from './collage/vienna-prater.jpeg';
+import viennaPicnicImg from './collage/vienna-picnic.jpeg';
+import louisBeerImg from './collage/louis-beer.jpeg';
+import hikingInAustriaImg from './collage/hiking-in-austria.jpeg';
+import runningImg from './collage/running.jpeg';
+import portugalTripImg from './collage/portugal-trip.jpeg';
+import mooImg from './collage/moo.jpeg';
+import denmarkBikeTripImg from './collage/denmark-bike-trip.jpeg';
+import sydneyImg from './collage/sydney.jpeg';
+import sydneyPoolImg from './collage/sydney-pool.jpeg';
+import estoniaLangImg from './collage/estonia-land.jpeg';
+import christmasCookiesImg from './collage/christmas-cookies.jpeg';
+import commitsImg from './commits-in-2022.png'
+</script>
 
 The year 2022 was eventful.
 
@@ -17,54 +30,18 @@ Apart from war and dealing with emotions, I’ve managed to visit a lot of place
 <Collage
   description="Year in pictures - most of my time after work was spent outdoors."
   images={[
-    {
-      src: "/images/year-in-review-2022-collage/vienna-prater.jpeg",
-      alt: "Prater park in Vienna",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/vienna-picnic.jpeg",
-      alt: "Vienna picnic spot",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/louis-beer.jpeg",
-      alt: "One of the many good beers I drank this year",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/hiking-in-austria.jpeg",
-      alt: "Hiking in Austria",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/running.jpeg",
-      alt: "Lost running through forests",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/portugal-trip.jpeg",
-      alt: "Portugal trip",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/moo.jpeg",
-      alt: "Cows in Innsbruck, Austria",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/denmark-bike-trip.jpeg",
-      alt: "Biking trip through Denmark",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/sydney.jpeg",
-      alt: "Sydney panorama",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/sydney-pool.jpeg",
-      alt: "Sydney swimming pool",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/estonia-land.jpeg",
-      alt: "Lost in Estonia forests",
-    },
-    {
-      src: "/images/year-in-review-2022-collage/christmas-cookies.jpeg",
-      alt: "Christmas baking",
-    },
+    { src: viennaPraterImg, alt: "Prater park in Vienna" },
+    { src: viennaPicnicImg, alt: "Vienna picnic spot" },
+    { src: louisBeerImg, alt: "One of the many good beers I drank this year" },
+    { src: hikingInAustriaImg, alt: "Hiking in Austria" },
+    { src: runningImg, alt: "Lost running through forests" },
+    { src: portugalTripImg, alt: "Portugal trip" },
+    { src: mooImg, alt: "Cows in Innsbruck, Austria" },
+    { src: denmarkBikeTripImg, alt: "Biking trip through Denmark" },
+    { src: sydneyImg, alt: "Sydney panorama" },
+    { src: sydneyPoolImg, alt: "Sydney swimming pool" },
+    { src: estoniaLangImg, alt: "Lost in Estonia forests" },
+    { src: christmasCookiesImg, alt: "Christmas baking" },
   ]}
 />
 
@@ -112,7 +89,7 @@ This year I’ve **made 966 commits**. Most of them were for [Lokalise](https://
 The amount of commits on its own is a useless metric, but when plotted on the activity chart, it tells the story of my year.
 
 <Figure
-  src="/images/commits-in-2022.png"
+  src={commitsImg}
   alt="GitHub commits activity chart for 2022"
   width={2000}
   height={498}
@@ -127,7 +104,3 @@ The first part of my year I was involved in **refactoring the Team Setting**. Th
 I don’t have any plans for 2023 yet. I’ve decided to start easy and have no big upfront plans. I have some ideas about what I would like to focus on, but I don’t want to commit to them yet. I’m taking January to think it through and have a good time.
 
 Happy new year!
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
