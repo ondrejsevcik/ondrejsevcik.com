@@ -1,14 +1,13 @@
 ---
 title: "Why and How I Migrated From ProtonMail to Fastmail"
 description: "I’m a long-time fan of ProtonMail. That’s why I had a hard time deciding whether I want to leave them or not."
-image: "https://ondrejsevcik.com/images/export-email.png"
 date: "2022-01-29"
 tags: ["tech"]
 ---
 <script>
 import Figure from "$lib/components/blog/Figure.svelte"
-import maskedEmailImg from './masked-email.png'
-import exportEmailImg from './export-email.png'
+import maskedEmailImg from './masked-email.jpg'
+import exportEmailImg from './export-email.jpg'
 </script>
 
 I’m a long-time fan of ProtonMail. Their mission is something that resonates with me. That’s why I had a hard time deciding whether I want to leave them or not.

@@ -2,18 +2,23 @@
 	import { formatDate } from '$lib/utils/format-date';
 	export let title;
 	export let description;
-	export let image;
 	export let date;
+	export let ogImage;
 
 	$: dateInstance = new Date(date);
 </script>
 
-<!-- // <SearchEngineOptimization
-      //   title={title}
-      //   description={description}
-      //   article={true}
-      //   image={image}
-      // /> -->
+<svelte:head>
+	<title>{title} | Ondrej Sevcik</title>
+	<!-- Open Graph data -->
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	{#if ogImage}
+		<meta property="og:image" content={image} />
+	{/if}
+</svelte:head>
+
 <section class="blogPostWrapper">
 	<header>
 		<h1 class="postTitle">{title}</h1>

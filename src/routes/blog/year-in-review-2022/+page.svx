@@ -1,7 +1,6 @@
 ---
 title: "Year in Review 2022"
 description: "The year 2022 was eventful..."
-image: "https://ondrejsevcik.com/images/year-in-review-2022-preview.png"
 date: "2023-01-10"
 tags: ["tech"]
 ---

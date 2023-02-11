@@ -1,14 +1,13 @@
 ---
 title: "Improving the performance of styled components with native CSS features"
 description: "Can we improve performance of styled components by using some of the native CSS features? I've decided to test it out"
-image: "https://ondrejsevcik.com/images/styled-components-test.png"
 date: "2023-01-27"
 tags: ["tech"]
 ---
 <script>
 import Callout from "$lib/components/blog/Callout.svelte"
 import Figure from "$lib/components/blog/Figure.svelte"
-import testImg from './styled-components-test.png'
+import testImg from './styled-components-test.jpg'
 </script>
 
 Styled components are slow. But can we improve its performance by using some of the native CSS features? I've decided to test it out.
