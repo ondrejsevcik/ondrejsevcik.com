@@ -64,10 +64,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# Next.js
-.next
-public/rss.xml
-
 # SvelteKit
 .DS_Store
 node_modules
