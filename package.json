@@ -16,8 +16,8 @@
     "rehype-highlight": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.28.0",
-    "eslint-config-next": "^13.0.5",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
     "prettier": "^2.8.4"
   },
   "engines": {
