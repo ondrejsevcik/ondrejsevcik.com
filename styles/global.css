@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
-
 :root {
   --font-sans: Avenir Next, Avenir, Helvetica, sans-serif;
-  --font-mono: Source Code Pro, monospace;
+  --font-mono: monospace;
 
   /* https://colordesigner.io/#0D1C33-17373C-2B6832-4F9300-A1D700 */
   --blue-100: #d5ebff;
