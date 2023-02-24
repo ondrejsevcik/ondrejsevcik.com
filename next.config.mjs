@@ -21,6 +21,10 @@ export default withMDX({
         source: "/hello/api/event",
         destination: "https://plausible.io/api/event",
       },
+      {
+        source: "/rss.xml",
+        destination: "/api/rss",
+      },
     ]
   },
 })

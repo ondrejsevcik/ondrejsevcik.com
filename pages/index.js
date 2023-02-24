@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { FullPageLayout } from "../components/full-page-layout"
 import { PopLink } from "../components/pop-link"
-import { generateRssFeed } from "../utils/generateRssFeed"
 import {
   GithubIcon,
   LinkedInIcon,
@@ -86,10 +85,4 @@ export default function HomePage() {
       </div>
     </FullPageLayout>
   )
-}
-
-// This is called on build time - will regenerate RSS posts
-export async function getStaticProps() {
-  await generateRssFeed()
-  return { props: {} }
 }

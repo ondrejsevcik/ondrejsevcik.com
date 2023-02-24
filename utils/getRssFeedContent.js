@@ -1,10 +1,9 @@
 import { getAllPostMeta } from "./api"
 import { Feed } from "feed"
-import fs from "fs"
 
 const baseUrl = "https://ondrejsevcik.com"
 
-export async function generateRssFeed() {
+export async function getRssFeedContent() {
   let posts = await getAllPostMeta()
   posts = posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -38,5 +37,5 @@ export async function generateRssFeed() {
     })
   })
 
-  fs.writeFileSync("public/rss.xml", feed.rss2())
+  return feed.rss2()
 }
