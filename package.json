@@ -8,16 +8,16 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
-    "@next/mdx": "^13.1.6",
+    "@next/mdx": "^13.2.1",
     "feed": "^4.2.2",
-    "next": "^13.1.6",
+    "next": "^13.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-highlight": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
-    "eslint-config-next": "^13.1.6",
+    "eslint-config-next": "^13.2.1",
     "prettier": "^2.8.4"
   },
   "engines": {
