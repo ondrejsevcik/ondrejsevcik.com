@@ -1,0 +1,41 @@
+import BlogPostLayout from "../../components/blog-post-layout"
+import Figure from "../../components/blog/figure"
+
+export const meta = {
+  title: "The Reason Why I Don’t Use Gmail as My Primary Email Anymore",
+  description:
+    "It’s been 2 years since I realized that my whole online presence is built around Google. And I did not like that idea.",
+  image: "https://ondrejsevcik.com/images/export-email.png",
+  date: "2023-03-01",
+  tags: ["tech"],
+}
+
+It’s been 2 years since I realized that my whole online presence is built around Google.
+
+It’s very convenient to build your whole life around Google Services - GMail, Drive, Contacts, Photos, YouTube, save Passwords to Chrome, Login with Google, … the list goes on and on. Google services are free, easy to use, and they all work well together.
+
+### Your account has been suspended
+
+The problem is that each service on Google has its own Terms & Conditions, and it’s not that uncommon to get your account suspended because you “breached something somewhere”.
+
+Once you get suspended, you basically stop existing online, and you lose access to all your data. Everything. Gone. Immediately. And Google has no obligation to talk to you. After all, it’s free.
+
+> Centralizing all our online being into the hands of a single giant is not the best idea.
+
+I did not like the idea of that. Not having an access to my email and my passwords could be existential. 
+
+### Portability is freedom
+
+My email is now on my own domain, hosted at Fastmail. I’m using 1Passwords for logins and passkeys. I use Firefox for bookmark sync. And I never use social logins.
+
+I pay for all of these services. It costs me around 12$ a month and it’s totally worth it. I feel good about supporting more independent internet, plus paying for service has so many other benefits (like a support that actually talks to you, better privacy, loads faster, and so on).
+
+The point is not to avoid Google at all costs, but to minimize the impact of being suspended. If I would simply switch to Apple or Microsoft, it would be the same problem. **The internet is meant to be decentralized.**
+
+I still use YouTube and Google Maps. But they are just yet another service I use. If I would get suspended, it would not be a big deal anymore.
+
+If you’re in the same position as I was 2 years ago, now is the best time to reconsider your online being.
+
+export default ({ children }) => (
+  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
+)
