@@ -2,6 +2,8 @@ import BlogPostLayout from "../../../components/blog-post-layout"
 import WarningBox from "../../../components/blog/warning-box"
 import InfoBox from "../../../components/blog/info-box"
 import Figure from "../../../components/blog/figure"
+import gitFoldersBeforeAfterImg from "./git-folders-before-after.png"
+import gitHistoryBeforeAfterMergeImg from "./git-history-before-after-merge.png"
 
 export const meta = {
   title: "How to Merge Git Repository Into Monorepo",
@@ -25,10 +27,8 @@ We start with two git repositories (monorepo and packageC) and end up with just 
 </WarningBox>
 
 <Figure
-  src="/images/git-folders-before-after.png"
+  src={gitFoldersBeforeAfterImg}
   alt="Folder structure before and after merge"
-  width={1486}
-  height={932}
 >
   Folder structure before and after merge
 </Figure>
@@ -79,11 +79,9 @@ By default, git won't allow you to merge branch that doesn't have a common ances
 Git repository is always created with an initial commit, but in this case, we don't have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that's common for those unrelated histories. You can read more about it in the [official documentation](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories).
 
 <Figure
-  src="/images/git-history-before-after-merge.png"
+  src={gitHistoryBeforeAfterMergeImg}
   alt="Git history before and after merge"
   maxWidth="24rem"
-  height={1167}
-  width={1668}
 >
   Git history before and after merge
 </Figure>

@@ -1,11 +1,13 @@
 import BlogPostLayout from "../../../components/blog-post-layout"
 import Figure from "../../../components/blog/figure"
+import maskedEmailImg from "./masked-email.png"
+import exportEmailImg from "./export-email.png"
 
 export const meta = {
   title: "Why and How I Migrated From ProtonMail to Fastmail",
   description:
     "I’m a long-time fan of ProtonMail. That’s why I had a hard time deciding whether I want to leave them or not.",
-  image: "https://ondrejsevcik.com/images/export-email.png",
+  image: exportEmailImg.src,
   date: "2022-01-29",
   tags: ["tech"],
 }
@@ -31,11 +33,9 @@ After searching for some while, I’ve stumbled over Fastmail. The reviews were 
 One feature that I’m particularly enjoying is [Masked email](https://www.fastmail.com/1password/). I didn't realize this until I've started using it. But being able to create an email alias exactly when you need it is great. More privacy and less tracking across the web.
 
 <Figure
-  src="/images/masked-email.png"
+  src={maskedEmailImg}
   alt="Masked email integration with 1Password"
   maxWidth="450px"
-  width={1033}
-  height={337}
 >
   Masked email integration with 1Password
 </Figure>
@@ -47,11 +47,9 @@ Moving Contacts and Calendar was easy as downloading a file ([.ics](https://en.w
 Since ProtonMail is zero-knowledge, it’s not possible to use the usual IMAP import to move your data directly between different mail providers. I had to download all my mails with an export tool to the `.mbox` package.
 
 <Figure
-  src="/images/export-email.png"
+  src={exportEmailImg}
   alt="Export email tool from ProtonMail"
   maxWidth="450px"
-  width={1074}
-  height={280}
 >
   Export email tool from ProtonMail
 </Figure>

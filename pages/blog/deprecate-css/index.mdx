@@ -1,10 +1,12 @@
 import BlogPostLayout from "../../../components/blog-post-layout"
 import Figure from "../../../components/blog/figure"
+import deprecatedCssExampleImg from "./deprecated-css-example.png"
 
 export const meta = {
   title: "Make Your Deprecated CSS Stand Out",
   description:
     "Make your deprecated CSS visible in your UI so that every developer can easily spot it.",
+  image: deprecatedCssExampleImg.src,
   date: "2019-02-18",
   tags: ["tech"],
 }
@@ -16,10 +18,8 @@ If you’re working in a team with a large codebase, you rarely have a chance to
 The idea is very simple - make your deprecated CSS stand out and every time you see it in the UI, you have a unique chance to get rid of it. Of course, this should apply only to the development environment.
 
 <Figure
-  src="/images/deprecated-css-example.png"
+  src={deprecatedCssExampleImg}
   alt="Example of deprecated .align-center class on GitHub homepage"
-  width={1866}
-  height={836}
 >
   Example of deprecated <code>.align-center</code> class on GitHub with a
   deprecation message.

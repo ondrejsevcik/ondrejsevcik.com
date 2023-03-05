@@ -1,11 +1,25 @@
 import BlogPostLayout from "../../../components/blog-post-layout"
 import Figure from "../../../components/blog/figure"
 import Collage from "../../../components/blog/collage"
+import commitsImg from "./commits-in-2022.png"
+import previewImg from "./preview.png"
+import viennaPraterImg from "./collage/vienna-prater.jpeg"
+import viennaPicnicImg from "./collage/vienna-picnic.jpeg"
+import louisBeersImg from "./collage/louis-beer.jpeg"
+import hikingInAustriaImg from "./collage/hiking-in-austria.jpeg"
+import runningImg from "./collage/running.jpeg"
+import portugalTripImg from "./collage/portugal-trip.jpeg"
+import mooImg from "./collage/moo.jpeg"
+import denmarkBikeTripImg from "./collage/denmark-bike-trip.jpeg"
+import sydneyImg from "./collage/sydney.jpeg"
+import sydneyPoolImg from "./collage/sydney-pool.jpeg"
+import estoniaLandImg from "./collage/estonia-land.jpeg"
+import christmasCookiesImg from "./collage/christmas-cookies.jpeg"
 
 export const meta = {
   title: "Year in Review 2022",
   description: "The year 2022 was eventful...",
-  image: "https://ondrejsevcik.com/images/year-in-review-2022-preview.png",
+  image: previewImg.src,
   date: "2023-01-10",
   tags: ["tech"],
 }
@@ -18,51 +32,51 @@ Apart from war and dealing with emotions, I’ve managed to visit a lot of place
   description="Year in pictures - most of my time after work was spent outdoors."
   images={[
     {
-      src: "/images/year-in-review-2022-collage/vienna-prater.jpeg",
+      src: viennaPraterImg.src,
       alt: "Prater park in Vienna",
     },
     {
-      src: "/images/year-in-review-2022-collage/vienna-picnic.jpeg",
+      src: viennaPicnicImg.src,
       alt: "Vienna picnic spot",
     },
     {
-      src: "/images/year-in-review-2022-collage/louis-beer.jpeg",
+      src: louisBeersImg.src,
       alt: "One of the many good beers I drank this year",
     },
     {
-      src: "/images/year-in-review-2022-collage/hiking-in-austria.jpeg",
+      src: hikingInAustriaImg.src,
       alt: "Hiking in Austria",
     },
     {
-      src: "/images/year-in-review-2022-collage/running.jpeg",
+      src: runningImg.src,
       alt: "Lost running through forests",
     },
     {
-      src: "/images/year-in-review-2022-collage/portugal-trip.jpeg",
+      src: portugalTripImg.src,
       alt: "Portugal trip",
     },
     {
-      src: "/images/year-in-review-2022-collage/moo.jpeg",
+      src: mooImg.src,
       alt: "Cows in Innsbruck, Austria",
     },
     {
-      src: "/images/year-in-review-2022-collage/denmark-bike-trip.jpeg",
+      src: denmarkBikeTripImg.src,
       alt: "Biking trip through Denmark",
     },
     {
-      src: "/images/year-in-review-2022-collage/sydney.jpeg",
+      src: sydneyImg.src,
       alt: "Sydney panorama",
     },
     {
-      src: "/images/year-in-review-2022-collage/sydney-pool.jpeg",
+      src: sydneyPoolImg.src,
       alt: "Sydney swimming pool",
     },
     {
-      src: "/images/year-in-review-2022-collage/estonia-land.jpeg",
+      src: estoniaLandImg.src,
       alt: "Lost in Estonia forests",
     },
     {
-      src: "/images/year-in-review-2022-collage/christmas-cookies.jpeg",
+      src: christmasCookiesImg.src,
       alt: "Christmas baking",
     },
   ]}
@@ -111,12 +125,7 @@ This year I’ve **made 966 commits**. Most of them were for [Lokalise](https://
 
 The amount of commits on its own is a useless metric, but when plotted on the activity chart, it tells the story of my year.
 
-<Figure
-  src="/images/commits-in-2022.png"
-  alt="GitHub commits activity chart for 2022"
-  width={2000}
-  height={498}
->
+<Figure src={commitsImg} alt="GitHub commits activity chart for 2022">
   GitHub commits activity chart for 2022
 </Figure>
 
