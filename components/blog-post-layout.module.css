@@ -130,6 +130,12 @@
   }
 }
 
+.blogPostContent hr {
+  border-top: 8px dotted var(--gray-200);
+  width: 80px;
+  margin: 2rem auto;
+}
+
 .blogPostAside {
   margin-top: 3rem;
   text-align: center;
