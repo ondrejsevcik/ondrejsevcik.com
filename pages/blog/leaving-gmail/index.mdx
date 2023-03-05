@@ -1,11 +1,12 @@
 import BlogPostLayout from "../../../components/blog-post-layout"
 import Figure from "../../../components/blog/figure"
+import suspendedAccountsImg from "./suspended-accounts.jpg"
 
 export const meta = {
   title: "The Reason Why I Don’t Use Gmail as My Primary Email Anymore",
   description:
     "It’s been 2 years since I realized that my whole online presence is built around Google. And I did not like that idea.",
-  image: "https://ondrejsevcik.com/images/suspended-accounts.jpg",
+  image: suspendedAccountsImg.src,
   date: "2023-03-01",
   tags: ["tech"],
 }
@@ -24,12 +25,7 @@ Once you get suspended, you basically stop existing online, and you lose access 
 
 I did not like the idea of that. Not having an access to my email and my passwords could be existential.
 
-<Figure
-  src="/images/suspended-accounts.jpg"
-  alt="A few of many suspended accounts"
-  width={1355}
-  height={420}
->
+<Figure src={suspendedAccountsImg} alt="A few of many suspended accounts">
   There are [many](https://twitter.com/miguelytob/status/1315749803041619981)
   [stories](https://www.businessinsider.com/google-users-locked-out-after-years-2020-10)
   [out](https://twitter.com/com/status/1466928315562958850)
