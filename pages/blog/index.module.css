@@ -7,6 +7,11 @@
   margin-right: auto;
 }
 
+.title {
+  font-size: var(--step-3);
+  font-weight: 600;
+}
+
 .postLink {
   font-size: var(--step-0);
   line-height: 1.5;

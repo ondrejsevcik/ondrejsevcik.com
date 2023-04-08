@@ -9,6 +9,11 @@ export default function Blog({ groupedPosts }) {
   return (
     <FullPageLayout>
       <div className={styles.list}>
+        <h1 className={styles.title}>Blog</h1>
+        <p>
+          Sharing my thoughts on frontend development, life, and anything in
+          between. Writing mostly for my past self. Thanks for stopping by!
+        </p>
         <SearchEngineOptimization title="Blog" />
         {groupedPosts.map(([year, posts]) => (
           <section key={year}>
