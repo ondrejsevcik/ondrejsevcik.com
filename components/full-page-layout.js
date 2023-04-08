@@ -5,6 +5,7 @@ import { SearchEngineOptimization } from "../components/seo"
 const items = [
   { href: "/", title: "Home" },
   { href: "/blog", title: "Blog" },
+  { href: "/notes", title: "Notes" },
 ]
 
 export function FullPageLayout({ withFooter = true, children }) {

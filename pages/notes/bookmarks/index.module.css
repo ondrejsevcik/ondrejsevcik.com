@@ -1,0 +1,35 @@
+.notesPage {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TODO add proper css styles to website and not this garbage */
+.title {
+  font-size: var(--step-3);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.subTitle {
+  font-size: var(--step-1);
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
+
+.list li {
+  margin-top: 0.25rem;
+}
+
+.list a {
+  color: var(--blue-800);
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
