@@ -25,7 +25,7 @@ const links = [
     href: "https://metatags.io/",
   },
   {
-    description: "Excelidraw - best whiteboard tool",
+    description: "Excalidraw - best whiteboard tool",
     href: "https://excalidraw.com/",
   },
   {
