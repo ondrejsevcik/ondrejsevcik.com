@@ -43,6 +43,10 @@ export default function RootLayout({ children }) {
         </nav>
 
         {children}
+
+        <footer className={styles.footerWrapper}>
+          &copy; {new Date().getFullYear()} Ondrej Sevcik
+        </footer>
       </body>
     </html>
   )
