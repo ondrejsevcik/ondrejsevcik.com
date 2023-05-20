@@ -1,8 +1,6 @@
-import { FullPageLayout } from "../../../components/full-page-layout"
-import { SearchEngineOptimization } from "../../../components/seo"
-import styles from "./index.module.css"
+import styles from "./page.module.css"
 
-export const meta = {
+export const metadata = {
   title: "Bookmarks",
   description: "Collection of useful websites that I often use.",
 }
@@ -36,22 +34,19 @@ const links = [
 
 export default function BookmarksPage() {
   return (
-    <FullPageLayout>
-      <SearchEngineOptimization title={meta.title} />
-      <div className={styles.notesPage}>
-        <h1 className={styles.title}>{meta.title}</h1>
-        <p>{meta.description}</p>
+    <div className={styles.notesPage}>
+      <h1 className={styles.title}>{metadata.title}</h1>
+      <p>{metadata.description}</p>
 
-        <h2 className={styles.subTitle}>Web Development</h2>
+      <h2 className={styles.subTitle}>Web Development</h2>
 
-        <ul className={styles.list}>
-          {links.map(l => (
-            <li key={l.href}>
-              <a href={l.href}>{l.description}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </FullPageLayout>
+      <ul className={styles.list}>
+        {links.map(l => (
+          <li key={l.href}>
+            <a href={l.href}>{l.description}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
