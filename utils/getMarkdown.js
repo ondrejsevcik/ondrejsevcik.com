@@ -1,11 +1,12 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import { micromark } from "micromark"
 
-const dir = path.join(process.cwd(), "app/notes/_content")
+const notesDir = path.join(process.cwd(), "app/notes/_content")
 
 export function getSortedNotesData() {
-  const fileNames = fs.readdirSync(dir)
+  const fileNames = fs.readdirSync(notesDir)
   const allPostsData = fileNames
     .map(fn => fn.replace(/\.md$/, ""))
     .map(id => getMarkdownData(id))
@@ -14,13 +15,13 @@ export function getSortedNotesData() {
 }
 
 export function getMarkdownData(id) {
-  const fullPath = path.join(dir, `${id}.md`)
+  const fullPath = path.join(notesDir, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const matterResult = matter(fileContents)
 
   return {
     id,
     ...matterResult.data,
-    content: matterResult.content,
+    html: micromark(matterResult.content),
   }
 }

@@ -8,13 +8,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default function NoteDetailPage({ params }) {
-  const { title, content } = getMarkdownData(params.id)
+  const { title, html } = getMarkdownData(params.id)
 
   return (
-    <div className={styles.notesPage}>
+    <article className={styles.notesPage}>
       <h1 className={styles.title}>{title}</h1>
 
-      {content}
-    </div>
+      {/* Not happy with this useless div, but haven't
+       found a way to avoid it in React */}
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </article>
   )
 }

@@ -18,7 +18,6 @@ function NotesCard({ title, description, href }) {
 export default function NotesPage() {
   const notesData = getSortedNotesData()
 
-  console.log("notesData", notesData)
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>{metadata.title}</h1>

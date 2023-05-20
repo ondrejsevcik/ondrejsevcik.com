@@ -5,31 +5,31 @@
 }
 
 /* TODO add proper css styles to website and not this garbage */
-.title {
+.notesPage h1 {
   font-size: var(--step-3);
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-.subTitle {
+.notesPage h2 {
   font-size: var(--step-1);
   font-weight: 600;
   margin-top: 2rem;
 }
 
-.list {
+.notesPage ul {
   list-style-type: disc;
   margin-left: 1rem;
 }
 
-.list li {
+.notesPage li {
   margin-top: 0.25rem;
 }
 
-.list a {
+.notesPage a {
   color: var(--blue-800);
 }
 
-.list a:hover {
+.notesPage a:hover {
   text-decoration: underline;
 }
