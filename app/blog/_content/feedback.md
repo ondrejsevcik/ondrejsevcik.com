@@ -1,11 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "On Giving and Receiving Feedback",
-  description: "Simple rules that work well when giving feedback.",
-  date: "2021-04-22",
-  tags: ["tech"],
-}
+---
+title: "On Giving and Receiving Feedback"
+description: "Simple rules that work well when giving feedback."
+date: "2021-04-22"
+tags: ["tech"]
+---
 
 Without a doubt, one of the most difficult soft skills to develop. And though I don't claim to be an expert on the topic, here are some simple rules that worked well for me.
 
@@ -31,7 +29,3 @@ Without a doubt, one of the most difficult soft skills to develop. And though I 
 
 13. **_“When you do X, it makes me feel like Y”_** — Feels more genuine.
 14. **As a leader or manager always explain your decisions** — No matter if you incorporated received feedback or ignored it. People want to know why.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
