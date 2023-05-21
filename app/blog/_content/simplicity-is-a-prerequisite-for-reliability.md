@@ -1,12 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "Simplicity Is a Prerequisite for Reliability",
-  description:
-    "Humans are not good with complexity. We can't hold much information in our working memory which makes us more likely to fail when working with complex systems.",
-  date: "2023-05-18",
-  tags: ["dev"],
-}
+---
+title: "Simplicity Is a Prerequisite for Reliability"
+description: "Humans are not good with complexity. We can't hold much information in our working memory which makes us more likely to fail when working with complex systems."
+date: "2023-05-18"
+tags: ["dev"]
+---
 
 Humans are not good with complexity.
 
@@ -38,7 +35,3 @@ Interestingly enough, many of these points apply not just to software developmen
 - Incidental complexity happens when you choose a tool that is easy to use (which is subjective), yet produces complicated output.
 - Inconsistency is extremely complex. You need to keep in mind the in-consistent variants at all times.
 - Simplicity is not about having fewer things, it’s about having simple straight lines instead of tangled spaghetti.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
