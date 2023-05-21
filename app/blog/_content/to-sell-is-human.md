@@ -1,11 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "To Sell is Human (by Daniel H. Pink)",
-  description: "To Sell is Human (by Daniel H. Pink)",
-  date: "2021-07-31",
-  tags: ["book-review"],
-}
+---
+title: "To Sell is Human (by Daniel H. Pink)"
+description: "To Sell is Human (by Daniel H. Pink)"
+date: "2021-07-31"
+tags: ["book-review"]
+---
 
 This book is describing how sales changed from “door-to-door villain salesman” to contemporary sales, which is done by everyone, not just salespeople.
 
@@ -31,7 +29,3 @@ It was an easy read (4h) and I would recommend it to anyone who’s interested i
   - Your buyer's answers are "**offers**", not objections.
   - "Yes, and..." - agreeing and adding a suggestion.
 - **Give real value** - You have to believe in the product you’re selling and that it makes customer's life better.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
