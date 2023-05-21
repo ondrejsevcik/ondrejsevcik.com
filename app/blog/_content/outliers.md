@@ -1,11 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "Outliers: The Story of Success (by Malcolm Gladwell)",
-  description: "Outliers: The Story of Success (by Malcolm Gladwell)",
-  date: "2021-11-06",
-  tags: ["book-review"],
-}
+---
+title: "Outliers: The Story of Success (by Malcolm Gladwell)"
+description: "Outliers: The Story of Success (by Malcolm Gladwell)"
+date: "2021-11-06"
+tags: ["book-review"]
+---
 
 People are unusually successful because they are unusually gifted.
 
@@ -32,7 +30,3 @@ It's mostly because it's in their **cultural heritage**. They **work harder** an
 Historically, rice field farmers had to work much harder and smarter compared to European "potato" farmers. This is reflected in today's Asian culture.
 
 The other reason is quite simple - **Their numbering system is logical and simple**. In English, the numbering system is inconsistent (one-teen vs Eleven, or three quarters vs three-fourths).
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
