@@ -1,12 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "Learning how to do nothing",
-  description:
-    "In the last few years, I spent my time reading, listening, or watching some interesting content whenever possible. I was hungry to learn more and understand everything.",
-  date: "2023-02-15",
-  tags: ["life"],
-}
+---
+title: "Learning how to do nothing"
+description: "In the last few years, I spent my time reading, listening, or watching some interesting content whenever possible. I was hungry to learn more and understand everything."
+date: "2023-02-15"
+tags: ["life"]
+---
 
 In the last few years, I spent my time reading, listening, or watching some interesting content whenever possible. I was hungry to learn more and understand everything.
 
@@ -23,7 +20,3 @@ The feed is surely interesting, but also infinite. I can never read it all. I ne
 Since January, I stopped using Twitter, unsubscribed from most newsletters and [cleaned up my phone](https://medium.com/make-time/six-years-with-a-distraction-free-iphone-8cf5eb4f97e3) from distracting apps.
 
 I don't automatically pick up the next podcast or audiobook whenever I have a moment. Instead, I try to enjoy and appreciate time just with my own thoughts.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
