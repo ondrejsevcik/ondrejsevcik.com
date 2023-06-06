@@ -12,3 +12,7 @@ description: "Collection of useful websites that I often use."
 - [Metatags - Meta tag code debugger and generator](https://metatags.io/)
 - [Excalidraw - best whiteboard tool](https://excalidraw.com/)
 - [DOMEvents.dev - Visualised DOM events](https://domevents.dev/)
+
+## Reading
+
+- [12ft.io - Read without paywall](https://12ft.io/)
