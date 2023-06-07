@@ -74,13 +74,13 @@ The benefit of using the native API is that it also shows up your markers and me
   alt="DevTools timeline with Performance Markers and Measure."
 />
 
-## Using PerformanceObserver to send measures to external monitoring tools
+## Sending measures to external monitoring tools
 
 One last step is to actually log those performance measures into external systems, where you can then analyze your performance trends over time.
 
 The Measure object has name and duration properties that are ideal candidates to be sent.
 
-With PerformanceObserver API, it’s just a few lines of code.
+With [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) API, it’s just a few lines of code.
 
 ```js
 function perfObserver(list, observer) {
