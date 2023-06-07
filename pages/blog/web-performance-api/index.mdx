@@ -13,7 +13,7 @@ export const meta = {
   tags: ["tech"],
 }
 
-TLDR;
+## TL;DR
 
 - Performance API is a great (native) way to measure how long certain Front-End interactions take.
 - Its Observable API allows for easy plug-in of existing monitoring tools.
@@ -45,7 +45,7 @@ For that, we will have to add two markers - one for **button clicked** and one
 (Full example in [Codesandbox](https://codesandbox.io/s/wizardly-benji-mimedt?file=/src/index.js)).
 
 ```js
-button.addEventListener('event', () => {
+button.addEventListener('click', () => {
   performance.mark("button-clicked") // <-- mark button click
 
   let response = await fetch('...').then(r => r.json())
