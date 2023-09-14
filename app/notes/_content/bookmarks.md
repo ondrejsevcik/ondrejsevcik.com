@@ -16,3 +16,7 @@ description: "Collection of useful websites that I often use."
 ## Reading
 
 - [12ft.io - Read without paywall](https://12ft.io/)
+
+## Tools
+
+- [PDFUX - Privacy friendly PDF tools](https://pdfux.com/)
