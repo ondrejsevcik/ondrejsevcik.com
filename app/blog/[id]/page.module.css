@@ -3,6 +3,7 @@
   font-size: var(--step-3);
   line-height: 3.5rem;
   text-align: center;
+  text-wrap: balance;
 }
 
 @media (max-width: 768px) {
