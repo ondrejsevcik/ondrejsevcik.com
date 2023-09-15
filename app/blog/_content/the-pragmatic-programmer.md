@@ -6,7 +6,7 @@ tags: ["book-review"]
 image: "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/tpp20.jpg"
 ---
 
-This is definitely one of the most influential books that affected how I approach writing software. It's full of pragmatic and practical wisdom for every day life of developer.
+This is definitely one of the most influential books that affected how I approach writing software. It's full of pragmatic and practical wisdom for the everyday life of a developer.
 
 ## Book notes
 
