@@ -17,6 +17,14 @@
   margin-top: 2rem;
 }
 
+.notesPage h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: var(--step-0);
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
 .notesPage ul {
   list-style-type: disc;
   margin-left: 1rem;
@@ -32,4 +40,44 @@
 
 .notesPage a:hover {
   text-decoration: underline;
+}
+
+.notesPage blockquote {
+  border-left-width: 4px;
+  border-color: var(--gray-300);
+  color: gray;
+  padding: 0.25rem;
+}
+
+/* There is also code inside <pre> element,
+  but that one should be styled differently */
+.notesPage p code,
+.notesPage li code {
+  background-color: rgba(31, 41, 55, 0.1);
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.notesPage pre {
+  overflow-x: auto;
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  line-height: 1.3;
+  padding: 1rem;
+
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+
+  background-color: #31324e;
+  color: #c9cdd7;
+}
+
+@media (min-width: 768px) {
+  .notesPage pre {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
 }
