@@ -1,86 +1,14 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import Collage from "../../../components/blog/collage"
-import commitsImg from "./commits-in-2022.png"
-import previewImg from "./preview.png"
-import viennaPraterImg from "./collage/vienna-prater.jpeg"
-import viennaPicnicImg from "./collage/vienna-picnic.jpeg"
-import louisBeersImg from "./collage/louis-beer.jpeg"
-import hikingInAustriaImg from "./collage/hiking-in-austria.jpeg"
-import runningImg from "./collage/running.jpeg"
-import portugalTripImg from "./collage/portugal-trip.jpeg"
-import mooImg from "./collage/moo.jpeg"
-import denmarkBikeTripImg from "./collage/denmark-bike-trip.jpeg"
-import sydneyImg from "./collage/sydney.jpeg"
-import sydneyPoolImg from "./collage/sydney-pool.jpeg"
-import estoniaLandImg from "./collage/estonia-land.jpeg"
-import christmasCookiesImg from "./collage/christmas-cookies.jpeg"
-
-export const meta = {
-  title: "Year in Review 2022",
-  description: "The year 2022 was eventful...",
-  image: previewImg.src,
-  date: "2023-01-10",
-  tags: ["tech"],
-}
+---
+title: "Year in Review 2022"
+description: "The year 2022 was eventful."
+image: "/blog-images/commits-in-2022.png"
+date: "2023-01-10"
+tags: ["tech"]
+---
 
 The year 2022 was eventful.
 
 Apart from war and dealing with emotions, I’ve managed to visit a lot of places, [meet my colleagues](https://www.linkedin.com/posts/lokalise_remotework-workfromanywhere-offsite-activity-6951514925630377984-VNfU) face-to-face for the first time, read a bunch, code a bunch, and dive deeper into the world of writing.
-
-<Collage
-  description="Year in pictures - most of my time after work was spent outdoors."
-  images={[
-    {
-      src: viennaPraterImg.src,
-      alt: "Prater park in Vienna",
-    },
-    {
-      src: viennaPicnicImg.src,
-      alt: "Vienna picnic spot",
-    },
-    {
-      src: louisBeersImg.src,
-      alt: "One of the many good beers I drank this year",
-    },
-    {
-      src: hikingInAustriaImg.src,
-      alt: "Hiking in Austria",
-    },
-    {
-      src: runningImg.src,
-      alt: "Lost running through forests",
-    },
-    {
-      src: portugalTripImg.src,
-      alt: "Portugal trip",
-    },
-    {
-      src: mooImg.src,
-      alt: "Cows in Innsbruck, Austria",
-    },
-    {
-      src: denmarkBikeTripImg.src,
-      alt: "Biking trip through Denmark",
-    },
-    {
-      src: sydneyImg.src,
-      alt: "Sydney panorama",
-    },
-    {
-      src: sydneyPoolImg.src,
-      alt: "Sydney swimming pool",
-    },
-    {
-      src: estoniaLandImg.src,
-      alt: "Lost in Estonia forests",
-    },
-    {
-      src: christmasCookiesImg.src,
-      alt: "Christmas baking",
-    },
-  ]}
-/>
 
 ## Fitness & Health
 
@@ -125,9 +53,13 @@ This year I’ve **made 966 commits**. Most of them were for [Lokalise](https://
 
 The amount of commits on its own is a useless metric, but when plotted on the activity chart, it tells the story of my year.
 
-<Figure src={commitsImg} alt="GitHub commits activity chart for 2022">
-  GitHub commits activity chart for 2022
-</Figure>
+<figure>
+  <img 
+    src="/blog-images/commits-in-2022.png"
+    alt="GitHub commits activity chart for 2022"
+  />
+  <figcaption>GitHub commits activity chart for 2022</figcaption>
+</figure>
 
 The first part of my year I was involved in **refactoring the Team Setting**. The second part I’ve spent on building a brand **new Comments UI**. Both of these are nicely visible on the timeline including the break in summer and November. December was calm as I was moving into a new team to work on my **next big thing - Translation Editor**, which I’m really excited about.
 
@@ -136,7 +68,3 @@ The first part of my year I was involved in **refactoring the Team Setting**. Th
 I don’t have any plans for 2023 yet. I’ve decided to start easy and have no big upfront plans. I have some ideas about what I would like to focus on, but I don’t want to commit to them yet. I’m taking January to think it through and have a good time.
 
 Happy new year!
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
