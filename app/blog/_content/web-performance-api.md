@@ -1,17 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import timelineImg from "./timeline.jpg"
-import exampleGif from "./example.gif"
-import devtoolsImg from "./devtools.jpg"
-
-export const meta = {
-  title: "Using Performance API to Measure Front-End Interaction Times",
-  description:
-    "Performance API is a great (native) way to measure how long certain Front-End interactions take.",
-  image: timelineImg.src,
-  date: "2023-06-07",
-  tags: ["tech"],
-}
+---
+title: "Using Performance API to Measure Front-End Interaction Times"
+description: "Performance API is a great (native) way to measure how long certain Front-End interactions take."
+image: "/blog-images/web-perf-timeline.jpg"
+date: "2023-06-07"
+tags: ["tech"]
+---
 
 ## TL;DR
 
@@ -32,13 +25,19 @@ Working with Performance API, you will see **Mark** and **Measure** mentione
 - **Mark** is an object that represents an event on a timeline. It’s created using `performance.mark()` call.
 - **The measure** is a measurement between two of those marks. It’s created using `performance.measure()` call.
 
-<Figure src={timelineImg} alt="Difference between Marker and Measure." />
+<figure>
+  <img src="/blog-images/web-perf-timeline.jpg" alt="Difference between Marker and Measure." />
+  <figcaption>Difference between Marker and Measure.</figcaption>
+</figure>
 
 ## Basic use case
 
 Let's measure how long it takes to show the next image after clicking the button.
 
-<Figure src={exampleGif} alt="What we're building." />
+<figure>
+  <img src="/blog-images/web-perf-example.gif" alt="What we're building." />
+  <figcaption>What we're building.</figcaption>
+</figure>
 
 For that, we will have to add two markers - one for **button clicked** and one for **image loaded**. With marks in place, we can then measure the time between them.
 
@@ -69,10 +68,13 @@ button.addEventListener('click', () => {
 
 The benefit of using the native API is that it also shows up your markers and measures in DevTools.
 
-<Figure
-  src={devtoolsImg}
-  alt="DevTools timeline with Performance Markers and Measure."
-/>
+<figure>
+  <img
+    src="/blog-images/web-perf-devtools.jpg"
+    alt="DevTools timeline with Performance Markers and Measure."
+  />
+  <figcaption>DevTools timeline with Performance Markers and Measure.</figcaption>
+</figure>
 
 ## Sending measures to external monitoring tools
 
@@ -99,7 +101,3 @@ observer.observe({ entryTypes: ["measure"] })
 And that’s it. I hope this short introduction helped you to understand how easy it is to use Performance API to monitor your app.
 
 For advanced use cases, visit the [MDN docs for Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API).
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
