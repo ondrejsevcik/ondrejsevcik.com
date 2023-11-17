@@ -1,7 +1,7 @@
 ---
 title: "Improving the performance of styled components with native CSS features"
 description: "Can we improve performance of styled components by using some of the native CSS features? I've decided to test it out"
-image: "/blog-images/styled-components-test.png"
+image: "/blog-images/styled-components-test.jpg"
 date: "2023-01-27"
 tags: ["tech"]
 ---
@@ -93,7 +93,7 @@ It turns out that using `data-attributes` is indeed a little bit faster than usi
 
 <figure>
   <img
-    src="/blog-images/styled-components-test.png"
+    src="/blog-images/styled-components-test.jpg"
     alt="React Profiller results "
     style="max-width:300px"
   />
