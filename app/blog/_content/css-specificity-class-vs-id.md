@@ -1,16 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-
-export const meta = {
-  title:
-    "How to Increase CSS Class Selector Specificity to Beat the ID Selector Without Using Important",
-  description:
-    "Two tips to workaround #ID vs .class selector specificity issues.",
-  image:
-    "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-  date: "2023-04-26",
-  tags: ["tech"],
-}
+---
+title: "How to Increase CSS Class Selector Specificity to Beat the ID Selector Without Using Important"
+description: "Two tips to workaround #ID vs .class selector specificity issues."
+image: "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+date: "2023-04-26"
+tags: ["tech"]
+---
 
 Recently, while working on some legacy code, I had to figure out how to overwrite ID selector styles without using `!important`.
 
@@ -58,10 +52,9 @@ Now instead of specificity `110`, it is down to `20`.
 }
 ```
 
-<Callout emoji="💡">
-  When you want to target by ID, prefer the attribute selector over the ID
-  selector. It will save you some headaches down the road.
-</Callout>
+<aside>
+  <p>When you want to target by ID, prefer the attribute selector over the ID selector. It will save you some headaches down the road.</p>
+</aside>
 
 ### Chaining the selector with itself
 
@@ -90,7 +83,3 @@ The specificity of `.child` is 10. The specificity of `.child.child.child` is 30
 This is an easy way to bump up specificity without adding additional classes or knowing about the context where the item will be placed.
 
 I find this better than using `!important`, but it is still a hack. If possible, try to avoid this.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
