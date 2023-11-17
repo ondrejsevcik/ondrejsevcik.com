@@ -7,8 +7,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.0.0",
-    "@next/mdx": "^14.0.3",
     "feed": "^4.2.2",
     "next": "^14.0.3",
     "react": "^18.2.0",

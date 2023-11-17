@@ -1,16 +1,4 @@
-import rehypeHighlight from "rehype-highlight"
-import mdx from "@next/mdx"
-
-const withMDX = mdx({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight],
-  },
-})
-
-export default withMDX({
-  pageExtensions: ["js", "jsx", "md", "mdx"],
+const config = {
   async rewrites() {
     return [
       {
@@ -27,4 +15,6 @@ export default withMDX({
       },
     ]
   },
-})
+}
+
+export default config
