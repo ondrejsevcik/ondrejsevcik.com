@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import Script from "next/script"
 import styles from "./layout.module.css"
 
 import "../styles/tailwind-base.css"
@@ -46,6 +47,13 @@ export default function RootLayout({ children }) {
         <footer className={styles.footerWrapper}>
           &copy; {new Date().getFullYear()} Ondrej Sevcik
         </footer>
+
+        <Script
+          defer
+          data-domain="ondrejsevcik.com"
+          data-api="/hello/api/event"
+          src="/hello/js/script.js"
+        />
       </body>
     </html>
   )
