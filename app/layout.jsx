@@ -22,7 +22,6 @@ export const metadata = {
     title: "Ondrej Sevcik",
     creator: "@ondrejsevcik",
   },
-
   alternates: {
     types: {
       "application/rss+xml": "/rss.xml",
