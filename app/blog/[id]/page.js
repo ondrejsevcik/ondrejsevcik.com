@@ -8,10 +8,10 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    image,
     openGraph: {
       title,
       description,
+      images: image,
       type: "article",
       publishedTime: new Date(date).toISOString(),
       authors: ["Ondrej Sevcik"],
