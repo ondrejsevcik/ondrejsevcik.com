@@ -1,15 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import hopingForTheBestImg from "./hoping-for-the-best.png"
-
-export const meta = {
-  title: "Writing Tests After Release Is a Mistake",
-  description:
-    "More often than not, I see developers writing tests after the code is released to production. And that’s a big mistake.",
-  image: hopingForTheBestImg.src,
-  date: "2022-04-26",
-  tags: ["tech"],
-}
+---
+title: "Writing Tests After Release Is a Mistake"
+description: "More often than not, I see developers writing tests after the code is released to production. And that’s a big mistake."
+date: "2022-04-26"
+tags: ["tech"]
+---
 
 Writing tests in 2022 is more common than ever before, but more often than not, I see developers writing tests after the code is released to production. And that’s a big mistake.
 
@@ -19,7 +13,10 @@ It seems obvious - writing tests takes time, so I will be faster if I don’t sp
 
 Writing code is just one part of producing features, and developers often ignore all the other areas that get affected. You end up with almost all the same problems like not testing at all.
 
-<Figure src={hopingForTheBestImg} alt="Hoping for the best" />
+<figure>
+    <img src="/blog-images/hoping-for-the-best.png" alt="Hoping for the best" />
+    <figcaption>Hoping for the best</figcaption>
+</figure>
 
 When you write tests after the release, you end up
 
@@ -46,7 +43,3 @@ If you want to write quality software that lasts, there is no way you can avoid 
 Testing is a skill, and you need to cultivate it. The more you do it, the better you become at it. And as you get better in TDD, you are likely to produce quality faster.
 
 Start with TDD today. You won’t regret it, I promise.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
