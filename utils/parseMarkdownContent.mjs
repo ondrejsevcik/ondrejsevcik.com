@@ -4,7 +4,6 @@ import remarkFrontmatter from "remark-frontmatter"
 import remarkParseFrontmatter from "remark-parse-frontmatter"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
-import rehypeSanitize from "rehype-sanitize"
 import rehypeStringify from "rehype-stringify"
 
 export function parseMarkdownContent(content) {
@@ -22,8 +21,6 @@ export function parseMarkdownContent(content) {
     })
     // Support HTML embedded inside markdown
     .use(rehypeRaw)
-    // Sanitize HTML
-    .use(rehypeSanitize)
     // Serialize syntax tree to HTML
     .use(rehypeStringify)
     // And finally, process the input
