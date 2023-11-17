@@ -1,13 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-
-export const meta = {
-  title: "6 Rules I Follow to Get Simple and Stable Tests",
-  description:
-    "These rules I always follow no matter what kind of tests I write.",
-  date: "2022-07-31",
-  tags: ["tech"],
-}
+---
+title: "6 Rules I Follow to Get Simple and Stable Tests"
+description: "These rules I always follow no matter what kind of tests I write."
+date: "2022-07-31"
+tags: ["tech"]
+---
 
 It took me several years of trying and failing to figure out what does work when I write tests. Here are 6 rules that I always follow no matter what kind of tests I write.
 
@@ -27,10 +23,9 @@ Test single concept in each unit test. If you follow the AAA pattern, this shoul
 
 Oftentimes, I see tests that cover a lot of different concepts in a single unit test. That’s a code smell. It’s better to split up such a test into multiple tests - each testing its own thing.
 
-<Callout emoji="💡">
-  Rule of thumb - if there is an `act` after your `assert`, you should consider
-  to splitting it out into two separate tests.
-</Callout>
+<aside>
+  <p>Rule of thumb - if there is an `act` after your `assert`, you should consider to splitting it out into two separate tests.</p>
+</aside>
 
 Your tests will be easier to understand, and easier to fix.
 
@@ -62,10 +57,9 @@ it('should be possible to remove all items from cart', () => {
 
 Avoid any `if`, `else`, `switch`, or [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) in your test code.
 
-<Callout emoji="💡">
-  The moment you use any of the control flow statements - you added logic to
-  your test and now you need a **test for your test**.
-</Callout>
+<aside>
+  <p>The moment you use any of the control flow statements - you added logic to your test and now you need a **test for your test**.</p>
+</aside>
 
 This often happens with a parametrized test where you expect slightly different behavior for different inputs, but also with tests where someone wanted to avoid failure for a flaky test.
 
@@ -120,17 +114,12 @@ You can skip testing trivial one-liners, getters, and setters.
 
 With this, you should hit the 80% coverage mark easily.
 
-<Callout emoji="💡">
-  Don’t obsess about code coverage - it only tells you what lines were executed,
-  not if they work as intended. Focus more on writing meaningful tests.
-</Callout>
+<aside>
+  <p>Don’t obsess about code coverage - it only tells you what lines were executed, not if they work as intended. Focus more on writing meaningful tests.</p>
+</aside>
 
 ## That’s it
 
 With these few rules, you can write tests that everybody will understand and it will be a pleasure to work with.
 
 Let me know if you have some other rules that you follow, and why.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
