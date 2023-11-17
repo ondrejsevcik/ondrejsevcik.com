@@ -5,6 +5,7 @@ import remarkParseFrontmatter from "remark-parse-frontmatter"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
 import rehypeStringify from "rehype-stringify"
+import rehypeHighlight from "rehype-highlight"
 
 export function parseMarkdownContent(content) {
   const result = unified()
@@ -21,6 +22,8 @@ export function parseMarkdownContent(content) {
     })
     // Support HTML embedded inside markdown
     .use(rehypeRaw)
+    // Improve code highlighting
+    .use(rehypeHighlight)
     // Serialize syntax tree to HTML
     .use(rehypeStringify)
     // And finally, process the input
