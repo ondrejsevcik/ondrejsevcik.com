@@ -40,10 +40,15 @@ export function parseMarkdownContent(content: string): MarkdownContent {
   const { frontmatter } = result.data
 
   return {
+    // @ts-ignore
     title: frontmatter.title,
+    // @ts-ignore
     description: frontmatter.description,
+    // @ts-ignore
     date: frontmatter.date,
+    // @ts-ignore
     image: frontmatter.image,
+    // @ts-ignore
     html: result.value,
   }
 }
