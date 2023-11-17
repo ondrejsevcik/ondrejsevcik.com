@@ -1,6 +1,7 @@
 ---
 title: "Writing Tests After Release Is a Mistake"
 description: "More often than not, I see developers writing tests after the code is released to production. And that’s a big mistake."
+image: "/blog-images/hoping-for-the-best.png"
 date: "2022-04-26"
 tags: ["tech"]
 ---
