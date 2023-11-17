@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { parseMarkdownContent } from "./parseMarkdownContent.mjs"
+import { parseMarkdownContent } from "./parseMarkdownContent"
 
 const blogDir = path.join(process.cwd(), "app/blog/_content")
 const notesDir = path.join(process.cwd(), "app/notes/_content")
@@ -13,15 +13,15 @@ export function getSortedNotesData() {
   return getSortedData(notesDir)
 }
 
-export function getNoteMarkdown(id) {
+export function getNoteMarkdown(id: string) {
   return getMarkdownData({ id, dir: notesDir })
 }
 
-export function getBlogMarkdown(id) {
+export function getBlogMarkdown(id: string) {
   return getMarkdownData({ id, dir: blogDir })
 }
 
-function getSortedData(dir) {
+function getSortedData(dir: string) {
   const fileNames = fs.readdirSync(dir)
   const allPostsData = fileNames
     .map(fn => fn.replace(/\.md$/, ""))
@@ -30,14 +30,10 @@ function getSortedData(dir) {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-function getMarkdownData({ id, dir }) {
+function getMarkdownData({ id, dir }: { id: string; dir: string }) {
   const fullPath = path.join(dir, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
-  const { frontmatter, html } = parseMarkdownContent(fileContents)
+  const content = parseMarkdownContent(fileContents)
 
-  return {
-    id,
-    ...frontmatter,
-    html,
-  }
+  return { id, ...content }
 }

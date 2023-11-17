@@ -7,7 +7,15 @@ import rehypeRaw from "rehype-raw"
 import rehypeStringify from "rehype-stringify"
 import rehypeHighlight from "rehype-highlight"
 
-export function parseMarkdownContent(content) {
+type MarkdownContent = {
+  title: string
+  description: string
+  date: string
+  image?: string
+  html: string
+}
+
+export function parseMarkdownContent(content: string): MarkdownContent {
   const result = unified()
     // Take Markdown as input and turn it into MD syntax tree
     .use(remarkParse)
@@ -29,8 +37,13 @@ export function parseMarkdownContent(content) {
     // And finally, process the input
     .processSync(content)
 
+  const { frontmatter } = result.data
+
   return {
-    frontmatter: result.data.frontmatter,
+    title: frontmatter.title,
+    description: frontmatter.description,
+    date: frontmatter.date,
+    image: frontmatter.image,
     html: result.value,
   }
 }

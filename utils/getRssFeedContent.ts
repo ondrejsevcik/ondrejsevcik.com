@@ -3,8 +3,8 @@ import { getSortedBlogData } from "./getMarkdown"
 
 const baseUrl = "https://ondrejsevcik.com"
 
-export async function getRssFeedContent() {
-  let posts = await getSortedBlogData()
+export function getRssFeedContent() {
+  let posts = getSortedBlogData()
   posts = posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
@@ -16,6 +16,7 @@ export async function getRssFeedContent() {
     id: baseUrl,
     link: baseUrl,
     language: "en",
+    copyright: "Ondrej Sevcik " + new Date().getFullYear(),
     feedLinks: {
       rss2: `${baseUrl}/rss.xml`,
     },

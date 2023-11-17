@@ -2,8 +2,9 @@ import { groupBy } from "../../utils/group-by"
 import { getSortedBlogData } from "../../utils/getMarkdown"
 import Link from "next/link"
 import styles from "./page.module.css"
+import { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog",
 }
 

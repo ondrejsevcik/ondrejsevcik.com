@@ -1,6 +1,13 @@
 import styles from "./pop-link.module.css"
 
-export function PopLink({ icon, label, href, rel }) {
+type PopLinkProps = {
+  icon: React.ReactNode
+  label: string
+  href: string
+  rel?: string
+}
+
+export function PopLink({ icon, label, href, rel }: PopLinkProps) {
   return (
     <a className={styles.link} aria-label={label} href={href} rel={rel}>
       <span className={styles.linkBg} aria-hidden="true"></span>

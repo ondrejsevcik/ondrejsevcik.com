@@ -1,8 +1,9 @@
 import styles from "./page.module.css"
 import { getBlogMarkdown } from "../../../utils/getMarkdown"
 import { formatDate } from "../../../utils/format-date"
+import { Metadata } from "next"
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }): Promise<Metadata> {
   const { title, description, date, image } = getBlogMarkdown(params.id)
 
   return {

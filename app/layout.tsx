@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link"
 import Script from "next/script"
 import styles from "./layout.module.css"
+import type { Metadata } from "next"
 
 import "../styles/tailwind-base.css"
 import "../styles/global.css"
@@ -13,7 +14,7 @@ const items = [
   { href: "/notes", title: "Notes" },
 ]
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "Ondrej Sevcik",
     template: "%s | Ondrej Sevcik",
@@ -30,7 +31,11 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={styles.layout}>
