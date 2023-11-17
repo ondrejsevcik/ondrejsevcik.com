@@ -36,7 +36,7 @@ export default function BlogPostPage({ params }) {
         className={styles.blogPostContent}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <footer className={styles.blogPostAside}>
+      <footer className={styles.footer}>
         Liked the post? Have concerns? Reply via{" "}
         <a
           href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
