@@ -1,14 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-import fourThousandWeeksImg from "./four-thousand-weeks.jpg"
-
-export const meta = {
-  title: "Book Notes - Four Thousand Weeks",
-  description: "Notes from the book - Four thousand weeks.",
-  image: fourThousandWeeksImg.src,
-  date: "2022-12-11",
-  tags: ["tech"],
-}
+---
+title: "Book Notes - Four Thousand Weeks"
+description: "Notes from the book - Four thousand weeks."
+image: "blog-images/four-thousand-weeks/jpg"
+date: "2022-12-11"
+tags: ["tech"]
+---
 
 There are two simple ideas in the book:
 
@@ -66,7 +62,3 @@ Act on your generous impulse right away. Don't wait until later when you can "do
 ### 10. Practice doing nothing
 
 Make better choices with your time.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
