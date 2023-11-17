@@ -158,6 +158,11 @@
   margin-bottom: 2rem;
 }
 
+.blogPostContent aside[data-warning] {
+  border-color: rgba(252, 214, 100, 1);
+  background-color: rgba(254, 241, 203, 1);
+}
+
 .blogPostContent aside::before {
   content: "💡";
 }

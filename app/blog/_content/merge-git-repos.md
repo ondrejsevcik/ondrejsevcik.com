@@ -1,17 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import WarningBox from "../../../components/blog/warning-box"
-import InfoBox from "../../../components/blog/info-box"
-import Figure from "../../../components/blog/figure"
-import gitFoldersBeforeAfterImg from "./git-folders-before-after.png"
-import gitHistoryBeforeAfterMergeImg from "./git-history-before-after-merge.png"
-
-export const meta = {
-  title: "How to Merge Git Repository Into Monorepo",
-  description:
-    "Step-by-step tutorial on how to merge one repository into another one while keeping all its history.",
-  date: "2019-08-23",
-  tags: ["tech"],
-}
+---
+title: "How to Merge Git Repository Into Monorepo"
+description: "Step-by-step tutorial on how to merge one repository into another one while keeping all its history."
+date: "2019-08-23"
+tags: ["tech"]
+---
 
 Merging two unrelated git repositories into one might look like an ambitious task, but once you understand what's happening, you will find out it's pretty simple.
 
@@ -21,22 +13,21 @@ In this article, we will merge a git repository into monorepo. The example is de
 
 We start with two git repositories (monorepo and packageC) and end up with just monorepo, that will contain git history and all files from packageC.
 
-<WarningBox>
-  <strong>Beware</strong> - This technique doesn't allow you to merge tags from{" "}
-  <code>packageC</code>.
-</WarningBox>
+<aside data-warning>
+  <p><strong>Beware</strong> - This technique doesn't allow you to merge tags from <code>packageC</code>.</p>
+</aside>
 
-<Figure
-  src={gitFoldersBeforeAfterImg}
-  alt="Folder structure before and after merge"
->
-  Folder structure before and after merge
-</Figure>
+<figure>
+  <img
+    src="/blog-images/git-folders-before-after.png"
+    alt="Folder structure before and after merge"
+  />
+  <figcaption>Folder structure before and after merge</figcaption>
+</figure>
 
-<InfoBox>
-  If you don't want to keep history, it's way simpler to just copy files to the
-  new repository and make a commit (KISS).
-</InfoBox>
+<aside>
+  <p>If you don't want to keep history, it's way simpler to just copy files to the new repository and make a commit (KISS).</p>
+</aside>
 
 ## Step by step
 
@@ -64,11 +55,9 @@ git filter-branch --prune-empty --tree-filter '
 
 Since now, the history will be rewritten as if all files were always located in `packages/packageC` folder.
 
-<InfoBox>
-  With <code>git filter-branch</code> you can also extract package out of
-  monorepo back into a single repository, but that's a topic for another
-  article.
-</InfoBox>
+<aside>
+  <p>With <code>git filter-branch</code> you can also extract package out of monorepo back into a single repository, but that's a topic for another article.</p>
+</aside>
 
 ### 3. Merge into monorepo
 
@@ -78,13 +67,14 @@ By default, git won't allow you to merge branch that doesn't have a common ances
 
 Git repository is always created with an initial commit, but in this case, we don't have any. Our monorepo and packageC were created separately and thus have separate initial commits. To fix this, git will pretend that there was an empty initial commit that's common for those unrelated histories. You can read more about it in the [official documentation](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories).
 
-<Figure
-  src={gitHistoryBeforeAfterMergeImg}
-  alt="Git history before and after merge"
-  maxWidth="24rem"
->
-  Git history before and after merge
-</Figure>
+<figure>
+  <img
+    src="/blog-images/git-history-before-after-merge.png"
+    alt="Git history before and after merge"
+    style="max-width:24rem"
+  >
+  <figcaption>Git history before and after merge</figcaption>
+</figure>
 
 ```bash
 # Add remote in your monorepo to packageC
@@ -104,7 +94,3 @@ git remote remove packageC
 ### 4. Clean up
 
 After a successful merge, it's time for cleanup. Remove duplicate config files (`.editorconfig`, `.eslint`, ...), delete old repository and fix your CI build.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
