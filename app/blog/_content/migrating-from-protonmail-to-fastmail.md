@@ -1,16 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import maskedEmailImg from "./masked-email.png"
-import exportEmailImg from "./export-email.png"
-
-export const meta = {
-  title: "Why and How I Migrated From ProtonMail to Fastmail",
-  description:
-    "I’m a long-time fan of ProtonMail. That’s why I had a hard time deciding whether I want to leave them or not.",
-  image: exportEmailImg.src,
-  date: "2022-01-29",
-  tags: ["tech"],
-}
+---
+title: "Why and How I Migrated From ProtonMail to Fastmail"
+description: "I’m a long-time fan of ProtonMail. That’s why I had a hard time deciding whether I want to leave them or not."
+image: "/blog-images/export-email.png"
+date: "2022-01-29"
+tags: ["tech"]
+---
 
 I’m a long-time fan of ProtonMail. Their mission is something that resonates with me. That’s why I had a hard time deciding whether I want to leave them or not.
 
@@ -32,13 +26,14 @@ After searching for some while, I’ve stumbled over Fastmail. The reviews were 
 
 One feature that I’m particularly enjoying is [Masked email](https://www.fastmail.com/1password/). I didn't realize this until I've started using it. But being able to create an email alias exactly when you need it is great. More privacy and less tracking across the web.
 
-<Figure
-  src={maskedEmailImg}
-  alt="Masked email integration with 1Password"
-  maxWidth="450px"
->
-  Masked email integration with 1Password
-</Figure>
+<figure>
+  <img
+    src="/blog-images/masked-email.png"
+    alt="Masked email integration with 1Password"
+    style="max-width:450px"
+  />
+  <figcaption>Masked email integration with 1Password</figcaption>
+</figure>
 
 ## Migration
 
@@ -46,13 +41,14 @@ Moving Contacts and Calendar was easy as downloading a file ([.ics](https://en.w
 
 Since ProtonMail is zero-knowledge, it’s not possible to use the usual IMAP import to move your data directly between different mail providers. I had to download all my mails with an export tool to the `.mbox` package.
 
-<Figure
-  src={exportEmailImg}
-  alt="Export email tool from ProtonMail"
-  maxWidth="450px"
->
-  Export email tool from ProtonMail
-</Figure>
+<figure>
+  <img
+    src="/blog-images/export-email.png"
+    alt="Export email tool from ProtonMail"
+    style="max-width:450px"
+  />
+  <figcaption>Export email tool from ProtonMail</figcaption>
+</figure>
 
 But even after that, the trouble didn’t end. Fastmail doesn’t support uploading the `.mbox` file. I used Apple Mail to import my emails from `.mbox` first and then connected it with my Fastmail account and drag&dropped my local mails to Fastmail inbox. A bit more work than expected.
 
@@ -65,7 +61,3 @@ I still support ProtonMail in their mission and I will still pay for their VPN. 
 Fastmail turned out to be a perfect alternative. Their service simply works and I like their commitment to privacy and community.
 
 Maybe one day, I will migrate back, maybe not. Ultimately I’m glad that I have my own domain and can switch between different providers in a few hours. Those 12$/year for a domain are worth the freedom. You simply switch where it makes the most sense for you.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
