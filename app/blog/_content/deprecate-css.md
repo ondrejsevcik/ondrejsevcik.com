@@ -1,15 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import deprecatedCssExampleImg from "./deprecated-css-example.png"
-
-export const meta = {
-  title: "Make Your Deprecated CSS Stand Out",
-  description:
-    "Make your deprecated CSS visible in your UI so that every developer can easily spot it.",
-  image: deprecatedCssExampleImg.src,
-  date: "2019-02-18",
-  tags: ["tech"],
-}
+---
+title: "Make Your Deprecated CSS Stand Out"
+description: "Make your deprecated CSS visible in your UI so that every developer can easily spot it."
+image: "/blog-images/deprecated-css-example.png"
+date: "2019-02-18"
+tags: ["tech"]
+---
 
 Refactoring CSS is difficult. Due to its bazillion selectors and unlimited combinations, it can get pretty nasty.
 
@@ -17,13 +12,13 @@ If you’re working in a team with a large codebase, you rarely have a chance to
 
 The idea is very simple - make your deprecated CSS stand out and every time you see it in the UI, you have a unique chance to get rid of it. Of course, this should apply only to the development environment.
 
-<Figure
-  src={deprecatedCssExampleImg}
-  alt="Example of deprecated .align-center class on GitHub homepage"
->
-  Example of deprecated <code>.align-center</code> class on GitHub with a
-  deprecation message.
-</Figure>
+<figure>
+  <img
+    src="/blog-images/deprecated-css-example.png"
+    alt="Example of deprecated .align-center class on GitHub homepage"
+  />
+  <figcaption>Example of deprecated <code>.align-center</code> class on GitHub with a deprecation message.</figcaption>
+</figure>
 
 This has several benefits:
 
@@ -76,7 +71,7 @@ module.exports = {
 
     let sassEnvironmentFile = writeFile(
       "/app/styles/_environment-variable.scss",
-      `$environment: "${env}"`
+      `$environment: "${env}"`,
     )
 
     return merge([sassEnvironmentFile, tree])
@@ -94,7 +89,3 @@ And then just include this file in your app or addon SASS file
 That's it! Now go and refactor some of your old CSS.
 
 Big thanks to [Francesco](https://fnovy.com/) for helping with Ember setup.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
