@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { PopLink } from "../components/pop-link"
+import { PopLink } from "./components/pop-link"
 import {
   GithubIcon,
   LinkedInIcon,
@@ -7,7 +7,7 @@ import {
   MastodonIcon,
   RssFeedIcon,
   TwitterIcon,
-} from "../components/icons"
+} from "./components/icons"
 import styles from "./page.module.css"
 
 let socialLinks = [
