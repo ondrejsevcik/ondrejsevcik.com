@@ -1,17 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-import Figure from "../../../components/blog/figure"
-import styledComponentsTestImg from "./styled-components-test.png"
-
-export const meta = {
-  title:
-    "Improving the performance of styled components with native CSS features",
-  description:
-    "Can we improve performance of styled components by using some of the native CSS features? I've decided to test it out",
-  image: styledComponentsTestImg.src,
-  date: "2023-01-27",
-  tags: ["tech"],
-}
+---
+title: "Improving the performance of styled components with native CSS features"
+description: "Can we improve performance of styled components by using some of the native CSS features? I've decided to test it out"
+image: "/blog-images/styled-components-test.png"
+date: "2023-01-27"
+tags: ["tech"]
+---
 
 Styled components are slow. But can we improve its performance by using some of the native CSS features? I've decided to test it out.
 
@@ -98,17 +91,18 @@ In this [simple demo](https://codesandbox.io/s/styled-components-perf-test-cond
 
 It turns out that using `data-attributes` is indeed a little bit faster than using dynamic props on styled-components. Not surprisingly the fastest was using CSS class names.
 
-<Figure
-  src={styledComponentsTestImg}
-  alt="React Profiller results "
-  maxWidth="300px"
->
-  React Profiller results
-</Figure>
+<figure>
+  <img
+    src="/blog-images/styled-components-test.png"
+    alt="React Profiller results "
+    style="max-width:300px"
+  />
+  <figcaption>React Profiller results</figcaption>
+</figure>
 
-<Callout emoji="⚠️">
-  This was very basic performance test. Take the results with a grain of salt.
-</Callout>
+<aside>
+  <p>This was very basic performance test. Take the results with a grain of salt.</p>
+</aside>
 
 ---
 
@@ -117,7 +111,3 @@ Using native CSS features can indeed improve the performance of styled-component
 But using CSS in JS is still controversial. It improves DX while hurting the user experience.
 
 As long as CSS in JS doesn't improve UX & DX at the same time, it's better to stick with plain old CSS and a some good CSS methodology.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
