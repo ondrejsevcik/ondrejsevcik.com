@@ -1,15 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import suspendedAccountsImg from "./suspended-accounts.jpg"
-
-export const meta = {
-  title: "The Reason Why I Don’t Use Gmail as My Primary Email Anymore",
-  description:
-    "It’s been 2 years since I realized that my whole online presence is built around Google. And I did not like that idea.",
-  image: suspendedAccountsImg.src,
-  date: "2023-03-01",
-  tags: ["tech"],
-}
+---
+title: "The Reason Why I Don’t Use Gmail as My Primary Email Anymore"
+description: "It’s been 2 years since I realized that my whole online presence is built around Google. And I did not like that idea."
+image: "/blog-images/suspended-accounts.jpg"
+date: "2023-03-01"
+tags: ["tech"]
+---
 
 It’s been 2 years since I realized that my whole online presence is built around Google.
 
@@ -25,13 +20,12 @@ Once you get suspended, you basically stop existing online, and you lose access 
 
 I did not like the idea of that. Not having an access to my email and my passwords could be existential.
 
-<Figure src={suspendedAccountsImg} alt="A few of many suspended accounts">
-  There are [many](https://twitter.com/miguelytob/status/1315749803041619981)
-  [stories](https://www.businessinsider.com/google-users-locked-out-after-years-2020-10)
-  [out](https://twitter.com/com/status/1466928315562958850)
-  [there](https://kylepiira.com/2020/01/09/why-i-quit-google/) where people got
-  locked out.
-</Figure>
+<figure>
+  <img src="/blog-images/suspended-accounts.jpg" alt="A few of many suspended accounts" />
+  <figcaption>
+    There are <a href="https://twitter.com/miguelytob/status/1315749803041619981">many</a> <a href="https://www.businessinsider.com/google-users-locked-out-after-years-2020-10">stories</> <a href="https://twitter.com/com/status/1466928315562958850">out</a> <a href="https://kylepiira.com/2020/01/09/why-i-quit-google/">there</a> where people got locked out.
+  </figcaption>
+</figure>
 
 ## Portability is freedom
 
@@ -46,7 +40,3 @@ I still use YouTube and Google Maps. But they are just yet another service I use
 ---
 
 If you’re in the same position as I was 2 years ago, now is the best time to reconsider your online being.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
