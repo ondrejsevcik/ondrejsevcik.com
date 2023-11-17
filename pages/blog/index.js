@@ -3,7 +3,7 @@ import Link from "next/link"
 import { SearchEngineOptimization } from "../../components/seo"
 import { groupBy } from "../../utils/group-by"
 import styles from "./index.module.css"
-import { getAllPostMeta } from "../../utils/api"
+import { getSortedBlogData } from "../../utils/getMarkdown"
 
 export default function Blog({ groupedPosts }) {
   return (
@@ -25,9 +25,9 @@ export default function Blog({ groupedPosts }) {
                     new Date(pB.date).getTime() - new Date(pA.date).getTime(),
                 )
                 .map(post => (
-                  <div className={styles.groupPost} key={post.slug}>
+                  <div className={styles.groupPost} key={post.id}>
                     <Link
-                      href={`/blog/${encodeURIComponent(post.slug)}`}
+                      href={`/blog/${encodeURIComponent(post.id)}`}
                       className={styles.postLink}
                     >
                       {post.title}
@@ -43,7 +43,7 @@ export default function Blog({ groupedPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = await getAllPostMeta()
+  const allPosts = await getSortedBlogData()
   const groupedPosts = Object.entries(
     groupBy(allPosts, post => new Date(post.date).getFullYear().toString()),
   ).reverse()

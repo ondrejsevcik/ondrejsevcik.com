@@ -1,12 +1,12 @@
-import { getAllPostMeta } from "./api"
 import { Feed } from "feed"
+import { getSortedBlogData } from "./getMarkdown"
 
 const baseUrl = "https://ondrejsevcik.com"
 
 export async function getRssFeedContent() {
-  let posts = await getAllPostMeta()
+  let posts = await getSortedBlogData()
   posts = posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
 
   const feed = new Feed({
@@ -25,8 +25,8 @@ export async function getRssFeedContent() {
   })
 
   posts.forEach(post => {
-    const { slug, title, date, description } = post
-    const url = `${baseUrl}/blog/${slug}`
+    const { id, title, date, description } = post
+    const url = `${baseUrl}/blog/${id}`
 
     feed.addItem({
       title,
