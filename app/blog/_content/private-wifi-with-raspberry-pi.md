@@ -1,18 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import InfoBox from "../../../components/blog/info-box"
-import WarningBox from "../../../components/blog/warning-box"
-import nordVpnAccountPageImg from "./nord-vpn-account-page.png"
-import nordVpnConnected from "./nord-vpn-connected.png"
-
-export const meta = {
-  title: "Building Private WiFi Hotspot With RaspberryPi, RaspAP, and VPN",
-  description:
-    "Build your private WiFi hotspot so that your internet provider can't spy on you.",
-  image: nordVpnAccountPageImg.src,
-  date: "2021-04-09",
-  tags: ["tech"],
-}
+---
+title: "Building Private WiFi Hotspot With RaspberryPi, RaspAP, and VPN"
+description: "Build your private WiFi hotspot so that your internet provider can't spy on you."
+image: "/book-images/nord-vpn-account-page.png"
+date: "2021-04-09"
+tags: ["tech"]
+---
 
 Your internet service provider can see every single app and site you use - even if the website is using encrypted `HTTPS` protocol.
 
@@ -28,7 +20,7 @@ You will need **RaspberryPi**, **Lan cable (RJ45)**, and a **NordVPN** account (
 
 ## Setting it up
 
-<InfoBox>I assume that you have some basic Linux skills.</InfoBox>
+<aside><p>I assume that you have some basic Linux skills.</p></aside>
 
 ### Step 1 - Install Raspbian
 
@@ -58,10 +50,9 @@ Go to DHCP Server > Advanced and add `1.1.1.1` as an upstream DNS server. Also, 
 
 After this, test your setup on [DNS leak test](https://dnsleaktest.com/). This website will check if you've configured your DNS correctly. If you see any other DNS than Cloudflare’s, then it is wrong.
 
-<WarningBox>
-  Don't use Firefox for this test. Firefox uses <code>DNS over HTTPS</code>{" "}
-  feature that works different way than classic DNS.
-</WarningBox>
+<aside data-warning>
+  <p>Don't use Firefox for this test. Firefox uses <code>DNS over HTTPS</code> feature that works different way than classic DNS.</p>
+</aside>
 
 ### Step 5 - Enable AdBlocking
 
@@ -73,28 +64,32 @@ The last step is setting up a permanent VPN connection between your RaspberryPi 
 
 You will need an `.ovpn` configuration file. Go to [NordVPN servers](https://nordvpn.com/servers/tools/) website and pick a server of your choice.
 
-<InfoBox>
-  Prefer <code>OpenVPN UDP</code> over <code>OpenVPN TCP</code> option - it is
-  generally faster.
-</InfoBox>
+<aside>
+  <p>Prefer <code>OpenVPN UDP</code> over <code>OpenVPN TCP</code> option - it is generally faster.</p>
+</aside>
 
 After you get your config, go to the `OpenVPN` setting and upload it there. You will also need `Service credentials`. Those, you can get from your NordVPN account page.
 
-<Figure src={nordVpnAccountPageImg} alt="NordVPN account page">
-  NordVPN account page
-</Figure>
+<figure>
+  <img 
+    src="/blog-images/nord-vpn-account-page.png"
+    alt="NordVPN account page" 
+  />
+  <figcaption>NordVPN account page</figcaption>
+</figure>
 
 After this step, you can hit `Save` and start your OpenVPN service.
 
 If you did everything right, you can check [NordVPN.com](https://nordvpn.com) website and see in the top bar if you're connected through them.
 
-<Figure
-  src={nordVpnConnected}
-  alt="NordVPN website status check"
-  maxWidth="400px"
->
-  NordVPN website status check
-</Figure>
+<figure>
+  <img
+    src="/blog-images/nord-vpn-connected.png"
+    alt="NordVPN website status check"
+    style="max-width:400px"
+  />
+  <figcaption>NordVPN website status check</figcaption>
+</figure>
 
 ## Conclusion
 
@@ -103,7 +98,3 @@ Congratulations. If you've made it this far, it means you care about your privac
 I hope this mini-tutorial was helpful to you. Feel free to write me on my [Twitter](https://twitter.com/ondrejsevcik) if you have any questions or comments.
 
 PS: If you find RaspAP useful, consider supporting this project with some $$$ on their [GitHub sponsors page](https://github.com/sponsors/RaspAP).
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
