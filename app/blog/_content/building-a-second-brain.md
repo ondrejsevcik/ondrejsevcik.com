@@ -1,16 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Figure from "../../../components/blog/figure"
-import codeImg from "./code.jpg"
-import progressiveSummarizationImg from "./progressive-summarization.jpg"
-
-export const meta = {
-  title: "Book Notes - Building a Second Brain",
-  description:
-    "I’m an avid notetaker. Taking notes from various sources and then distilling them into something meaningful for me, is how I crystalize my thinking.",
-  image: progressiveSummarizationImg.src,
-  date: "2023-11-13",
-  tags: ["tech"],
-}
+---
+title: "Book Notes - Building a Second Brain"
+description: "I’m an avid notetaker. Taking notes from various sources and then distilling them into something meaningful for me, is how I crystalize my thinking."
+image: "/blog-images/progressive-summarization.jpg"
+date: "2023-11-13"
+tags: ["tech"]
+---
 
 I’m an avid notetaker. Taking notes from various sources and then distilling them into something meaningful for me, is how I crystalize my thinking.
 
@@ -43,12 +37,13 @@ Bit by bit, I end up with a lot of great notes without too much effort at once.
 
 Rewriting notes using your own language is also very useful. It’s known as a Generation Effect - **You’re more likely to remember information you’ve written in your own words**.
 
-<Figure src={codeImg} alt="CODE stages">
-  Each note goes through stages. Capture → Organize → Distill → Express. If
-  you’re not gonna express the note in some way, why are you even capturing it?
-</Figure>
+<figure src={codeImg} alt="CODE stages">
+  <img src="/blog-images/second-brain-code.jpg" alt="CODE stages" />
+  <figcaption>Each note goes through stages. Capture → Organize → Distill → Express. If
+  you’re not gonna express the note in some way, why are you even capturing it?</figcaption>
+</figure>
 
-## **Progressive Summarization**
+## Progressive Summarization
 
 Progressive summarization is a method of condensing information through multiple readings. It is a technique used for managing a large amount of information.
 
@@ -57,19 +52,16 @@ Progressive summarization is a method of condensing information through multiple
 3. **Second Layer**: This time, you highlight the parts of the bolded text that are even more significant. The purpose is to identify the essence of what's valuable in the content.
 4. **Third Layer**: Create a summary in your own words or condense the highlighted and bolded sections into a shorter form.
 
-<Figure
-  src={progressiveSummarizationImg}
-  alt="Progressive summarization example"
->
-  Progressive summarization example
+<figure>
+  <img 
+    src="/blog-images/progressive-summarization.jpg" 
+    alt="Progressive summarization example" 
+  />
+  <figcaption>Progressive summarization example</figcaption>
 </Figure>
 
-## **The perfect system doesn’t exist**
+## The perfect system doesn’t exist
 
 The only way to know whether you’re getting the good stuff is to try putting it to use in real life. Don’t worry about whether you’re capturing “correctly.” **There’s no right way to do this, and therefore, no wrong way**.
 
 **Any system that must be perfect to be reliable is deeply flawed**. You should prefer a system that is imperfect, but that continues to be useful in the real conditions of your life.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
