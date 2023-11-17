@@ -1,11 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "Find and Remove Merged Git Branches",
-  description: "Remove merged branches with one simple git command.",
-  date: "2020-01-18",
-  tags: ["til"],
-}
+---
+title: "Find and Remove Merged Git Branches"
+description: "Remove merged branches with one simple git command."
+date: "2020-01-18"
+tags: ["til"]
+---
 
 Working in multiple repositories with multiple branches and many PRs, it's very easy to lose track of what has been merged. That's why I'm glad I've found this command.
 
@@ -17,7 +15,3 @@ git branch --merged master
 # Just make sure you're on master when you do that.
 git branch --merged master | grep --invert-match '^\*' | xargs -n 1 git branch -d
 ```
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
