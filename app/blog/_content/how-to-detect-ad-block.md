@@ -1,13 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-
-export const meta = {
-  title: "How to Detect AdBlock in Plain JavaScript With a Few Lines of Code",
-  description:
-    "Using analytics tools to measure the impact of your application is part of every website these days. But measuring how many of your users block your analytics is probably even more important. And luckily, it’s not that difficult to figure it out.",
-  date: "2022-09-05",
-  tags: ["tech"],
-}
+---
+title: "How to Detect AdBlock in Plain JavaScript With a Few Lines of Code"
+description: "Using analytics tools to measure the impact of your application is part of every website these days. But measuring how many of your users block your analytics is probably even more important. And luckily, it’s not that difficult to figure it out."
+date: "2022-09-05"
+tags: ["tech"]
+---
 
 Using analytics tools to measure the impact is part of every website these days.
 
@@ -40,13 +36,8 @@ In practice:
 
 The way most AdBlocks work these days is that they target specific CSS classes (like `class="ad-box"`) and apply `display: none` on it. That way, the Ad disappears in your browser.
 
-<Callout emoji="💡">
-  Always double-check that you don’t break the experience for users that do not
-  use AdBlock.
-</Callout>
+<aside>
+  <p>Always double-check that you don’t break the experience for users that do not use AdBlock.</p>
+</aside>
 
 You can see all the CSS classes that are used for blocking in [EasyList blocklist](https://easylist.to/easylist/easylist.txt).
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
