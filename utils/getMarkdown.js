@@ -1,7 +1,6 @@
 import fs from "fs"
 import path from "path"
-import matter from "gray-matter"
-import { micromark } from "micromark"
+import { parseMarkdownContent } from "./parseMarkdownContent.mjs"
 
 const blogDir = path.join(process.cwd(), "app/blog/_content")
 const notesDir = path.join(process.cwd(), "app/notes/_content")
@@ -34,11 +33,11 @@ function getSortedData(dir) {
 function getMarkdownData({ id, dir }) {
   const fullPath = path.join(dir, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
-  const matterResult = matter(fileContents)
+  const { frontmatter, html } = parseMarkdownContent(fileContents)
 
   return {
     id,
-    ...matterResult.data,
-    html: micromark(matterResult.content),
+    ...frontmatter,
+    html,
   }
 }

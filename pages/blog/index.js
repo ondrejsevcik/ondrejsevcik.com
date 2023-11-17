@@ -22,7 +22,7 @@ export default function Blog({ groupedPosts }) {
               {posts
                 .sort(
                   (pA, pB) =>
-                    new Date(pB.date).getTime() - new Date(pA.date).getTime()
+                    new Date(pB.date).getTime() - new Date(pA.date).getTime(),
                 )
                 .map(post => (
                   <div className={styles.groupPost} key={post.slug}>
@@ -45,7 +45,7 @@ export default function Blog({ groupedPosts }) {
 export async function getStaticProps() {
   const allPosts = await getAllPostMeta()
   const groupedPosts = Object.entries(
-    groupBy(allPosts, post => new Date(post.date).getFullYear().toString())
+    groupBy(allPosts, post => new Date(post.date).getFullYear().toString()),
   ).reverse()
 
   return { props: { groupedPosts } }

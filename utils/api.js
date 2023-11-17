@@ -13,8 +13,8 @@ export async function getAllPostMeta() {
       import(`../pages/blog/${slug}/index.mdx`).then(({ meta }) => ({
         ...meta,
         slug,
-      }))
-    )
+      })),
+    ),
   )
 
   const newPosts = getSortedBlogData().map(post => ({
