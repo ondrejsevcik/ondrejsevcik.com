@@ -1,15 +1,10 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-import extremeProgrammingCoverImg from "./extreme-programming-cover.jpg"
-
-export const meta = {
-  title: "Book Notes - Extreme Programming Explained (2nd Edition)",
-  description:
-    "XP term has been thrown around for some time and I finally got my hands on this book. Here are my notes and thoughts on the topic.",
-  image: extremeProgrammingCoverImg.src,
-  date: "2022-10-23",
-  tags: ["tech"],
-}
+---
+title: "Book Notes - Extreme Programming Explained (2nd Edition)"
+description: "XP term has been thrown around for some time and I finally got my hands on this book. Here are my notes and thoughts on the topic."
+image: "/blog-images/extreme-programming-cover.jpg"
+date: "2022-10-23"
+tags: ["tech"]
+---
 
 The main idea of [Extreme Programming](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change-ebook-dp-B00N1ZN6C0/dp/B00N1ZN6C0) is that you should not try to predict things and plan everything in detail, but rather use a methodology that embraces changes.
 
@@ -72,7 +67,3 @@ Even though the ideas from the book are probably not applicable to every situati
 - Start the week by writing automated tests that will run when the stories are completed. Then spend the rest of the week completing the stories and getting the tests to pass.
 - Write a failing automated test before changing any code.
 - Beta testing is a symptom of weak testing practices and poor communication with customers.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
