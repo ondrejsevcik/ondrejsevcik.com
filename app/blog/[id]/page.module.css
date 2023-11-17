@@ -146,6 +146,22 @@
   border-radius: 4px;
 }
 
+.blogPostContent aside {
+  background-color: var(--blue-100);
+  padding: 1rem;
+  border-radius: 4px;
+  color: var(--gray-700);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blogPostContent aside::before {
+  content: "💡";
+}
+
 @media (min-width: 768px) {
   .blogPostContent pre {
     margin-left: -1rem;

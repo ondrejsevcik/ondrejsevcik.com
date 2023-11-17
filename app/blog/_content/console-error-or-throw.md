@@ -1,12 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-import Callout from "../../../components/blog/callout"
-
-export const meta = {
-  title: "Console.error or Throw New Error?",
-  description: "How do I decide whether to use console.error or throw.",
-  date: "2021-11-21",
-  tags: ["tech"],
-}
+---
+title: "Console.error or Throw New Error?"
+description: "How do I decide whether to use console.error or throw."
+date: "2021-11-21"
+tags: ["tech"]
+---
 
 Recently, I was involved in a discussion about error handling. We couldn't agree on proper usage of `console.error` and when to use `throw`. So I've decided to write a short post on how I see it.
 
@@ -22,9 +19,9 @@ Use `console.error` (or `console.assert`) to make assertions to prevent impossib
 
 Anytime you have corrupted data or an impossible state - throw!
 
-<Callout emoji="💡">
-  Dead program can do less harm than a program with corrupted data.
-</Callout>
+<aside>
+  <p>Dead program can do less harm than a program with corrupted data.</p>
+</aside>
 
 Consider following scenario
 
@@ -62,7 +59,3 @@ I find this error handling most straightforward. It makes it obvious what functi
 Don't use `console.error` for real error handling. Use `throw new Error()` when you can't satisfy your business needs. And **treat all errors equally, no matter where they come from**. It will make your life easier.
 
 PS: Warning is just a future error.
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
