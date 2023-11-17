@@ -1,12 +1,9 @@
-import BlogPostLayout from "../../../components/blog-post-layout"
-
-export const meta = {
-  title: "Find Most Changed Files in Git Repository",
-  description:
-    "With this command, you can list the most changed files in your repository over time.",
-  date: "2020-03-07",
-  tags: ["til"],
-}
+---
+title: "Find Most Changed Files in Git Repository"
+description: "With this command, you can list the most changed files in your repository over time."
+date: "2020-03-07"
+tags: ["til"]
+---
 
 Somewhere I've read that the files you change most often are most likely the ones that are doing too much and should be refactored into smaller ones.
 
@@ -24,7 +21,3 @@ You can also throw in `grep` to narrow down the results for a specific filetype 
 # Only JavaScript files (.js extension)
 git log --name-only --since="last year" --pretty=format: | grep .js$ | sort | uniq -c | sort -rg | head -100
 ```
-
-export default ({ children }) => (
-  <BlogPostLayout meta={meta}>{children}</BlogPostLayout>
-)
