@@ -55,7 +55,9 @@ export default function HomePage() {
         height={250}
       />
       <div className={styles.content}>
-        <div className={styles.headerName}>Hi, I&apos;m Ondrej 👋🏼</div>
+        <div className={styles.headerName}>
+          Hi, I&apos;m Ondrej <span className={styles.hand}>👋🏼</span>
+        </div>
         <p className={styles.paragraphSmallMargin}>
           Frontend Developer, runner, minimalist, and occasional writer.
         </p>
