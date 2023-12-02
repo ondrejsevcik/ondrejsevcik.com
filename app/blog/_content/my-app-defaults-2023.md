@@ -30,7 +30,7 @@ It will be fun to see how this list evolves over the years.
 - 🎵 Music: Youtube Music
 - 🎤 Podcasts: Apple Podcasts (iOS only) + Patreon for paid ones
 
-And here are a few extras that are part of the “official” template.
+And here are a few extras that are not part of the “official” template.
 
 - 🔐 Password Management: 1Password Family
 - 👾 Code Editor: IntelliJ (Work) and VS Code (Personal)
