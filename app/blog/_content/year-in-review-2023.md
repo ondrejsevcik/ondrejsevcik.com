@@ -34,14 +34,14 @@ I read a little bit less than I usually do in a year. I also dropped more books 
 
 Books that I finished
 
-1. Sport je bolest (Sport is Pain)
-2. Debugging CSS
-3. Průvodce pro pasivní investování (Passive investment guide)
-4. Staff Engineers Path
-5. Building a Second Brain (my notes [here](https://ondrejsevcik.com/blog/building-a-second-brain))
-6. Spare (By Prince Harry)
-7. Klima je příležitost (Climate is an opportunity)
-8. Ekonomické bubliny (Economic bubbles)
+1. [Sport je bolest](https://www.melvil.cz/kniha-sport-je-bolest/) (Sport is Pain)
+2. [Debugging CSS](https://debuggingcss.com/)
+3. [Průvodce pro pasivní investování](https://rozbiteprasatko.cz/produkt/pruvodce-pro-pasivni-investovani/) (Passive investment guide)
+4. [Staff Engineers Path](https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/)
+5. [Building a Second Brain](https://www.buildingasecondbrain.com/book) (my notes [here](https://ondrejsevcik.com/blog/building-a-second-brain))
+6. [Spare](https://en.wikipedia.org/wiki/Spare_(memoir)) (By Prince Harry)
+7. [Klima je příležitost](https://klimajeprilezitost.cz/) (Climate is an opportunity)
+8. [Ekonomické bubliny](https://www.grada.cz/ekonomicke-bubliny-10522/) (Economic bubbles)
 
 ## Listening
 
