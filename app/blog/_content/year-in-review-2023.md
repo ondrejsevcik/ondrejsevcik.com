@@ -1,7 +1,7 @@
 ---
 title: "Year in Review 2023"
 description: "I did start 2023 with no plans. This was intentional. I usually make big plans at the beginning of the year and then try to fulfill..."
-image: "/blog-images/commits-in-2023.png"
+image: "/blog-images/commits-in-2023.jpg"
 date: "2024-01-18"
 tags: ["tech"]
 ---
@@ -63,7 +63,7 @@ This year was intense. **The AI managed to put everything upside down**. Lokalis
 
 <figure>
   <img 
-    src="/blog-images/commits-in-2023.png"
+    src="/blog-images/commits-in-2023.jpg"
     alt="GitHub commits activity chart for 2023"
   />
   <figcaption>GitHub commits activity chart for 2023</figcaption>
