@@ -1,17 +1,23 @@
-import { groupBy } from "../../utils/group-by"
-import { getSortedBlogData } from "../../utils/getMarkdown"
-import Link from "next/link"
-import styles from "./page.module.css"
-import { Metadata } from "next"
+import { json } from "@remix-run/node"
+import { groupBy } from "../../../utils/group-by"
+import { Link, useLoaderData } from "@remix-run/react"
+import styles from "./route.module.css"
+import type { MetaFunction } from "@remix-run/node"
+import { getBlogPosts } from "./getBlogPosts.server"
 
-export const metadata: Metadata = {
-  title: "Blog",
+export const meta: MetaFunction = () => {
+  return [{ title: `Blog | Ondrej Sevcik` }]
+}
+
+export const loader = async () => {
+  const blogPosts = await getBlogPosts()
+  return json({ blogPosts })
 }
 
 export default function BlogPage() {
-  const allPosts = getSortedBlogData()
+  const { blogPosts } = useLoaderData()
   const groupedPosts = Object.entries(
-    groupBy(allPosts, post => new Date(post.date).getFullYear().toString()),
+    groupBy(blogPosts, post => new Date(post.date).getFullYear().toString()),
   ).reverse()
 
   return (
@@ -34,7 +40,7 @@ export default function BlogPage() {
               .map(post => (
                 <div className={styles.groupPost} key={post.id}>
                   <Link
-                    href={`/blog/${encodeURIComponent(post.id)}`}
+                    to={`/blog/${encodeURIComponent(post.id)}`}
                     className={styles.postLink}
                   >
                     {post.title}
