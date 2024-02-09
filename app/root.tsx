@@ -10,19 +10,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react"
 
-import "./styles/tailwind-base.css"
-import "./styles/global.css"
-import "./styles/highlight-js.css"
+import "~/styles/tailwind-base.css"
+import "~/styles/global.css"
+import "~/styles/highlight-js.css"
+
 import styles from "./root.module.css"
 
 export const links: LinksFunction = () => [
-  [
-    ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-    // { rel: "stylesheet", href: tailwindStyles },
-    // { rel: "stylesheet", href: globalStyles },
-    // { rel: "stylesheet", href: highlightStyles },
-    // { rel: "stylesheet", href: rootStyles },
-  ],
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ]
 
 export const meta: MetaFunction = () => {
