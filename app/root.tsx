@@ -51,7 +51,7 @@ export default function App() {
       <body className={styles.layout}>
         <nav className={styles.nav}>
           {items.map(({ href, title }) => (
-            <Link key={href} href={href} className={styles.navLink}>
+            <Link key={href} to={href} className={styles.navLink}>
               {title}
             </Link>
           ))}
