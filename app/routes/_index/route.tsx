@@ -1,5 +1,4 @@
-import Image from "next/image"
-import { PopLink } from "./components/pop-link"
+import { PopLink } from "./pop-link"
 import {
   GithubIcon,
   LinkedInIcon,
@@ -7,8 +6,8 @@ import {
   MastodonIcon,
   RssFeedIcon,
   TwitterIcon,
-} from "./components/icons"
-import styles from "./page.module.css"
+} from "./icons"
+import styles from "./route.module.css"
 
 let socialLinks = [
   {
@@ -47,7 +46,7 @@ let socialLinks = [
 export default function HomePage() {
   return (
     <div className={styles.contentWrapper}>
-      <Image
+      <img
         className={styles.profileImg}
         alt="Profile portrait"
         src="/images/profile-picture.jpg"
