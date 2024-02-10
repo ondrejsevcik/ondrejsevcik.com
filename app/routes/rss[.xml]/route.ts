@@ -1,6 +1,7 @@
-import { getRssFeedContent } from "../../../utils/getRssFeedContent"
+import { getRssFeedContent } from "./getRssFeedContent"
+import type { LoaderFunctionArgs } from "@remix-run/node" // or cloudflare/deno
 
-export async function GET(request: Request) {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
   const feedContent = await getRssFeedContent()
   const headers = new Headers(request.headers)
   headers.set("Content-Type", "text/xml")

@@ -1,5 +1,5 @@
 import { Feed } from "feed"
-import { getSortedBlogData } from "./getMarkdown"
+import { getSortedBlogData } from "../../../utils/getMarkdown"
 
 const baseUrl = "https://ondrejsevcik.com"
 
