@@ -58,13 +58,12 @@ export default function App() {
           &copy; {new Date().getFullYear()} Ondrej Sevcik
         </footer>
 
-        {/* // TODO enable logging */}
-        {/* <Script
+        <script
           defer
           data-domain="ondrejsevcik.com"
           data-api="/hello/api/event"
           src="/hello/js/script.js"
-        /> */}
+        />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
