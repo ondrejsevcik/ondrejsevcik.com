@@ -6,7 +6,15 @@ import { getBlogPost } from "./getBlogPost.server"
 
 export const loader = async ({ params }) => {
   const blogPost = await getBlogPost(params.id)
-  return json({ blogPost })
+  return json(
+    { blogPost },
+    {
+      headers: {
+        // Cache for a day
+        "Cache-Control": "public, max-age=86400",
+      },
+    },
+  )
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
