@@ -18,7 +18,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { property: "og:description", content: data.blogPost.description },
     { property: "og:images", content: data.blogPost.image },
     { property: "og:type", content: "article" },
-    { property: "og:type", content: "publishedTime" },
     { property: "article:author", content: "Ondrej Sevcik" },
     {
       property: "article:published_time",
