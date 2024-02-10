@@ -1,4 +1,5 @@
-import { json } from "@remix-run/node"
+import { json } from "@vercel/remix"
+import type { MetaFunction, HeadersFunction } from "@vercel/remix"
 import styles from "./route.module.css"
 import { formatDate } from "../../../utils/formatDate"
 import { useLoaderData } from "@remix-run/react"
@@ -16,6 +17,10 @@ export const loader = async ({ params }) => {
     },
   )
 }
+
+export const headers: HeadersFunction = ({ loaderHeaders }) => ({
+  "cache-control": loaderHeaders.get("cache-control") ?? "",
+})
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   const title = `${data.blogPost.title} | Ondrej Sevcik`
@@ -35,10 +40,9 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 }
 
 export default function BlogPostPage() {
-  const { blogPost } = useLoaderData()
-  let { title, date: dateString, html } = blogPost
-
-  let date = new Date(dateString)
+  const { blogPost } = useLoaderData<typeof loader>()
+  const { title, date: dateString, html } = blogPost
+  const date = new Date(dateString)
 
   return (
     <section className={styles.blogPostWrapper}>

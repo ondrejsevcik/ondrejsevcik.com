@@ -1,5 +1,5 @@
 import { getRssFeedContent } from "./getRssFeedContent"
-import type { LoaderFunctionArgs } from "@remix-run/node" // or cloudflare/deno
+import type { LoaderFunctionArgs } from "@vercel/remix" // or cloudflare/deno
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const feedContent = await getRssFeedContent()

@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node"
+import { json } from "@vercel/remix"
 import { useLoaderData } from "@remix-run/react"
 import styles from "./route.module.css"
 import { getNote } from "./getNote.server"

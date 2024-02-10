@@ -1,5 +1,5 @@
 import { cssBundleHref } from "@remix-run/css-bundle"
-import type { LinksFunction, MetaFunction } from "@remix-run/node"
+import type { LinksFunction, MetaFunction } from "@vercel/remix"
 import {
   Link,
   Links,

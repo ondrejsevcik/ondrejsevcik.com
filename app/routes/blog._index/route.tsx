@@ -1,8 +1,8 @@
-import { json } from "@remix-run/node"
+import { json } from "@vercel/remix"
+import type { MetaFunction, HeadersFunction } from "@vercel/remix"
 import { groupBy } from "../../../utils/group-by"
 import { Link, useLoaderData } from "@remix-run/react"
 import styles from "./route.module.css"
-import type { MetaFunction, HeadersFunction } from "@remix-run/node"
 import { getBlogPosts } from "./getBlogPosts.server"
 
 export const meta: MetaFunction = () => {

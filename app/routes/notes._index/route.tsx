@@ -1,7 +1,7 @@
+import { json } from "@vercel/remix"
+import type { MetaFunction } from "@vercel/remix"
 import { Link, useLoaderData } from "@remix-run/react"
-import { json } from "@remix-run/node"
 import styles from "./route.module.css"
-import type { MetaFunction } from "@remix-run/node"
 import { getNotes } from "./getNotes.server"
 
 export const meta: MetaFunction = () => {
