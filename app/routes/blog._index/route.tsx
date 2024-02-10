@@ -11,7 +11,15 @@ export const meta: MetaFunction = () => {
 
 export const loader = async () => {
   const blogPosts = await getBlogPosts()
-  return json({ blogPosts })
+  return json(
+    { blogPosts },
+    {
+      headers: {
+        // Cache for a day
+        "cache-control": "public, max-age=86400",
+      },
+    },
+  )
 }
 
 export default function BlogPage() {

@@ -11,7 +11,7 @@ export const loader = async ({ params }) => {
     {
       headers: {
         // Cache for a day
-        "Cache-Control": "public, max-age=86400",
+        "cache-control": "public, max-age=86400",
       },
     },
   )
