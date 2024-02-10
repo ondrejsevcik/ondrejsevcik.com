@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import { parseMarkdownContent } from "./parseMarkdownContent"
 
-const blogDir = path.join(process.cwd(), "app/blog/_content")
+const blogDir = path.join(process.cwd(), "_blog-content")
 const notesDir = path.join(process.cwd(), "app/notes/_content")
 
 export function getSortedBlogData() {
