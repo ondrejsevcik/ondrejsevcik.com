@@ -3,7 +3,7 @@ import path from "path"
 import { parseMarkdownContent } from "./parseMarkdownContent"
 
 const blogDir = path.join(process.cwd(), "_blog-content")
-const notesDir = path.join(process.cwd(), "app/notes/_content")
+const notesDir = path.join(process.cwd(), "_notes-content")
 
 export function getSortedBlogData() {
   return getSortedData(blogDir)
