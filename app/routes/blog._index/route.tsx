@@ -2,7 +2,7 @@ import { json } from "@remix-run/node"
 import { groupBy } from "../../../utils/group-by"
 import { Link, useLoaderData } from "@remix-run/react"
 import styles from "./route.module.css"
-import type { MetaFunction } from "@remix-run/node"
+import type { MetaFunction, HeadersFunction } from "@remix-run/node"
 import { getBlogPosts } from "./getBlogPosts.server"
 
 export const meta: MetaFunction = () => {
@@ -22,8 +22,12 @@ export const loader = async () => {
   )
 }
 
+export const headers: HeadersFunction = ({ loaderHeaders }) => ({
+  "cache-control": loaderHeaders.get("cache-control") ?? "",
+})
+
 export default function BlogPage() {
-  const { blogPosts } = useLoaderData()
+  const { blogPosts } = useLoaderData<typeof loader>()
   const groupedPosts = Object.entries(
     groupBy(blogPosts, post => new Date(post.date).getFullYear().toString()),
   ).reverse()
