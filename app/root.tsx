@@ -21,7 +21,10 @@ export const links: LinksFunction = () => [
 ]
 
 export const meta: MetaFunction = () => {
-  return [{ title: `Ondrej Sevcik` }]
+  return [
+    { title: `Ondrej Sevcik` },
+    { name: "description", content: "Blogging about everything dev." },
+  ]
 }
 
 const items = [
@@ -36,7 +39,6 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Blogging about everything dev." />
         <meta name="twitter:creator" content="@ondrejsevcik" />
         <meta name="twitter:title" content="Ondrej Sevcik" />
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
