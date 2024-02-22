@@ -16,7 +16,7 @@ Here are a few use cases, I use GitHub Search for lately.
 
 In my case, the package X is React. I was trying to find out what React versions we still use. This search command gave me the answer.
 
-```
+```bash
 org:lokalise path:**/package.json react-dom NOT is:archived
 ```
 
@@ -28,7 +28,7 @@ In my case, I was looking for how many React components we have.
 
 A small problem is that once you get over 1000s, it will give you just an approximate number, but in my case, that was still good enough.
 
-```
+```bash
 org:lokalise path:**/*.tsx NOT is:archived
 ```
 
@@ -44,7 +44,7 @@ org:lokalise path:**/*.tsx NOT is:archived
 
 We’re in a process of migrating from `styled-components` to native CSS (which is more web friendly). With this search, I can track easily how the migration is going.
 
-```
+```bash
 org:lokalise "from 'styled-components'" NOT is:archived
 ```
 
