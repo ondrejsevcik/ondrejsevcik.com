@@ -1,8 +1,8 @@
 ---
 title: "My use cases for Advanced GitHub Search"
 description: "Here are a few use cases, I use GitHub Search for lately..."
-image: "/blog-images/progressive-summarization.jpg"
-date: "2023-11-13"
+image: "/blog-images/github-search-import.jpg"
+date: "2024-02-22"
 tags: ["tech"]
 ---
 
@@ -32,7 +32,13 @@ A small problem is that once you get over 1000s, it will give you just an approx
 org:lokalise path:**/*.tsx NOT is:archived
 ```
 
-<img src="" />
+<figure>
+  <img
+    src="/blog-images/github-search-files-count.jpg"
+    alt="GitHub Search for .tsx files."
+  />
+  <figcaption>GitHub Search for <code>.tsx</code> files.</figcaption>
+</figure>
 
 ## Find out how many files use styled-components
 
@@ -42,4 +48,10 @@ We’re in a process of migrating from `styled-components` to native CSS (which 
 org:lokalise "from 'styled-components'" NOT is:archived
 ```
 
-<img src="" />
+<figure>
+  <img
+    src="/blog-images/github-search-import.jpg"
+    alt="GitHub Search for file import"
+  />
+  <figcaption>GitHub Search for file import</figcaption>
+</figure>
