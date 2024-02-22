@@ -1,5 +1,5 @@
 ---
-title: "My use cases for Advanced GitHub Search"
+title: "My Use Cases for Advanced Github Search"
 description: "Here are a few use cases, I use GitHub Search for lately..."
 image: "/blog-images/github-search-import.jpg"
 date: "2024-02-22"
