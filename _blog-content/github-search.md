@@ -10,7 +10,7 @@ I’ve been overseeing many different repositories at Lokalise and that means al
 
 I always knew that GitHub has a search functionality, but until recently, I didn’t realize that I can use it exactly for this purpose.
 
-Here are a few use cases, I use GitHub Search for lately.
+Here are a few use cases that help me keep an overview.
 
 ## Find out what versions of package X do we use in different repositories
 
