@@ -29,7 +29,10 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { name: "description", content: data.blogPost.description },
     { property: "og:title", content: title },
     { property: "og:description", content: data.blogPost.description },
-    { property: "og:images", content: data.blogPost.image },
+    {
+      property: "og:images",
+      content: `https://ondrejsevcik.com${data.blogPost.image}`,
+    },
     { property: "og:type", content: "article" },
     { property: "article:author", content: "Ondrej Sevcik" },
     {
