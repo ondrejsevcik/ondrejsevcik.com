@@ -6,14 +6,17 @@ import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
 import rehypeStringify from "rehype-stringify"
 import rehypeHighlight from "rehype-highlight"
+import z from "zod"
 
-type MarkdownContent = {
-  title: string
-  description: string
-  date: string
-  image?: string
-  html: string
-}
+const MarkdownContentSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.string(),
+  image: z.string().optional(),
+  html: z.string(),
+})
+
+type MarkdownContent = z.infer<typeof MarkdownContentSchema>
 
 export function parseMarkdownContent(content: string): MarkdownContent {
   const result = unified()
@@ -37,13 +40,8 @@ export function parseMarkdownContent(content: string): MarkdownContent {
     // And finally, process the input
     .processSync(content)
 
-  const { frontmatter } = result.data
-
-  return {
-    title: frontmatter.title,
-    description: frontmatter.description,
-    date: frontmatter.date,
-    image: frontmatter.image,
+  return MarkdownContentSchema.parse({
+    ...(result.data.frontmatter as Record<string, string>),
     html: result.value,
-  }
+  })
 }
