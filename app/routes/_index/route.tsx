@@ -9,7 +9,7 @@ import {
 } from "./icons"
 import styles from "./route.module.css"
 
-let socialLinks = [
+const socialLinks = [
   {
     label: "Email",
     href: "mailto:hi@ondrejsevcik.com",

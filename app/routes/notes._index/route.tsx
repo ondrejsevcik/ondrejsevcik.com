@@ -9,11 +9,19 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader = async () => {
-  const notes = await getNotes()
+  const notes = getNotes()
   return json({ notes })
 }
 
-function NotesCard({ title, description, href }) {
+function NotesCard({
+  title,
+  description,
+  href,
+}: {
+  title: string
+  description: string
+  href: string
+}) {
   return (
     <Link to={href} className={styles.noteCard}>
       <h1>{title}</h1>
@@ -23,7 +31,7 @@ function NotesCard({ title, description, href }) {
 }
 
 export default function NotesPage() {
-  const { notes } = useLoaderData()
+  const { notes } = useLoaderData<typeof loader>()
 
   return (
     <div className={styles.page}>
