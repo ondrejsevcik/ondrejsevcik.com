@@ -1,10 +1,18 @@
-import { json } from "@vercel/remix"
+import { MetaFunction, json } from "@vercel/remix"
 import { useLoaderData } from "@remix-run/react"
 import styles from "./route.module.css"
 import { getNote } from "./getNote.server"
+import z from "zod"
 
-export const loader = async ({ params }) => {
-  const note = await getNote(params.id)
+const ParamsSchema = z.object({ id: z.string() })
+
+export const loader = async ({
+  params,
+}: {
+  params: Record<string, unknown>
+}) => {
+  const { id } = ParamsSchema.parse(params)
+  const note = getNote(id)
   return json({ note })
 }
 
@@ -28,7 +36,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function NoteDetailPage() {
   const {
     note: { title, html },
-  } = useLoaderData()
+  } = useLoaderData<typeof loader>()
 
   return (
     <article className={styles.notesPage}>
