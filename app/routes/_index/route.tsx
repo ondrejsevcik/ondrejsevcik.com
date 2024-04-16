@@ -12,7 +12,7 @@ import styles from "./route.module.css"
 const socialLinks = [
   {
     label: "Email",
-    href: "mailto:hi@ondrejsevcik.com",
+    href: "mailto:ondrej@ondrejsevcik.com",
     icon: <MailIcon />,
   },
   {
