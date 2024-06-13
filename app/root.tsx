@@ -1,29 +1,31 @@
-import { cssBundleHref } from "@remix-run/css-bundle"
 import type { LinksFunction, MetaFunction } from "@vercel/remix"
 import {
   Link,
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react"
 
-import "~/styles/tailwind-base.css"
-import "~/styles/global.css"
-import "~/styles/highlight-js.css"
+import tailwindBaseSrc from "./styles/tailwind-base.css?url"
+import globalStylesSrc from "./styles/global.css?url"
+import highlightJsSrc from "./styles/highlight-js.css?url"
 
 import styles from "./root.module.css"
-
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-]
 
 export const meta: MetaFunction = () => {
   return [
     { title: `Ondrej Sevcik` },
     { name: "description", content: "Blogging about everything dev." },
+  ]
+}
+
+export const links: LinksFunction = () => {
+  return [
+    { rel: "stylesheet", href: tailwindBaseSrc },
+    { rel: "stylesheet", href: globalStylesSrc },
+    { rel: "stylesheet", href: highlightJsSrc },
   ]
 }
 
@@ -68,7 +70,6 @@ export default function App() {
         />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   )
