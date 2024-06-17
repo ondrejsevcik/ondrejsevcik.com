@@ -54,6 +54,7 @@ export default function BlogPage() {
                   <Link
                     to={`/blog/${encodeURIComponent(post.id)}`}
                     className={styles.postLink}
+                    reloadDocument
                   >
                     {post.title}
                   </Link>
