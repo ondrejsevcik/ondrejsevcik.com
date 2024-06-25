@@ -5,7 +5,7 @@ date: "2024-06-22"
 tags: ["tech"]
 ---
 
-I decided to read the Remix documentation from end to end. While most aspects of Remix are well thought out and straightforward, there were some parts that caught my attention, and I had to note them down.
+I decided to read the [Remix](https://remix.run/) documentation from end to end. While most aspects of Remix are well thought out and straightforward, there were some parts that caught my attention, and I had to note them down.
 
 Here are some of them.
 
