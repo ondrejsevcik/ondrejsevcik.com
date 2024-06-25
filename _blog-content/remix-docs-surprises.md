@@ -142,7 +142,7 @@ export default function Root() {
 
 Remix does not perform any merging on `meta` tags. When multiple routes export `meta` tags, the leaf route receives all of them and must handle merging manually.
 
-The gotcha here is that `meta` tags are only additive. Simply merging them all together can result in duplicate tags in your document.
+The catch here is that `meta` tags are only additive. Simply merging them all together can result in duplicate tags in your document.
 
 The solution is to filter out [unwanted tags](https://remix.run/docs/en/main/route/meta#merging-with-parent-meta) beforehand.
 
