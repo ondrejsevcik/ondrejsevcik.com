@@ -23,7 +23,7 @@ function NotesCard({
   href: string
 }) {
   return (
-    <Link to={href} className={styles.noteCard}>
+    <Link to={href} className={styles.noteCard} prefetch="intent">
       <h1>{title}</h1>
       <p>{description}</p>
     </Link>
