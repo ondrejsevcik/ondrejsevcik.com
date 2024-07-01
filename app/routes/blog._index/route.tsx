@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader = async () => {
-  const blogPosts = await getBlogPosts()
+  const blogPosts = getBlogPosts()
   return json(
     { blogPosts },
     {
