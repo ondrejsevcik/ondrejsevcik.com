@@ -43,6 +43,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="twitter:creator" content="@ondrejsevcik" />
         <meta name="twitter:title" content="Ondrej Sevcik" />
+        <meta name="fediverse:creator" content="@ondrejsevcik@hachyderm.io" />
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         <Meta />
         <Links />
