@@ -23,16 +23,15 @@ export const headers: HeadersFunction = ({ loaderHeaders }) => ({
 })
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  if (!data) return []
+
   const title = `${data.blogPost.title} | Ondrej Sevcik`
-  return [
+
+  const metaTags = [
     { title: title },
     { name: "description", content: data.blogPost.description },
     { property: "og:title", content: title },
     { property: "og:description", content: data.blogPost.description },
-    {
-      property: "og:image",
-      content: `https://ondrejsevcik.com${data.blogPost.image}`,
-    },
     { property: "og:type", content: "article" },
     { property: "article:author", content: "Ondrej Sevcik" },
     {
@@ -40,6 +39,15 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
       content: new Date(data.blogPost.date).toISOString(),
     },
   ]
+
+  if (data.blogPost.image) {
+    metaTags.push({
+      property: "og:image",
+      content: `https://ondrejsevcik.com${data.blogPost.image}`,
+    })
+  }
+
+  return metaTags
 }
 
 export default function BlogPostPage() {
