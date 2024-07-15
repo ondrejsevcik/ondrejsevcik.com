@@ -1,8 +1,8 @@
-import { type MetaFunction, json } from "@vercel/remix";
 import { useLoaderData } from "@remix-run/react";
-import styles from "./route.module.css";
-import { getNote } from "./getNote.server";
+import { type MetaFunction, json } from "@vercel/remix";
 import z from "zod";
+import { getNote } from "./getNote.server";
+import styles from "./route.module.css";
 
 const ParamsSchema = z.object({ id: z.string() });
 

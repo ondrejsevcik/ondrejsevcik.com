@@ -1,4 +1,3 @@
-import { PopLink } from "./pop-link";
 import {
 	GithubIcon,
 	LinkedInIcon,
@@ -7,6 +6,7 @@ import {
 	RssFeedIcon,
 	TwitterIcon,
 } from "./icons";
+import { PopLink } from "./pop-link";
 import styles from "./route.module.css";
 
 const socialLinks = [

@@ -1,9 +1,9 @@
-import { json } from "@vercel/remix";
-import type { MetaFunction, HeadersFunction } from "@vercel/remix";
-import { groupBy } from "../../../utils/group-by";
 import { Link, useLoaderData } from "@remix-run/react";
-import styles from "./route.module.css";
+import { json } from "@vercel/remix";
+import type { HeadersFunction, MetaFunction } from "@vercel/remix";
+import { groupBy } from "../../../utils/group-by";
 import { getBlogPosts } from "./getBlogPosts.server";
+import styles from "./route.module.css";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Blog | Ondrej Sevcik" }];

@@ -1,9 +1,9 @@
-import { json } from "@vercel/remix";
-import type { MetaFunction, HeadersFunction } from "@vercel/remix";
-import styles from "./route.module.css";
-import { formatDate } from "../../../utils/formatDate";
 import { useLoaderData } from "@remix-run/react";
+import { json } from "@vercel/remix";
+import type { HeadersFunction, MetaFunction } from "@vercel/remix";
+import { formatDate } from "../../../utils/formatDate";
 import { getBlogPost } from "./getBlogPost.server";
+import styles from "./route.module.css";
 
 export const loader = async ({ params }) => {
 	const blogPost = await getBlogPost(params.id);

@@ -1,4 +1,3 @@
-import type { LinksFunction, MetaFunction } from "@vercel/remix";
 import {
 	Link,
 	Links,
@@ -7,10 +6,11 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
+import type { LinksFunction, MetaFunction } from "@vercel/remix";
 
-import tailwindBaseSrc from "./styles/tailwind-base.css?url";
 import globalStylesSrc from "./styles/global.css?url";
 import highlightJsSrc from "./styles/highlight-js.css?url";
+import tailwindBaseSrc from "./styles/tailwind-base.css?url";
 
 import styles from "./root.module.css";
 

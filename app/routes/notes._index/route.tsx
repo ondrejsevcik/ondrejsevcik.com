@@ -1,8 +1,8 @@
+import { Link, useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
 import type { MetaFunction } from "@vercel/remix";
-import { Link, useLoaderData } from "@remix-run/react";
-import styles from "./route.module.css";
 import { getNotes } from "./getNotes.server";
+import styles from "./route.module.css";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Notes | Ondrej Sevcik" }];
