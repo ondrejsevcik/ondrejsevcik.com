@@ -1,5 +1,5 @@
-import { getSortedBlogData } from "../../../utils/getMarkdown"
+import { getSortedBlogData } from "../../../utils/getMarkdown";
 
 export function getBlogPosts() {
-  return getSortedBlogData()
+	return getSortedBlogData();
 }
