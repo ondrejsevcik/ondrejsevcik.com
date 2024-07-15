@@ -6,7 +6,7 @@ import styles from "./route.module.css";
 import { getBlogPosts } from "./getBlogPosts.server";
 
 export const meta: MetaFunction = () => {
-	return [{ title: `Blog | Ondrej Sevcik` }];
+	return [{ title: "Blog | Ondrej Sevcik" }];
 };
 
 export const loader = async () => {

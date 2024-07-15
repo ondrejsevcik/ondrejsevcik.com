@@ -1,4 +1,4 @@
-import { MetaFunction, json } from "@vercel/remix";
+import { type MetaFunction, json } from "@vercel/remix";
 import { useLoaderData } from "@remix-run/react";
 import styles from "./route.module.css";
 import { getNote } from "./getNote.server";
@@ -44,6 +44,7 @@ export default function NoteDetailPage() {
 
 			{/* Not happy with this useless div, but haven't
        found a way to avoid it in React */}
+			{/* biome-ignore lint/security/noDangerouslySetInnerHtml: trusted content */}
 			<div dangerouslySetInnerHTML={{ __html: html }} />
 		</article>
 	);

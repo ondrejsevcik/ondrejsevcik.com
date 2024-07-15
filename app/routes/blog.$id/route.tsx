@@ -65,6 +65,7 @@ export default function BlogPostPage() {
 			</header>
 			<article
 				className={styles.blogPostContent}
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: content is trusted.
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
 			<footer className={styles.footer}>

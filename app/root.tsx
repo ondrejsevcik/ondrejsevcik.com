@@ -16,7 +16,7 @@ import styles from "./root.module.css";
 
 export const meta: MetaFunction = () => {
 	return [
-		{ title: `Ondrej Sevcik` },
+		{ title: "Ondrej Sevcik" },
 		{ name: "description", content: "Blogging about everything dev." },
 	];
 };

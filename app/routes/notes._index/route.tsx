@@ -5,7 +5,7 @@ import styles from "./route.module.css";
 import { getNotes } from "./getNotes.server";
 
 export const meta: MetaFunction = () => {
-	return [{ title: `Notes | Ondrej Sevcik` }];
+	return [{ title: "Notes | Ondrej Sevcik" }];
 };
 
 export const loader = async () => {

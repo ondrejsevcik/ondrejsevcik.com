@@ -16,7 +16,7 @@ export function getRssFeedContent() {
 		id: baseUrl,
 		link: baseUrl,
 		language: "en",
-		copyright: "Ondrej Sevcik " + new Date().getFullYear(),
+		copyright: `Ondrej Sevcik ${new Date().getFullYear()}`,
 		feedLinks: {
 			rss2: `${baseUrl}/rss.xml`,
 		},
@@ -25,7 +25,7 @@ export function getRssFeedContent() {
 		},
 	});
 
-	posts.forEach((post) => {
+	for (const post of posts) {
 		const { id, title, date, description } = post;
 		const url = `${baseUrl}/blog/${id}`;
 
@@ -36,7 +36,7 @@ export function getRssFeedContent() {
 			description,
 			date: new Date(date),
 		});
-	});
+	}
 
 	return feed.rss2();
 }
