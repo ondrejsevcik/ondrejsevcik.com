@@ -32,29 +32,33 @@
   margin-left: 1rem;
 }
 
-.linksPost li {
+.linkPost li {
   margin-top: 0.25rem;
 }
 
-.linksPost a {
+.linkPost a {
   color: var(--blue-800);
 }
 
-.linksPost a:hover {
+.linkPost a:hover {
   text-decoration: underline;
 }
 
-.linksPost blockquote {
+.linkPost blockquote {
   border-left-width: 4px;
   border-color: var(--gray-300);
   color: gray;
   padding: 0.25rem;
 }
 
+.linkPost blockquote + blockquote {
+  margin-top: 1rem;
+}
+
 /* There is also code inside <pre> element,
   but that one should be styled differently */
-.linksPost p code,
-.linksPost li code {
+.linkPost p code,
+.linkPost li code {
   background-color: rgba(31, 41, 55, 0.1);
   border-radius: 0.25rem;
   font-family: var(--font-sans);
@@ -62,7 +66,7 @@
   padding-right: 0.25rem;
 }
 
-.linksPost pre {
+.linkPost pre {
   overflow-x: auto;
   font-family: var(--font-sans);
   font-size: var(--step--1);
@@ -80,7 +84,7 @@
 }
 
 @media (min-width: 768px) {
-  .linksPost pre {
+  .linkPost pre {
     margin-left: -1rem;
     margin-right: -1rem;
   }

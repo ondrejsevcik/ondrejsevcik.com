@@ -42,14 +42,18 @@ export default function NoteDetailPage() {
 		<article className={styles.linkPost}>
 			<h1 className={styles.title}>{title}</h1>
 
-			<a href={ogUrl} target="_blank" rel="noopener noreferrer">
-				{ogUrl}
-			</a>
-
 			{/* Not happy with this useless div, but haven't
        found a way to avoid it in React */}
 			{/* biome-ignore lint/security/noDangerouslySetInnerHtml: trusted content */}
 			<div dangerouslySetInnerHTML={{ __html: html }} />
+
+			<p>
+				Read the whole story{" "}
+				<a href={ogUrl} target="_blank" rel="noopener noreferrer">
+					here
+				</a>
+				.
+			</p>
 		</article>
 	);
 }
