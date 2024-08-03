@@ -1,0 +1,35 @@
+/* TODO use layouts for this */
+.page {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: var(--step-3);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.cardList {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.noteCard {
+  background-color: var(--gray-50);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  transition: background 200ms ease-in-out;
+}
+
+.noteCard:hover {
+  background-color: var(--gray-200);
+}
+
+.noteCard h1 {
+  font-size: var(--step-1);
+  margin-bottom: 0.5rem;
+}

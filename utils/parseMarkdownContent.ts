@@ -6,19 +6,8 @@ import remarkParse from "remark-parse";
 import remarkParseFrontmatter from "remark-parse-frontmatter";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import z from "zod";
 
-const MarkdownContentSchema = z.object({
-	title: z.string(),
-	description: z.string(),
-	date: z.string(),
-	image: z.string().optional(),
-	html: z.string(),
-});
-
-type MarkdownContent = z.infer<typeof MarkdownContentSchema>;
-
-export function parseMarkdownContent(content: string): MarkdownContent {
+export function getMarkdownContent(content: string): Record<string, unknown> {
 	const result = unified()
 		// Take Markdown as input and turn it into MD syntax tree
 		.use(remarkParse)
@@ -40,8 +29,8 @@ export function parseMarkdownContent(content: string): MarkdownContent {
 		// And finally, process the input
 		.processSync(content);
 
-	return MarkdownContentSchema.parse({
-		...(result.data.frontmatter as Record<string, string>),
-		html: result.value,
-	});
+	return {
+		...(result.data.frontmatter as Record<string, unknown>),
+		html: result.value.toString(),
+	};
 }

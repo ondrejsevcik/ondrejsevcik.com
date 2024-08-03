@@ -1,39 +1,75 @@
 import fs from "node:fs";
 import path from "node:path";
-import { parseMarkdownContent } from "./parseMarkdownContent";
+import { getMarkdownContent } from "./parseMarkdownContent";
+import z from "zod";
 
 const blogDir = path.join(process.cwd(), "_blog-content");
 const notesDir = path.join(process.cwd(), "_notes-content");
+const linksDir = path.join(process.cwd(), "_links-content");
 
-export function getSortedBlogData() {
-	return getSortedData(blogDir);
+export function getSortedPosts(type: "blog" | "notes"): BlogPostContent[] {
+	const dir = type === "blog" ? blogDir : notesDir;
+	return getAllMarkdownContent(dir)
+		.map((data) => BlogPostContentSchema.parse(data))
+		.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export function getSortedNotesData() {
-	return getSortedData(notesDir);
+export function getSortedLinkPosts(): LinkPostContent[] {
+	return getAllMarkdownContent(linksDir)
+		.map((data) => LinkPostContentSchema.parse(data))
+		.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export function getNoteMarkdown(id: string) {
-	return getMarkdownData({ id, dir: notesDir });
-}
-
-export function getBlogMarkdown(id: string) {
-	return getMarkdownData({ id, dir: blogDir });
-}
-
-function getSortedData(dir: string) {
+function getAllMarkdownContent(dir: string) {
 	const fileNames = fs.readdirSync(dir);
-	const allPostsData = fileNames
+	return fileNames
 		.map((fn) => fn.replace(/\.md$/, ""))
 		.map((id) => getMarkdownData({ id, dir }));
-
-	return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-function getMarkdownData({ id, dir }: { id: string; dir: string }) {
+const LinkPostContentSchema = z.object({
+	id: z.string().min(1),
+	title: z.string().min(1),
+	date: z.string().min(1),
+	html: z.string().min(1),
+});
+
+type LinkPostContent = z.infer<typeof LinkPostContentSchema>;
+
+export function getLinkPostMarkdown(id: string): LinkPostContent {
+	const data = getMarkdownData({ id, dir: linksDir });
+	return LinkPostContentSchema.parse(data);
+}
+
+const BlogPostContentSchema = z.object({
+	id: z.string().min(1),
+	title: z.string().min(1),
+	// TODO check if I can add min(1) restriction
+	description: z.string(),
+	date: z.string().min(1),
+	image: z.string().optional(),
+	html: z.string().min(1),
+});
+
+type BlogPostContent = z.infer<typeof BlogPostContentSchema>;
+
+export function getNoteMarkdown(id: string): BlogPostContent {
+	const data = getMarkdownData({ id, dir: notesDir });
+	return BlogPostContentSchema.parse(data);
+}
+
+export function getBlogMarkdown(id: string): BlogPostContent {
+	const data = getMarkdownData({ id, dir: blogDir });
+	return BlogPostContentSchema.parse(data);
+}
+
+function getMarkdownData({
+	id,
+	dir,
+}: { id: string; dir: string }): Record<string, unknown> {
 	const fullPath = path.join(dir, `${id}.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
-	const content = parseMarkdownContent(fileContents);
+	const content = getMarkdownContent(fileContents);
 
 	return { id, ...content };
 }
