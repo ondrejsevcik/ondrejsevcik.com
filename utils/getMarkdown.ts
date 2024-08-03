@@ -32,6 +32,7 @@ const LinkPostContentSchema = z.object({
 	title: z.string().min(1),
 	date: z.string().min(1),
 	html: z.string().min(1),
+	ogUrl: z.string().url(),
 });
 
 type LinkPostContent = z.infer<typeof LinkPostContentSchema>;
