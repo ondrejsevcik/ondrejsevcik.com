@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { getMarkdownContent } from "./getMarkdownContent";
 import z from "zod";
+import { getMarkdownContent } from "./getMarkdownContent";
 
 const blogDir = path.join(process.cwd(), "_blog-content");
 const notesDir = path.join(process.cwd(), "_notes-content");
