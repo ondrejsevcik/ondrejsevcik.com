@@ -1,12 +1,12 @@
 import { useLoaderData } from "@remix-run/react";
-import { type MetaFunction, json } from "@vercel/remix";
+import { type LoaderFunction, type MetaFunction, json } from "@vercel/remix";
 import z from "zod";
 import { getLinkPost } from "./getLinkPost.server";
 import styles from "./route.module.css";
 
 const ParamsSchema = z.object({ id: z.string() });
 
-export const loader = async ({
+export const loader: LoaderFunction = async ({
 	params,
 }: {
 	params: Record<string, unknown>;
