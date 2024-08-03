@@ -1,12 +1,18 @@
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
-import type { HeadersFunction, MetaFunction } from "@vercel/remix";
+import type { HeadersFunction, LoaderFunction, MetaFunction } from "@vercel/remix";
 import { formatDate } from "../../../utils/formatDate";
 import { getBlogPost } from "./getBlogPost.server";
 import styles from "./route.module.css";
+import z from 'zod'
 
-export const loader = async ({ params }) => {
-	const blogPost = await getBlogPost(params.id);
+const idSchema = z.string().min(1)
+
+export const loader: LoaderFunction = async ({ params }) => {
+	const maybeId = idSchema.safeParse(params.id);
+	if (!maybeId.success) throw new Response("Not Found", { status: 404 });
+
+	const blogPost = await getBlogPost(maybeId.data);
 	return json(
 		{ blogPost },
 		{
