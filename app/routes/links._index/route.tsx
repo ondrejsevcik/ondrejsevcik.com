@@ -13,12 +13,15 @@ export const loader: LoaderFunction = async () => {
 	return json({ linkPosts });
 };
 
-function LinkPost({ title, href }: { title: string; href: string }) {
+function LinkPost({ title, href , tags}: { title: string; href: string; tags: string[] }) {
 	return (
 		<article>
 			<Link to={href} className={styles.noteCard} prefetch="intent">
 				<h2>{title}</h2>
 			</Link>
+			<ul>
+				{tags.map((tag) => (<li key={tag}>#{tag}</li>))}
+			</ul>
 		</article>
 	);
 }
@@ -32,8 +35,8 @@ export default function NotesPage() {
 			<h1 className={styles.title}>Links</h1>
 
 			<div className={styles.cardList}>
-				{linkPosts.map(({ id, title }) => (
-					<LinkPost key={id} title={title} href={`/links/${id}`} />
+				{linkPosts.map(({ id, title, tags }) => (
+					<LinkPost key={id} title={title} tags={tags} href={`/links/${id}`} />
 				))}
 			</div>
 		</div>
