@@ -2,6 +2,7 @@
 title: "Can Happy People Change the World?"
 date: "2024-07-27"
 tags: ["life"]
+ogUrl: https://www.flourishingfriday.blog/p/can-happy-people-change-the-world
 ---
 
 > Happy people are generally the ones most likely to not just care about the world around them, but to take action to improve it.

@@ -35,12 +35,16 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function NoteDetailPage() {
 	const {
-		linkPost: { title, html },
+		linkPost: { title, ogUrl, html },
 	} = useLoaderData<typeof loader>();
 
 	return (
 		<article className={styles.linkPost}>
 			<h1 className={styles.title}>{title}</h1>
+
+			<a href={ogUrl} target="_blank" rel="noopener noreferrer">
+				{ogUrl}
+			</a>
 
 			{/* Not happy with this useless div, but haven't
        found a way to avoid it in React */}
