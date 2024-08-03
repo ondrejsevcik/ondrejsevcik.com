@@ -24,7 +24,7 @@ function NotesCard({
 }) {
 	return (
 		<Link to={href} className={styles.noteCard} prefetch="intent">
-			<h1>{title}</h1>
+			<h2>{title}</h2>
 			<p>{description}</p>
 		</Link>
 	);

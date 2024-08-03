@@ -29,7 +29,7 @@
   background-color: var(--gray-200);
 }
 
-.noteCard h1 {
+.noteCard h2 {
   font-size: var(--step-1);
   margin-bottom: 0.5rem;
 }
