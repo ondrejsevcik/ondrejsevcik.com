@@ -33,6 +33,7 @@ const items = [
 	{ href: "/", title: "Home" },
 	{ href: "/blog", title: "Blog" },
 	{ href: "/notes", title: "Notes" },
+	{ href: "/links", title: "Links" },
 ];
 
 export default function App() {

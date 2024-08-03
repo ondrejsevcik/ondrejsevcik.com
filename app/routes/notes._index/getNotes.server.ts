@@ -1,5 +1,5 @@
-import { getSortedNotesData } from "../../../utils/getMarkdown";
+import { getSortedPosts } from "../../../utils/getMarkdown";
 
 export function getNotes() {
-	return getSortedNotesData();
+	return getSortedPosts("notes");
 }

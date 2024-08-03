@@ -1,10 +1,10 @@
 import { Feed } from "feed";
-import { getSortedBlogData } from "../../../utils/getMarkdown";
+import { getSortedPosts } from "../../../utils/getMarkdown";
 
 const baseUrl = "https://ondrejsevcik.com";
 
 export function getRssFeedContent() {
-	let posts = getSortedBlogData();
+	let posts = getSortedPosts("blog");
 	posts = posts.sort(
 		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 	);
