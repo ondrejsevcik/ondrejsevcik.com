@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { getMarkdownContent } from "./parseMarkdownContent";
+import { getMarkdownContent } from "./getMarkdownContent";
 import z from "zod";
 
 const blogDir = path.join(process.cwd(), "_blog-content");
