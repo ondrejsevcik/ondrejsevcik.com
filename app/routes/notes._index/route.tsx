@@ -1,16 +1,17 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
-import type { MetaFunction } from "@vercel/remix";
+import type { LoaderFunction, MetaFunction } from "@vercel/remix";
 import { getNotes } from "./getNotes.server";
 import styles from "./route.module.css";
+import { cacheControlHeaders } from "../../.server/headers";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Notes | Ondrej Sevcik" }];
 };
 
-export const loader = async () => {
+export const loader: LoaderFunction = async () => {
 	const notes = getNotes();
-	return json({ notes });
+	return json({ notes }, { headers: cacheControlHeaders });
 };
 
 function NotesCard({

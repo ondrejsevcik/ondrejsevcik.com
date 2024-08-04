@@ -1,4 +1,5 @@
-import type { HeadersFunction } from "@vercel/remix";
+import { json, type LoaderFunction } from "@vercel/remix";
+import { cacheControlHeaders } from "../../.server/headers";
 import {
 	GithubIcon,
 	LinkedInIcon,
@@ -44,11 +45,9 @@ const socialLinks = [
 	},
 ];
 
-export const headers: HeadersFunction = () => ({
-	// I don't change index page too often so it can be cached for a while
-	// cache for 1 day in browser and 2 days on CDN
-	"cache-control": "public, max-age=86400, s-maxage=172800",
-});
+export const loader: LoaderFunction = async () => {
+	return json({ ok: true }, { headers: cacheControlHeaders });
+};
 
 export default function HomePage() {
 	return (

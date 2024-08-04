@@ -1,34 +1,19 @@
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
-import type {
-	HeadersFunction,
-	LoaderFunction,
-	MetaFunction,
-} from "@vercel/remix";
+import type { LoaderFunction, MetaFunction } from "@vercel/remix";
 import z from "zod";
 import { PostContent } from "../../components/PostContent";
 import { getBlogPost } from "./getBlogPost.server";
 import styles from "./route.module.css";
+import { cacheControlHeaders } from "../../.server/headers";
 
 const idSchema = z.string().min(1);
 
 export const loader: LoaderFunction = async ({ params }) => {
 	const id = idSchema.parse(params.id);
 	const blogPost = getBlogPost(id);
-	return json(
-		{ blogPost },
-		{
-			headers: {
-				// Cache for a day
-				"cache-control": "public, max-age=86400, s-maxage=86400",
-			},
-		},
-	);
+	return json({ blogPost }, { headers: cacheControlHeaders });
 };
-
-export const headers: HeadersFunction = ({ loaderHeaders }) => ({
-	"cache-control": loaderHeaders.get("cache-control") ?? "",
-});
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	if (!data) return [];

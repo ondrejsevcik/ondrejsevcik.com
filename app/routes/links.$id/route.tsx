@@ -4,17 +4,14 @@ import z from "zod";
 import { PostContent } from "../../components/PostContent";
 import { getLinkPost } from "./getLinkPost.server";
 import styles from "./route.module.css";
+import { cacheControlHeaders } from "../../.server/headers";
 
 const ParamsSchema = z.object({ id: z.string() });
 
-export const loader: LoaderFunction = async ({
-	params,
-}: {
-	params: Record<string, unknown>;
-}) => {
+export const loader: LoaderFunction = async ({ params }) => {
 	const { id } = ParamsSchema.parse(params);
 	const linkPost = getLinkPost(id);
-	return json({ linkPost });
+	return json({ linkPost }, { headers: cacheControlHeaders });
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

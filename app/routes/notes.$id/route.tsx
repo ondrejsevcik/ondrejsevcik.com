@@ -3,17 +3,14 @@ import { type LoaderFunction, type MetaFunction, json } from "@vercel/remix";
 import z from "zod";
 import { getNote } from "./getNote.server";
 import styles from "./route.module.css";
+import { cacheControlHeaders } from "../../.server/headers";
 
 const ParamsSchema = z.object({ id: z.string() });
 
-export const loader: LoaderFunction = async ({
-	params,
-}: {
-	params: Record<string, unknown>;
-}) => {
+export const loader: LoaderFunction = async ({ params }) => {
 	const { id } = ParamsSchema.parse(params);
 	const note = getNote(id);
-	return json({ note });
+	return json({ note }, { headers: cacheControlHeaders });
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
