@@ -1,0 +1,8 @@
+.readStoryLink {
+  color: var(--blue-800);
+}
+
+.readStoryLink:hover,
+.readStoryLink:focus {
+  text-decoration: underline;
+}

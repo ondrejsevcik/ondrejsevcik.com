@@ -6,8 +6,8 @@ export const PostContent = ({
 	title,
 	date,
 	html,
-	footer,
-}: { title: string; date: Date; html: string; footer?: ReactNode }) => {
+	children,
+}: { title: string; date: Date; html: string; children?: ReactNode }) => {
 	return (
 		<section className={styles.blogPostWrapper}>
 			<header>
@@ -21,7 +21,7 @@ export const PostContent = ({
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: content is trusted.
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
-			{footer ? <footer className={styles.footer}>{footer}</footer> : null}
+			{children}
 		</section>
 	);
 };
