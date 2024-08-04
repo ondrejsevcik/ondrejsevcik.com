@@ -36,7 +36,7 @@ const LinkPostContentSchema = z.object({
 	tags: z.array(z.string().min(1)),
 });
 
-type LinkPostContent = z.infer<typeof LinkPostContentSchema>;
+export type LinkPostContent = z.infer<typeof LinkPostContentSchema>;
 
 export function getLinkPostMarkdown(id: string): LinkPostContent {
 	const data = getMarkdownData({ id, dir: linksDir });

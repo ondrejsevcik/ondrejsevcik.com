@@ -1,27 +1,28 @@
-/* TODO use layouts for this */
 .page {
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .title {
   font-size: var(--step-3);
   font-weight: 600;
-  margin-bottom: 2rem;
 }
 
-.cardList {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
+.linkPost h2 {
+  color: red;
 }
 
-.noteCard {
+.linkPost a {
+  font-size: var(--step-0);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--blue-800);
 }
 
-.noteCard:hover {
-}
-
-.noteCard h1 {
+.linkPOst a:hover {
+  text-decoration: underline;
 }

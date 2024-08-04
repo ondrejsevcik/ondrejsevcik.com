@@ -3,6 +3,7 @@ import { json } from "@vercel/remix";
 import type { LoaderFunction, MetaFunction } from "@vercel/remix";
 import { getLinkPosts } from "./getLinkPosts.server";
 import styles from "./route.module.css";
+import type { LinkPostContent } from "utils/getMarkdown";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Links | Ondrej Sevcik" }];
@@ -13,15 +14,21 @@ export const loader: LoaderFunction = async () => {
 	return json({ linkPosts });
 };
 
-function LinkPost({ title, href , tags}: { title: string; href: string; tags: string[] }) {
+function LinkPost({ post }: { post: LinkPostContent }) {
+	const { id, title, tags } = post;
 	return (
-		<article>
-			<Link to={href} className={styles.noteCard} prefetch="intent">
-				<h2>{title}</h2>
-			</Link>
+		<article className={styles.linkPost}>
+			<h2>
+				<Link to={`/links/${id}`} prefetch="intent">
+					{title}
+				</Link>
+			</h2>
+			{/* // TODO add tags
 			<ul>
-				{tags.map((tag) => (<li key={tag}>#{tag}</li>))}
-			</ul>
+				{tags.map((tag) => (
+					<li key={tag}>#{tag}</li>
+				))}
+			</ul> */}
 		</article>
 	);
 }
@@ -31,14 +38,15 @@ export default function NotesPage() {
 
 	return (
 		<div className={styles.page}>
-			TODO add description here
 			<h1 className={styles.title}>Links</h1>
+			<p>
+				Links to content that I found interesting. Sometimes with my commentary.{" "}
+				<a href="#TODO">Subscribe with RSS</a>.
+			</p>
 
-			<div className={styles.cardList}>
-				{linkPosts.map(({ id, title, tags }) => (
-					<LinkPost key={id} title={title} tags={tags} href={`/links/${id}`} />
-				))}
-			</div>
+			{linkPosts.map((linkPost) => (
+				<LinkPost key={linkPost.id} post={linkPost} />
+			))}
 		</div>
 	);
 }
