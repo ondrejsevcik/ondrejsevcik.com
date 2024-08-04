@@ -1,9 +1,14 @@
 import { useLoaderData } from "@remix-run/react";
-import { type LoaderFunction, type MetaFunction, json } from "@vercel/remix";
+import {
+	type HeadersFunction,
+	type LoaderFunction,
+	type MetaFunction,
+	json,
+} from "@vercel/remix";
 import z from "zod";
+import { cacheControlHeaders, keepCacheControl } from "../../.server/headers";
 import { getNote } from "./getNote.server";
 import styles from "./route.module.css";
-import { cacheControlHeaders } from "../../.server/headers";
 
 const ParamsSchema = z.object({ id: z.string() });
 
@@ -12,6 +17,8 @@ export const loader: LoaderFunction = async ({ params }) => {
 	const note = getNote(id);
 	return json({ note }, { headers: cacheControlHeaders });
 };
+
+export const headers: HeadersFunction = keepCacheControl;
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const { note } = data;

@@ -1,10 +1,14 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
-import type { LoaderFunction, MetaFunction } from "@vercel/remix";
+import type {
+	HeadersFunction,
+	LoaderFunction,
+	MetaFunction,
+} from "@vercel/remix";
 import { groupBy } from "../../../utils/group-by";
+import { cacheControlHeaders, keepCacheControl } from "../../.server/headers";
 import { getBlogPosts } from "./getBlogPosts.server";
 import styles from "./route.module.css";
-import { cacheControlHeaders } from "../../.server/headers";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Blog | Ondrej Sevcik" }];
@@ -14,6 +18,8 @@ export const loader: LoaderFunction = async () => {
 	const blogPosts = getBlogPosts();
 	return json({ blogPosts }, { headers: cacheControlHeaders });
 };
+
+export const headers: HeadersFunction = keepCacheControl;
 
 export default function BlogPage() {
 	const { blogPosts } = useLoaderData<typeof loader>();
