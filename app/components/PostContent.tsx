@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import styles from "./PostContent.module.css";
 import { formatDate } from "../../utils/formatDate";
+import styles from "./PostContent.module.css";
 
 export const PostContent = ({
 	title,

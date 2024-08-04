@@ -1,9 +1,9 @@
 import { useLoaderData } from "@remix-run/react";
 import { type LoaderFunction, type MetaFunction, json } from "@vercel/remix";
 import z from "zod";
+import { PostContent } from "../../components/PostContent";
 import { getLinkPost } from "./getLinkPost.server";
 import styles from "./route.module.css";
-import { PostContent } from "../../components/PostContent";
 
 const ParamsSchema = z.object({ id: z.string() });
 

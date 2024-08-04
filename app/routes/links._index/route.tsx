@@ -1,9 +1,9 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
 import type { LoaderFunction, MetaFunction } from "@vercel/remix";
+import type { LinkPostContent } from "utils/getMarkdown";
 import { getLinkPosts } from "./getLinkPosts.server";
 import styles from "./route.module.css";
-import type { LinkPostContent } from "utils/getMarkdown";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Links | Ondrej Sevcik" }];

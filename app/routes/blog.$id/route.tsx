@@ -6,9 +6,9 @@ import type {
 	MetaFunction,
 } from "@vercel/remix";
 import z from "zod";
-import styles from "./route.module.css";
-import { getBlogPost } from "./getBlogPost.server";
 import { PostContent } from "../../components/PostContent";
+import { getBlogPost } from "./getBlogPost.server";
+import styles from "./route.module.css";
 
 const idSchema = z.string().min(1);
 
