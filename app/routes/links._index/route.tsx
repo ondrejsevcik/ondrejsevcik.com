@@ -40,8 +40,8 @@ export default function NotesPage() {
 		<div className={styles.page}>
 			<h1 className={styles.title}>Links</h1>
 			<p>
-				Links to content that I found interesting. Sometimes with my commentary.{" "}
-				<a href="#TODO">Subscribe with RSS</a>.
+				Links to content I found interesting, sometimes with my commentary.{" "}
+				<a href="/links-rss">Subscribe with RSS</a>.
 			</p>
 
 			{linkPosts.map((linkPost) => (
