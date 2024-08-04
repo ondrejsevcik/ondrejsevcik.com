@@ -1,3 +1,4 @@
+import type { HeadersFunction } from "@vercel/remix";
 import {
 	GithubIcon,
 	LinkedInIcon,
@@ -42,6 +43,12 @@ const socialLinks = [
 		icon: <RssFeedIcon />,
 	},
 ];
+
+export const headers: HeadersFunction = () => ({
+	// I don't change index page too often so it can be cached for a while
+	// cache for 1 day in browser and 2 days on CDN
+	"cache-control": "public, max-age=86400, s-maxage=172800",
+});
 
 export default function HomePage() {
 	return (
