@@ -2,7 +2,7 @@ import { useLoaderData } from "@remix-run/react";
 import { type LoaderFunction, type MetaFunction, json } from "@vercel/remix";
 import z from "zod";
 import { getLinkPost } from "./getLinkPost.server";
-import styles from "./route.module.css";
+import { PostContent } from "../../components/PostContent";
 
 const ParamsSchema = z.object({ id: z.string() });
 
@@ -35,25 +35,24 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function NoteDetailPage() {
 	const {
-		linkPost: { title, ogUrl, html },
+		linkPost: { title, date: dateString, ogUrl, html },
 	} = useLoaderData<typeof loader>();
+	const date = new Date(dateString);
 
 	return (
-		<article className={styles.linkPost}>
-			<h1 className={styles.title}>{title}</h1>
-
-			{/* Not happy with this useless div, but haven't
-       found a way to avoid it in React */}
-			{/* biome-ignore lint/security/noDangerouslySetInnerHtml: trusted content */}
-			<div dangerouslySetInnerHTML={{ __html: html }} />
-
-			<p>
-				Read the whole story{" "}
-				<a href={ogUrl} target="_blank" rel="noopener noreferrer">
-					here
-				</a>
-				.
-			</p>
-		</article>
+		<PostContent
+			title={title}
+			date={date}
+			html={html}
+			footer={
+				<p>
+					Read the whole story{" "}
+					<a href={ogUrl} target="_blank" rel="noopener noreferrer">
+						here
+					</a>
+					.
+				</p>
+			}
+		/>
 	);
 }
