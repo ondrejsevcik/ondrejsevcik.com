@@ -6,9 +6,8 @@ import type {
 	MetaFunction,
 } from "@vercel/remix";
 import z from "zod";
-import { formatDate } from "../../../utils/formatDate";
 import { getBlogPost } from "./getBlogPost.server";
-import styles from "./route.module.css";
+import { PostContent } from "../../components/PostContent";
 
 const idSchema = z.string().min(1);
 
@@ -64,29 +63,23 @@ export default function BlogPostPage() {
 	const date = new Date(dateString);
 
 	return (
-		<section className={styles.blogPostWrapper}>
-			<header>
-				<h1 className={styles.postTitle}>{title}</h1>
-				<time className={styles.meta} dateTime={date.toISOString()}>
-					{formatDate(date)}
-				</time>
-			</header>
-			<article
-				className={styles.blogPostContent}
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: content is trusted.
-				dangerouslySetInnerHTML={{ __html: html }}
-			/>
-			<footer className={styles.footer}>
-				Liked the post? Have concerns? Reply via{" "}
-				<a
-					href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
-					target="_blank"
-					rel="noreferrer"
-				>
-					email
-				</a>
-				.
-			</footer>
-		</section>
+		<PostContent
+			title={title}
+			date={date}
+			html={html}
+			footer={
+				<>
+					Liked the post? Have concerns? Reply via{" "}
+					<a
+						href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
+						target="_blank"
+						rel="noreferrer"
+					>
+						email
+					</a>
+					.
+				</>
+			}
+		/>
 	);
 }
