@@ -6,6 +6,7 @@ import type {
 	MetaFunction,
 } from "@vercel/remix";
 import z from "zod";
+import styles from "./route.module.css";
 import { getBlogPost } from "./getBlogPost.server";
 import { PostContent } from "../../components/PostContent";
 
@@ -63,23 +64,18 @@ export default function BlogPostPage() {
 	const date = new Date(dateString);
 
 	return (
-		<PostContent
-			title={title}
-			date={date}
-			html={html}
-			footer={
-				<>
-					Liked the post? Have concerns? Reply via{" "}
-					<a
-						href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						email
-					</a>
-					.
-				</>
-			}
-		/>
+		<PostContent title={title} date={date} html={html}>
+			<footer className={styles.footer}>
+				Liked the post? Have concerns? Reply via{" "}
+				<a
+					href={`mailto:hi@ondrejsevcik.com?subject=${title}`}
+					target="_blank"
+					rel="noreferrer"
+				>
+					email
+				</a>
+				.
+			</footer>
+		</PostContent>
 	);
 }

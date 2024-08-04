@@ -100,6 +100,10 @@
   padding: 0.5rem;
 }
 
+.blogPostContent blockquote + blockquote {
+  margin-top: 1rem;
+}
+
 /* There is also code inside <pre> element,
   but that one should be styled differently */
 .blogPostContent p code,
@@ -178,17 +182,4 @@
   border-top: 8px dotted var(--gray-200);
   width: 80px;
   margin: 2rem auto;
-}
-
-.footer {
-  margin-top: 3rem;
-  text-align: center;
-  font-weight: 500;
-  font-size: var(--step--1);
-  border-top: 1px solid #d1d5db;
-  padding-top: 1rem;
-}
-
-.footer a {
-  color: var(--blue-800);
 }
