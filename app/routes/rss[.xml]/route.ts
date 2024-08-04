@@ -1,7 +1,7 @@
-import type { LoaderFunction } from "@vercel/remix";
+import type { LoaderFunctionArgs } from "@vercel/remix";
 import { getRssFeedContent } from "./getRssFeedContent";
 
-export const loader: LoaderFunction = async ({ request }) => {
+export async function loader({ request }: LoaderFunctionArgs) {
 	const feedContent = getRssFeedContent();
 	const headers = new Headers(request.headers);
 	headers.set("Content-Type", "text/xml");
@@ -13,4 +13,4 @@ export const loader: LoaderFunction = async ({ request }) => {
 		status: 200,
 		headers,
 	});
-};
+}

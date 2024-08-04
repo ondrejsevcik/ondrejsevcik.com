@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react";
 import {
 	type HeadersFunction,
-	type LoaderFunction,
+	type LoaderFunctionArgs,
 	type MetaFunction,
 	json,
 } from "@vercel/remix";
@@ -12,15 +12,17 @@ import styles from "./route.module.css";
 
 const ParamsSchema = z.object({ id: z.string() });
 
-export const loader: LoaderFunction = async ({ params }) => {
+export async function loader({ params }: LoaderFunctionArgs) {
 	const { id } = ParamsSchema.parse(params);
 	const note = getNote(id);
 	return json({ note }, { headers: cacheControlHeaders });
-};
+}
 
 export const headers: HeadersFunction = keepCacheControl;
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
+	if (!data) return [];
+
 	const { note } = data;
 	const title = `${note.title} | Ondrej Sevcik`;
 	return [

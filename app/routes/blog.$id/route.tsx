@@ -2,7 +2,7 @@ import { useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
 import type {
 	HeadersFunction,
-	LoaderFunction,
+	LoaderFunctionArgs,
 	MetaFunction,
 } from "@vercel/remix";
 import z from "zod";
@@ -13,11 +13,11 @@ import styles from "./route.module.css";
 
 const idSchema = z.string().min(1);
 
-export const loader: LoaderFunction = async ({ params }) => {
+export async function loader({ params }: LoaderFunctionArgs) {
 	const id = idSchema.parse(params.id);
 	const blogPost = getBlogPost(id);
 	return json({ blogPost }, { headers: cacheControlHeaders });
-};
+}
 
 export const headers: HeadersFunction = keepCacheControl;
 

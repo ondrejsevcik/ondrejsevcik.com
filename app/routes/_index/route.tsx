@@ -1,4 +1,4 @@
-import { type HeadersFunction, type LoaderFunction, json } from "@vercel/remix";
+import { type HeadersFunction, json } from "@vercel/remix";
 import { cacheControlHeaders, keepCacheControl } from "../../.server/headers";
 import {
 	GithubIcon,
@@ -45,9 +45,9 @@ const socialLinks = [
 	},
 ];
 
-export const loader: LoaderFunction = async () => {
+export async function loader() {
 	return json({ ok: true }, { headers: cacheControlHeaders });
-};
+}
 
 export const headers: HeadersFunction = keepCacheControl;
 
