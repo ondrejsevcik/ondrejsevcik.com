@@ -6,7 +6,7 @@
 		"dev": "remix vite:dev",
 		"build": "remix vite:build",
 		"start": "remix-serve ./build/server/index.js",
-		"lint": "biome check",
+		"lint": "biome check && npm run typecheck",
 		"lint:fix": "biome check --write",
 		"typecheck": "tsc"
 	},
