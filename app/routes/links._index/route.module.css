@@ -7,6 +7,14 @@
   gap: 2rem;
 }
 
+.page a {
+  color: var(--blue-800);
+}
+
+.page a:hover, .page a:focus {
+  text-decoration: underline;
+}
+
 .title {
   font-size: var(--step-3);
   font-weight: 600;
@@ -23,6 +31,6 @@
   color: var(--blue-800);
 }
 
-.linkPOst a:hover {
+.linkPost a:hover {
   text-decoration: underline;
 }
