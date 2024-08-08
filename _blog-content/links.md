@@ -1,5 +1,5 @@
 ---
-title: "TODO Add title"
+title: "Building My Digital Library: Adding a Links Section"
 description: "I've been collecting content online for over 15 years using tools like GitHub, Apple Notes, Evernote, Twitter, Mastodon, Readwise, DayOne, and Notion. Each had pros and cons, but I wanted full control and easy sharing. Hosting content on my website provides both."
 date: "2024-08-07"
 tags: ["tech"]
