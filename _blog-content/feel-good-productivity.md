@@ -11,8 +11,6 @@ Overall, it’s a nice and easy-to-read book that I would recommend to anyone ne
 
 ## Play
 
-This chapter offers practical advice on how to approach work and life with a more positive and adventurous mindset.
-
 - **Engaging in adventures and exploring different environments are key to a happy life.** These experiences boost positive emotions and overall happiness.
 - One way to improve your experience with any task is to ask, **“What would this look like if it were fun?”** This small perspective change can turn work into a more enjoyable and game-like activity.
 - **Failure should be viewed as a data point rather than a setback.** It's an essential part of the learning process, providing valuable feedback on the path to success.
