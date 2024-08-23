@@ -1,7 +1,7 @@
 ---
 title: "What Game Theory Reveals About Life, The Universe, and Everything"
 date: "2024-01-08"
-tags: []
+tags: ["life"]
 ogUrl: https://www.youtube.com/watch?v=mScpHTIi-kM
 ---
 
