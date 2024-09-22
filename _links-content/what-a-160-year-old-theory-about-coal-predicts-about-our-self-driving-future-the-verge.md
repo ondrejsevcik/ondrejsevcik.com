@@ -1,5 +1,5 @@
 ---
-title: "What a 160-year-old theory about coal predicts about our self-driving future - The Verge"
+title: "What a 160-year-old theory about coal predicts about our self-driving future"
 date: "2024-09-22"
 tags: ["life"]
 ogUrl: https://www.theverge.com/2024/9/2/24232386/self-driving-car-jevons-paradox-robotaxi-waymo-cruise
